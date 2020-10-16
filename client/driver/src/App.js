@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import DetailRoute from './pages/DetailRoute'
 import store from './store/'
+import GarbageDump from './pages-admin/GarbageDump'
+import AddGarbageDump from './pages-admin/AddGarbageDump'
 
 function App() {
   return (
@@ -23,6 +25,12 @@ function App() {
               </Route>
               <Route path="/route" exact>
                 <DetailRoute />
+              </Route>
+              <Route path="/garbagedump" exact>
+                <GarbageDump />
+              </Route>
+              <Route path="/garbagedump/add" exact>
+                <AddGarbageDump />
               </Route>
             </Switch>
         </div>
