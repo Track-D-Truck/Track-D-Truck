@@ -1,31 +1,34 @@
 import React, { useState } from 'react'
 import {Modal, Button} from 'react-bootstrap'
 
-export default function ModalEditTruck() {
-  const [show, setShow] = useState(false);
-	// const [name, setName] = useState('')
-	// const [capacity, setCapacity] = useState('')
-	// const [schedule, setSchedule] = useState('')
-	// const [type, setType] = useState('')
-	const [truck, setTruck] = useState({
+export default function ModalCreateDump() {
+	const [show, setShow] = useState(false);
+	const [dump, setDump] = useState({
 		name: '',
 		capacity: '',
 		schedule: '',
 		type: ''
 	})
+
+	// const [name, setName] = useState('')
+	// const [capacity, setCapacity] = useState('')
+	// const [schedule, setSchedule] = useState('')
+	// const [type, setType] = useState('')
   const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	
-	function handleSubmitTruck(event) {
+	
+	function handleSubmitDump(event) {
 		event.preventDefault()
-		console.log(truck)
+		console.log(dump,'<<<<<<<<<<<');
+		console.log('masuk')
 		setShow(false)
-    }
-    
+	}
+
     return (
         <>
-        <Button className="btn btn-secondary my-3 mx-2" variant="primary" onClick={handleShow}>
-          Edit
+        <Button className="btn btn-secondary my-3" variant="primary" onClick={handleShow}>
+          Create New
         </Button>
   
         <Modal
@@ -35,18 +38,18 @@ export default function ModalEditTruck() {
           keyboard={false}
         >
           <Modal.Header closeButton>
-            <Modal.Title>Edit Truck</Modal.Title>
+            <Modal.Title>Create Dump</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
-					<form>
+						<form>
 							<div className="form-group row">
 								<label for="inputEmail" className="col-sm-2 col-form-label">Name</label>
 								<div className="col-sm-10">
 									<input type="text" className="form-control" id="staticEmail" 
 										onChange={e => {
-											setTruck({
-													...truck,
+											setDump({
+													...dump,
 													name: e.target.value
 											})
 									}}
@@ -59,8 +62,8 @@ export default function ModalEditTruck() {
 								<div className="col-sm-10">
 									<input type="text" className="form-control" id="staticType" 
 											onChange={e => {
-												setTruck({
-														...truck,
+												setDump({
+														...dump,
 														type: e.target.value
 												})
 										}}
@@ -72,8 +75,8 @@ export default function ModalEditTruck() {
 								<div className="col-sm-10">
 									<input type="number" className="form-control" id="staticCapacity"
 										onChange={e => {
-												setTruck({
-														...truck,
+												setDump({
+														...dump,
 														capacity: e.target.value
 												})
 											}} />
@@ -83,8 +86,8 @@ export default function ModalEditTruck() {
 								<label for="inputSchedule" className="col-sm-2 col-form-label">Schedule</label>
 								<div className="col-sm-10">
 									<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {
-											setTruck({
-													...truck,
+											setDump({
+													...dump,
 													schedule: e.target.value
 											})
 										}} >
@@ -104,7 +107,7 @@ export default function ModalEditTruck() {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick= {handleSubmitTruck}>Update</Button>
+            <Button variant="primary" onClick= {handleSubmitDump}>Submit</Button>
           </Modal.Footer>
         </Modal>
       </>
