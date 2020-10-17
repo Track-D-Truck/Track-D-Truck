@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD:server/services/dataCrunching/tps/package.json
+  "name": "tps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+=======
   "name": "admin",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
+>>>>>>> feature/client/admin:client/admin/package.json
   "scripts": {
     "start": "react-scripts start eslint-disable-next-line",
     "build": "react-scripts build",
@@ -23,6 +30,15 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+<<<<<<< HEAD:server/services/dataCrunching/tps/package.json
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.6.2"
+=======
   "browserslist": {
     "production": [
       ">0.2%",
@@ -34,5 +50,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+>>>>>>> feature/client/admin:client/admin/package.json
   }
 }
