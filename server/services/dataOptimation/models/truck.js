@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Truck.belongsTo(models.Driver)
     }
   };
   Truck.init({
@@ -18,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     capacity: DataTypes.INTEGER,
     cost: DataTypes.INTEGER,
     status: DataTypes.STRING,
-    location: DataTypes.STRING
+    location: DataTypes.STRING,
+    DriverId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Truck',

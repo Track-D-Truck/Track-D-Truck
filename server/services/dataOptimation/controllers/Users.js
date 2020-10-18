@@ -13,15 +13,13 @@ const transporter = nodemailer.createTransport({
 })
 
 class DriverController {
-
-
     static register(req, res, next) {
         const objUser = {
             name:req.body.name,
             email:req.body.email,
             password:req.body.password,
             phone:req.body.phone,
-            role:'Driver'
+            role:req.body.role || 'Driver'
         }                 
         Driver.create(objUser)
         .then(result => {
