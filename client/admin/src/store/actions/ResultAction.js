@@ -8,7 +8,7 @@ export function SET_RESULT(data) {
 export function FETCH_RESULT() {
   console.log('masuk nih');
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/results`, {
+    fetch(`http://localhost:3000/optimations/test`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"

@@ -9,7 +9,7 @@ export function SET_ERROR(status) {
 export function FETCH_DUMPS() {
 
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/TPStorages`, {
+    fetch(`http://localhost:3000/tps`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -38,7 +38,7 @@ export function SET_DUMPS(data) {
 
 export function CREATE_DUMP(data) {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/TPStorages`, {
+    fetch(`http://localhost:3000/tps`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -57,7 +57,7 @@ export function CREATE_DUMP(data) {
 
 export function DELETE_DUMP(id) {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/TPStorages/${id}`, {
+    fetch(`http://localhost:3000/tps/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"

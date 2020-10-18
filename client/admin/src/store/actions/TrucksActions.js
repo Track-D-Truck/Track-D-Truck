@@ -28,7 +28,7 @@ export function SET_TRUCK(data) {
 export function FETCH_TRUCKS() {
 
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/Trucks`, {
+    fetch(`http://localhost:3000/trucks`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -38,6 +38,7 @@ export function FETCH_TRUCKS() {
         return res.json()
       })
       .then((data) => {
+        console.log(data,'<<<<<<<<<');
         data.forEach(truck => {
           truck.location = truck.location.split(',')
         });
@@ -49,7 +50,7 @@ export function FETCH_TRUCKS() {
 
 export function CREATE_TRUCK(data) {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/Trucks`, {
+    fetch(`http://localhost:3000/trucks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -60,6 +61,7 @@ export function CREATE_TRUCK(data) {
         return res.json()
       })
       .then((data) => {
+        console.log(data,'<<<<<<<<<');
         dispatch(SET_TRUCKS(data))
       })
       .catch(err => console.log(err))
@@ -68,7 +70,7 @@ export function CREATE_TRUCK(data) {
 
 export function DELETE_TRUCK(id) {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3000/Trucks/${id}`, {
+    fetch(`http://localhost:3000/trucks/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
@@ -78,6 +80,7 @@ export function DELETE_TRUCK(id) {
         return res.json()
       })
       .then((data) => {
+        console.log(data,'<<<<<<<<<');
         dispatch(FETCH_TRUCKS())
       })
       .catch(err => console.log(err))

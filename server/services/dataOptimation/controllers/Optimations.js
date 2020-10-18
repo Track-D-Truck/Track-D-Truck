@@ -2,7 +2,7 @@ const axios = require("axios");
 const { TPStorage } = require(`../models`);
 const { Truck, Driver } = require(`../models`);
 
-let GMAPS_API_KEY = ''
+let GMAPS_API_KEY = 'AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc'
 
 class OptimationController {
   static async test(req, res, next) {
@@ -10,8 +10,7 @@ class OptimationController {
     const activeTruck = await Truck.findAll({
       include: [Driver],
       where: {
-        status: "available",
-        role: "Driver"
+        status: "available"
       },
     })
       .then((result) => {

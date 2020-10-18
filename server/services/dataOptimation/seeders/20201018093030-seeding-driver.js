@@ -19,7 +19,6 @@ module.exports = {
       password: "123456",
       phone: 6281234567890,
       role: "admin",
-      status: "unavailable",
       createdAt: new Date(),
         updatedAt: new Date()
   },
@@ -29,7 +28,6 @@ module.exports = {
       password: "123456",
       phone: 6281234567891,
       role: "driver",
-      status: "available",
       createdAt: new Date(),
         updatedAt: new Date()
   },
@@ -39,7 +37,6 @@ module.exports = {
       password: "123456",
       phone: 6281234567892,
       role: "driver",
-      status: "available",
       createdAt: new Date(),
         updatedAt: new Date()
   },
@@ -49,7 +46,6 @@ module.exports = {
       password: "123456",
       phone: 6281234567893,
       role: "driver",
-      status: "available",
       createdAt: new Date(),
         updatedAt: new Date()
   }

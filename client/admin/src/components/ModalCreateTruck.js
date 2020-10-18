@@ -71,19 +71,19 @@ export default function ModalCreateTruck() {
 								</div>
 							</div>
 
-							{/* <div className="form-group row">
-								<label for="inputCapacity" className="col-sm-2 col-form-label">Capacity</label>
+							<div className="form-group row">
+								<label for="inputCapacity" className="col-sm-2 col-form-label">Cost/Distance</label>
 								<div className="col-sm-10">
 									<input type="number" className="form-control" id="staticCapacity"
 										onChange={e => {
 												setTruck({
 														...truck,
-														capacity: e.target.value
+														cost: e.target.value
 												})
 											}} />
 								</div>
 							</div>
-							<div className="form-group row">
+							{/* <div className="form-group row">
 								<label for="inputSchedule" className="col-sm-2 col-form-label">Schedule</label>
 								<div className="col-sm-10">
 									<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {

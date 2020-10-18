@@ -1,0 +1,186 @@
+{
+  "Drivers": [
+    {
+      "id": 1,
+      "name": "Ari",
+      "email": "ari@mail.com",
+      "password": "123456",
+      "phone": 6281234567890,
+      "role": "admin",
+      "status": "unavailable"
+    },
+    {
+      "id": 2,
+      "name": "Rijal",
+      "email": "rijal@mail.com",
+      "password": "123456",
+      "phone": 6281234567891,
+      "role": "driver",
+      "status": "available"
+    },
+    {
+      "id": 3,
+      "name": "Ginanjar",
+      "email": "ginanjar@mail.com",
+      "password": "123456",
+      "phone": 6281234567892,
+      "role": "driver",
+      "status": "available"
+    },
+    {
+      "id": 4,
+      "name": "Alek",
+      "email": "alek@mail.com",
+      "password": "123456",
+      "phone": 6281234567893,
+      "role": "driver",
+      "status": "available"
+    }
+  ],
+  "Trucks": [
+    {
+      "id": 1,
+      "truck_code": "truck-1",
+      "cost": 1000,
+      "capacity": 10,
+      "status": "available",
+      "location": "-6.86666, 107.60000"
+    },
+    {
+      "id": 2,
+      "truck_code": "truck-2",
+      "cost": 1000,
+      "capacity": 7,
+      "status": "unavailable",
+      "location": "-6.86666, 107.60000"
+    },
+    {
+      "id": 3,
+      "truck_code": "truck-3",
+      "cost": 1000,
+      "capacity": 7,
+      "status": "available",
+      "location": "-6.86666, 107.60000"
+    }
+  ],
+  "TPStorages": [
+    {
+      "id": 1,
+      "name": "Terminal Dago",
+      "location": "-6.8672104, 107.6213954",
+      "status": "active",
+      "volume": 3
+    },
+    {
+      "id": 2,
+      "name": "Cihampeulas",
+      "location": "-6.8881609, 107.6039859",
+      "status": "active",
+      "volume": 3
+    },
+    {
+      "id": 3,
+      "name": "GOR Saparua",
+      "location": "-6.9088007, 107.6158271",
+      "status": "active",
+      "volume": 6
+    },
+    {
+      "id": 4,
+      "name": "Dipatiukur",
+      "location": "-6.8927743, 107.6166699",
+      "status": "active",
+      "volume": 2
+    },
+    {
+      "id": 5,
+      "name": "Cieumbeluit",
+      "location": "-6.875576, 107.604352",
+      "status": "inactive",
+      "volume": 3
+    },
+    {
+      "id": 6,
+      "name": "Tamansari",
+      "location": "-6.908792, 107.615854",
+      "status": "inactive",
+      "volume": 3
+    }
+  ],
+  "results": [
+    {
+      "truck": {
+        "id": 3,
+        "truck_code": "truck-3",
+        "capacity": 7,
+        "cost": 1000,
+        "status": "available",
+        "location": "-6.86666, 107.60000",
+        "DriverId": 102,
+        "createdAt": "2020-10-18T05:26:40.302Z",
+        "updatedAt": "2020-10-18T07:02:42.130Z",
+        "Driver": {
+          "id": 102,
+          "name": "Aripin",
+          "email": "aripin@mail.com",
+          "password": "123456",
+          "role": "Driver",
+          "status": "unavailable",
+          "createdAt": "2020-01-11T17:00:00.000Z",
+          "updatedAt": "2020-01-11T17:00:00.000Z"
+        }
+      },
+      "route": [
+        {
+          "address": "Jl. Cihampelas No.250-264, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131, Indonesia",
+          "location": "-6.8881609, 107.6039859",
+          "name": "Cihampeulas",
+          "volume": 3
+        },
+        {
+          "address": "Jl. Dago Elos II No.115, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135, Indonesia",
+          "location": "-6.8672104, 107.6213954",
+          "name": "Terminal Dago",
+          "volume": 3
+        }
+      ]
+    },
+    {
+      "truck": {
+        "id": 1,
+        "truck_code": "truck-1",
+        "capacity": 10,
+        "cost": 1000,
+        "status": "available",
+        "location": "-6.86666, 107.60000",
+        "DriverId": 101,
+        "createdAt": "2020-10-18T05:26:12.082Z",
+        "updatedAt": "2020-10-18T06:59:36.498Z",
+        "Driver": {
+          "id": 101,
+          "name": "Bambang",
+          "email": "bambang@mail.com",
+          "password": "123456",
+          "role": "Driver",
+          "status": "unavailable",
+          "createdAt": "2020-01-11T17:00:00.000Z",
+          "updatedAt": "2020-01-11T17:00:00.000Z"
+        }
+      },
+      "route": [
+        {
+          "address": "Jl. Tengku Angkasa No.18, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
+          "location": "-6.8927743, 107.6166699",
+          "name": "Dipatiukur",
+          "volume": 2
+        },
+        {
+          "address": "Jl. Saparua, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115, Indonesia",
+          "location": "-6.9088007, 107.6158271",
+          "name": "GOR Saparua",
+          "volume": 6
+        }
+      ]
+    }
+  ]
+}
