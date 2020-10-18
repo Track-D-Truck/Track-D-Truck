@@ -13,6 +13,7 @@ import Login from './pages/Login'
 import Trucks from './pages/Trucks'
 import Report from './pages/Report'
 import GarbageDump from './pages/GarbageDump'
+import Drivers from './pages/Drivers'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/trucks" component={Trucks}></Route>
         <Route path='/report' component={Report}/>
         <Route path='/dumps' component={GarbageDump}/>
+        <Route path='/drivers' component={Drivers}/>
       </Router>
     </Provider>
     

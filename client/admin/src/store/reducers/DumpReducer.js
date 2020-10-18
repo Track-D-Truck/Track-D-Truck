@@ -19,7 +19,7 @@ function dumpReducer(state = initState, action) {
         ...state,
         errorStatus: action.payload
       }
-    case "FETCH_TRUCKS":
+    case "SET_DUMPS":
       return {
         ...state,
         dumps: action.payload

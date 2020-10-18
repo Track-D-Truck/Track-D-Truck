@@ -1,27 +1,26 @@
 import React, { useState } from 'react'
 import {Modal, Button} from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+
+import {CREATE_DUMP} from '../store/actions/DumpsAction'
 
 export default function ModalCreateDump() {
-	const [show, setShow] = useState(false);
+	const dispatch = useDispatch()
+	const [show, setShow] = useState(false)
 	const [dump, setDump] = useState({
 		name: '',
-		capacity: '',
-		schedule: '',
-		type: ''
+		location: '',
+		status: '',
+		volume: ''
 	})
 
-	// const [name, setName] = useState('')
-	// const [capacity, setCapacity] = useState('')
-	// const [schedule, setSchedule] = useState('')
-	// const [type, setType] = useState('')
   const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	
 	
 	function handleSubmitDump(event) {
 		event.preventDefault()
-		console.log(dump,'<<<<<<<<<<<');
-		console.log('masuk')
+		dispatch(CREATE_DUMP(dump))
 		setShow(false)
 	}
 
@@ -58,31 +57,45 @@ export default function ModalCreateDump() {
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Type</label>
+								<label for="inputType" className="col-sm-2 col-form-label">Location</label>
 								<div className="col-sm-10">
 									<input type="text" className="form-control" id="staticType" 
 											onChange={e => {
 												setDump({
 														...dump,
-														type: e.target.value
+														location: e.target.value
 												})
 										}}
 									/>
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputCapacity" className="col-sm-2 col-form-label">Capacity</label>
+								<label for="inputCapacity" className="col-sm-2 col-form-label">Volume</label>
 								<div className="col-sm-10">
 									<input type="number" className="form-control" id="staticCapacity"
 										onChange={e => {
 												setDump({
 														...dump,
-														capacity: e.target.value
+														volume: e.target.value
 												})
 											}} />
 								</div>
 							</div>
-							<div className="form-group row">
+
+							{/* <div className="form-group row">
+								<label for="inputCapacity" className="col-sm-2 col-form-label">Status</label>
+								<div className="col-sm-10">
+									<input type="number" className="form-control" id="staticCapacity"
+										onChange={e => {
+												setDump({
+														...dump,
+														status: e.target.value
+												})
+											}} />
+								</div>
+							</div> */}
+
+							{/* <div className="form-group row">
 								<label for="inputSchedule" className="col-sm-2 col-form-label">Schedule</label>
 								<div className="col-sm-10">
 									<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {
@@ -101,7 +114,7 @@ export default function ModalCreateDump() {
 											<option value="Saturday">Saturday </option>
 										</select>
 								</div>
-							</div>
+							</div> */}
 
 						</form>
 

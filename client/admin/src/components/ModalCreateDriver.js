@@ -1,35 +1,27 @@
 import React, { useState } from 'react'
 import {Modal, Button} from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
 
-import {CREATE_TRUCK} from '../store/actions/TrucksActions'
-
-export default function ModalCreateTruck() {
+export default function ModalCreateDriver() {
 	const [show, setShow] = useState(false);
-	const dispatch = useDispatch()
-	const getCurrentTrucks = useSelector(state => state.TruckReducer.trucks)
-	
-	const currentTrucks = getCurrentTrucks[getCurrentTrucks.length-1]
-	let currentTruckID
-	if(currentTrucks) currentTruckID = currentTrucks.id 
-	const nextTrucks = `truck-${currentTruckID+1}`
-
-	const [truck, setTruck] = useState({
-		truck_code: '',
+	const [driver, setDriver] = useState({
+		name: '',
 		capacity: '',
-		cost: '',
-		status: '',
-		location: ''
+		schedule: '',
+		type: ''
 	})
 
+	// const [name, setName] = useState('')
+	// const [capacity, setCapacity] = useState('')
+	// const [schedule, setSchedule] = useState('')
+	// const [type, setType] = useState('')
   const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	
 	
-	function handleSubmitTruck(event) {
+	function handleSubmitDriver(event) {
 		event.preventDefault()
-		truck.truck_code = nextTrucks
-		dispatch(CREATE_TRUCK(truck))
+		console.log(driver,'<<<<<<<<<<<');
+		console.log('masuk')
 		setShow(false)
 	}
 
@@ -46,38 +38,45 @@ export default function ModalCreateTruck() {
           keyboard={false}
         >
           <Modal.Header closeButton>
-            <Modal.Title>Create Truck</Modal.Title>
+            <Modal.Title>Create driver</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
 						<form>
 							<div className="form-group row">
-								<label for="inputEmail" className="col-sm-2 col-form-label">Truck Code</label>
+								<label for="inputEmail" className="col-sm-2 col-form-label">Name</label>
 								<div className="col-sm-10">
-									<input type="text" readonly className="form-control-plaintext" id="staticEmail" value={nextTrucks}/>
+									<input type="text" className="form-control" id="staticEmail" 
+										onChange={e => {
+											setDriver({
+													...driver,
+													name: e.target.value
+											})
+									}}
+										
+										/>
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Capacity</label>
+								<label for="inputType" className="col-sm-2 col-form-label">Type</label>
 								<div className="col-sm-10">
 									<input type="text" className="form-control" id="staticType" 
 											onChange={e => {
-												setTruck({
-														...truck,
-														capacity: e.target.value
+												setDriver({
+														...driver,
+														type: e.target.value
 												})
 										}}
 									/>
 								</div>
 							</div>
-
-							{/* <div className="form-group row">
+							<div className="form-group row">
 								<label for="inputCapacity" className="col-sm-2 col-form-label">Capacity</label>
 								<div className="col-sm-10">
 									<input type="number" className="form-control" id="staticCapacity"
 										onChange={e => {
-												setTruck({
-														...truck,
+												setDriver({
+														...driver,
 														capacity: e.target.value
 												})
 											}} />
@@ -87,8 +86,8 @@ export default function ModalCreateTruck() {
 								<label for="inputSchedule" className="col-sm-2 col-form-label">Schedule</label>
 								<div className="col-sm-10">
 									<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {
-											setTruck({
-													...truck,
+											setDriver({
+													...driver,
 													schedule: e.target.value
 											})
 										}} >
@@ -102,13 +101,13 @@ export default function ModalCreateTruck() {
 											<option value="Saturday">Saturday </option>
 										</select>
 								</div>
-							</div> */}
+							</div>
 
 						</form>
 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick= {handleSubmitTruck}>Submit</Button>
+            <Button variant="primary" onClick= {handleSubmitDriver}>Submit</Button>
           </Modal.Footer>
         </Modal>
       </>

@@ -9,59 +9,77 @@ export function SET_ERROR(status) {
   
 }
 
-export function FETCH_TRUCKS() {
-
-  const dummyTruck = [
-    {
-      id: 1,
-      code: 'truck01',
-      driver: 'jajang',
-      capacity: 100,
-      position: 'parung',
-      route : ['sentul','bogor', 'parung', 'katulampa', 'bintaro'],
-      totalDistance : 50
-    } , {
-      id: 2,
-      code: 'truck02',
-      driver: 'jajang',
-      capacity: 100,
-      position: 'katulampa',
-      route : ['sentul','bogor', 'parung', 'katulampa', 'bintaro'],
-      totalDistance : 75
-    }
-  ]
-  return(dispatch, getState) => {
-    dispatch({
-      type: "FETCH_TRUCKS",
-      payload: dummyTruck
-    })
-  }
-//   return (dispatch, getState) => {
-//     // console.log(dispatch,'ini jalan gaaaaaa');
-//     fetch("http://localhost:3000/pokemon", {
-//         method: "GET",
-//         headers: {
-//             "Content-Type": "application/json"
-//         }
-//     })
-//         .then((res) => {
-//             return res.json()
-//         })
-//         .then((data) => {
-//             dispatch({
-//                 type: "FETCH_POKEMONS",
-//                 payload: data
-//             })
-//         })
-//         .catch(err => console.log(err))
-// }
+export function SET_TRUCKS(data) {
+  return {
+      type: "SET_TRUCKS",
+      payload: data
+  }; 
 }
 
-export function FETCH_TRUCK(truck) {
+export function SET_TRUCK(data) {
   return(dispatch, getState) => {
     dispatch({
-      type: "FETCH_TRUCK",
-      payload: truck
+      type: "SET_TRUCK",
+      payload: data
     })
   }
+}
+
+export function FETCH_TRUCKS() {
+
+  return (dispatch, getState) => {
+    fetch(`http://localhost:3000/Trucks`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        data.forEach(truck => {
+          truck.location = truck.location.split(',')
+        });
+        dispatch(SET_TRUCKS(data))
+      })
+      .catch(err => console.log(err))
+    }
+}
+
+export function CREATE_TRUCK(data) {
+  return (dispatch, getState) => {
+    fetch(`http://localhost:3000/Trucks`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        dispatch(SET_TRUCKS(data))
+      })
+      .catch(err => console.log(err))
+    }
+}
+
+export function DELETE_TRUCK(id) {
+  return (dispatch, getState) => {
+    fetch(`http://localhost:3000/Trucks/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        dispatch(FETCH_TRUCKS())
+      })
+      .catch(err => console.log(err))
+    }
 }

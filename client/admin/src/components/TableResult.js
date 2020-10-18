@@ -12,16 +12,15 @@ export default function TableResult() {
                 <th scope="col">Driver</th>
                 <th scope="col">Capacity</th>
                 <th scope="col">Current TPS</th>
-				<th scope="col">Total Current Distance</th>
-				<th scope="col">Total Current Cost</th>
-
+                <th scope="col">Total Current Distance</th>
+                <th scope="col">Total Current Cost</th>
             </tr>
             </thead>
             {chosenTruck &&
               <tbody style={{backgroundColor:'#FFF8CD'}}>
                 <tr>
                   {/* <th scope="row">{i}</th> */}
-                  <td>{chosenTruck.code}</td>
+                  <td>{chosenTruck.truck_code}</td>
                   <td>{chosenTruck.driver}</td>
                   <td>{chosenTruck.capacity}</td>
                   <td>{chosenTruck.position}</td>

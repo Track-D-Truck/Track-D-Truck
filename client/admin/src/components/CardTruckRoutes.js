@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux'
 
 export default function CardTruckRoutes() {
   const chosenTruck = useSelector(state => state.TruckReducer.chosenTruck)
+  
   return (
     <div className='card styleRoutes p-2' style={{backgroundColor:'#FFF8CD'}}>
       <h2> Routes</h2>
       <div>
-        {chosenTruck && chosenTruck.route.map((tps,i) => {
+        {/* {chosenTruck && chosenTruck.route.map((tps,i) => {
           return(
             <div key={i} className="mb-5 ml-3">
               {tps !== chosenTruck.position ?
@@ -18,7 +19,7 @@ export default function CardTruckRoutes() {
               <span className='ml-3'>{tps}</span>
             </div>
           )
-        })}
+        })} */}
 
       </div>
     </div>

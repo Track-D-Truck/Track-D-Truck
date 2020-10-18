@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 
-import {FETCH_TRUCKS} from '../store/actions/TrucksActions'
-import {FETCH_TRUCK} from  '../store/actions/TrucksActions'
+import {FETCH_TRUCKS, SET_TRUCK} from '../store/actions/TrucksActions'
+import {FETCH_RESULT} from '../store/actions/ResultAction'
 
 export default function CardTrackingTruck(props) {
 
@@ -11,6 +11,10 @@ export default function CardTrackingTruck(props) {
 
   useEffect(() => {
     dispatch(FETCH_TRUCKS())
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(FETCH_RESULT())
   }, [dispatch])
 
   return (
@@ -23,11 +27,11 @@ export default function CardTrackingTruck(props) {
         
         {trucks.map((truck,i) => {
           function handleChangeTruck() {
-              dispatch(FETCH_TRUCK(truck))
+              dispatch(SET_TRUCK(truck))
           }
           return(
             <span key={i} className='row mb-3'>
-              <h5 className='btn' onClick={handleChangeTruck}>{ truck.code}</h5>
+              <h5 className='btn' onClick={handleChangeTruck}>{ truck.truck_code}</h5>
             </span>
           )
         })}
