@@ -2,16 +2,20 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import ModalEditDump from './ModalEditDump'
+import Loading from './Loading'
 import { FETCH_DUMPS, SET_DUMPS, DELETE_DUMP } from '../store/actions/DumpsAction'
 
 export default function TableDumpDetail() {
   const dispatch = useDispatch()
   const dumps = useSelector(state => state.DumpReducer.dumps)
+  const loading = useSelector(state => state.DumpReducer.loadingStatus)
 
   useEffect(() => {
     dispatch(FETCH_DUMPS())
   },[dispatch])
 
+  if (loading) return <Loading/>
+  
   return (
     <table className="table text-center thead-bg">
             <thead className='trucklist'>
@@ -40,7 +44,7 @@ export default function TableDumpDetail() {
                             <td>{dump.status}</td>
                             <td>
                                 <button className="btn btn-secondary">Detail</button>
-                                <ModalEditDump/>
+                                <ModalEditDump chosenDump={dump} />
                                 <button className="btn btn-secondary" onClick={handleDeleteDump}>Delete</button>
                             </td>
                         </tr>

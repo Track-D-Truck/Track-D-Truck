@@ -2,18 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import ModalEditTruck from './ModalEditTruck'
+import Loading from './Loading'
 import {FETCH_DRIVERS, SET_DRIVERS} from '../store/actions/DriversAction'
 
 export default function TableDriverDetail() {
     // const [dummyTrucks, setDummyTrucks] = useState([])
     const drivers = useSelector(state => state.DriverReducer.drivers)
+    const loading = useSelector(state => state.DriverReducer.loadingStatus)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(FETCH_DRIVERS())
     }, [] )
 
-    
+    if (loading) return <Loading/>
     return (
         <table className="table text-center thead-bg">
             <thead className='trucklist'>

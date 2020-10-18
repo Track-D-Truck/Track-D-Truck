@@ -1,19 +1,22 @@
 export function SET_LOADING(status) {
-  // dispatch({
-  //   type: "SET_LOADING",
-  //   payload: status
-  // })
+  return {
+    type: "SET_LOADING",
+    payload: status
+  }
 }
 
 export function SET_ERROR(status) {
-  
+  return {
+    type: "SET_ERROR",
+    payload: status
+  }
 }
 
 export function SET_TRUCKS(data) {
   return {
       type: "SET_TRUCKS",
       payload: data
-  }; 
+  }
 }
 
 export function SET_TRUCK(data) {
@@ -26,8 +29,9 @@ export function SET_TRUCK(data) {
 }
 
 export function FETCH_TRUCKS() {
-
+  
   return (dispatch, getState) => {
+    dispatch(SET_LOADING(true))
     fetch(`http://localhost:3000/trucks`, {
       method: "GET",
       headers: {
@@ -38,13 +42,13 @@ export function FETCH_TRUCKS() {
         return res.json()
       })
       .then((data) => {
-        console.log(data,'<<<<<<<<<');
         data.forEach(truck => {
           truck.location = truck.location.split(',')
         });
         dispatch(SET_TRUCKS(data))
       })
       .catch(err => console.log(err))
+      .finally(() => dispatch(SET_LOADING(false)))
     }
 }
 
@@ -62,7 +66,7 @@ export function CREATE_TRUCK(data) {
       })
       .then((data) => {
         console.log(data,'<<<<<<<<<');
-        dispatch(SET_TRUCKS(data))
+        dispatch(FETCH_TRUCKS())
       })
       .catch(err => console.log(err))
     }

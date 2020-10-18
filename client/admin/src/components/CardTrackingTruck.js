@@ -3,12 +3,12 @@ import {useDispatch, useSelector} from 'react-redux'
 
 import {FETCH_TRUCKS, SET_TRUCK} from '../store/actions/TrucksActions'
 import {FETCH_RESULT} from '../store/actions/ResultAction'
-
+import Loading from './Loading'
 export default function CardTrackingTruck(props) {
 
   const dispatch = useDispatch()
   const trucks = useSelector(state => state.TruckReducer.trucks)
-
+  const loading = useSelector(state => state.TruckReducer.loadingStatus)
   useEffect(() => {
     dispatch(FETCH_TRUCKS())
   }, [dispatch])
@@ -17,6 +17,7 @@ export default function CardTrackingTruck(props) {
     dispatch(FETCH_RESULT())
   }, [dispatch])
 
+  if (loading) return <Loading/>
   return (
     <div className='card shadow styleTrackingTruck'>
 								
