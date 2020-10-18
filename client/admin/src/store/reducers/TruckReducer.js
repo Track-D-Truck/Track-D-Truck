@@ -2,7 +2,7 @@ const initState = {
   loadingStatus: false,
   errorStatus: false,
   trucks: [],
-  chosenTruck: ''
+  chosenTruck: null
 }
 
 function truckReducer(state = initState, action) {

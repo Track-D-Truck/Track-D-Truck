@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import {Modal, Button} from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 
+import  {UPDATE_TRUCK} from '../store/actions/TrucksActions'
 
 export default function ModalEditTruck(props) {
-  const [show, setShow] = useState(false)
+	const dispatch = useDispatch()
+	const [show, setShow] = useState(false)
 	const chosenTruck = props.chosenTruck
-	
 	const [truck, setTruck] = useState({
 		truck_code: '',
 		capacity: '',
 		cost: '',
 		status: '',
-		location: ''
+		location: '',
+		Driver: ''
 	})
   const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-	
+	const drivers = useSelector(state => state.DriverReducer.drivers)
+
 	useEffect(()=> {
 		setTruck({
 		truck_code: chosenTruck.truck_code,
@@ -24,10 +28,14 @@ export default function ModalEditTruck(props) {
 		status: chosenTruck.status,
 		location: chosenTruck.location,
 		})
-	}, [])
+	}, [setTruck])
+
+
 
 	function handleSubmitTruck(event) {
 		event.preventDefault()
+		truck.location = truck.location.join()
+		dispatch(UPDATE_TRUCK(truck, chosenTruck.id))
 		setShow(false)
     }
     
@@ -101,26 +109,24 @@ export default function ModalEditTruck(props) {
 								</div>
 						</form>
 
-						{/* <div className="form-group row">
-							<label for="inputSchedule" className="col-sm-2 col-form-label">Schedule</label>
+						<div className="form-group row">
+							<label for="inputSchedule" className="col-sm-2 col-form-label">Driver</label>
 							<div className="col-sm-10">
 								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {
 										setTruck({
 												...truck,
-												schedule: e.target.value
+												Driver: e.target.value
 										})
 									}} >
 										<option selected>Choose...</option>
-										<option value="Sunday">Sunday</option>
-										<option value="Monday">Monday</option>
-										<option value="Tuesday">Tuesday</option>
-										<option value="Wednesday">Wednesday</option>
-										<option value="Thursday">Thursday</option>
-										<option value="Friday">Friday</option>
-										<option value="Saturday">Saturday </option>
+										{ drivers.map((driver) => {
+											return(
+												<option value={driver.name}>{driver.id} - {driver.name}</option>
+											)
+										})}
 									</select>
 							</div>
-						</div> */}
+						</div>
 
           </Modal.Body>
           <Modal.Footer>

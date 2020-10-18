@@ -43,7 +43,6 @@ export default function TableDumpDetail() {
                             <td>{dump.volume}</td>
                             <td>{dump.status}</td>
                             <td>
-                                <button className="btn btn-secondary">Detail</button>
                                 <ModalEditDump chosenDump={dump} />
                                 <button className="btn btn-secondary" onClick={handleDeleteDump}>Delete</button>
                             </td>

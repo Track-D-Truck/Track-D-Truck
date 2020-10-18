@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {Modal, Button} from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+
+import  {UPDATE_DUMP} from '../store/actions/DumpsAction'
 
 export default function ModalEditDump(props) {
+	const dispatch = useDispatch()
 	const [show, setShow] = useState(false);
 	const chosenDump = props.chosenDump
 	const [dump, setDump] = useState({
@@ -26,7 +30,8 @@ export default function ModalEditDump(props) {
 	
 	function handleSubmitDump(event) {
 		event.preventDefault()
-		console.log(dump,'checkombak');
+		dump.location = dump.location.join()
+		dispatch(UPDATE_DUMP(dump, chosenDump.id))
 		setShow(false)
 	}
 

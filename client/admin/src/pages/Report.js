@@ -20,7 +20,7 @@ export default function Report() {
 
 							<div className="col-sm-6">
 								<div className='card shadow'>
-									<Maps />
+									{/* <Maps /> */}
 								</div>
 							</div>
 

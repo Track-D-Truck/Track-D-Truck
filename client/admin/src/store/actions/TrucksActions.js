@@ -52,8 +52,31 @@ export function FETCH_TRUCKS() {
     }
 }
 
+export function FETCH_TRUCK(id) {
+  
+  return (dispatch, getState) => {
+    dispatch(SET_LOADING(true))
+    fetch(`http://localhost:3000/trucks/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        data.location = data.location.split(',')
+        dispatch(SET_TRUCK(data))
+      })
+      .catch(err => console.log(err))
+      .finally(() => dispatch(SET_LOADING(false)))
+    }
+}
+
 export function CREATE_TRUCK(data) {
   return (dispatch, getState) => {
+    const trucks = getState().TruckReducer.trucks
     fetch(`http://localhost:3000/trucks`, {
       method: "POST",
       headers: {
@@ -65,7 +88,27 @@ export function CREATE_TRUCK(data) {
         return res.json()
       })
       .then((data) => {
-        console.log(data,'<<<<<<<<<');
+        trucks.concat(data)
+        console.log(trucks);
+        dispatch(FETCH_TRUCKS())
+      })
+      .catch(err => console.log(err))
+    }
+}
+
+export function UPDATE_TRUCK(data, id) {
+  return (dispatch, getState) => {
+    fetch(`http://localhost:3000/trucks/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
         dispatch(FETCH_TRUCKS())
       })
       .catch(err => console.log(err))
@@ -84,8 +127,6 @@ export function DELETE_TRUCK(id) {
         return res.json()
       })
       .then((data) => {
-        console.log(data,'<<<<<<<<<');
-        dispatch(FETCH_TRUCKS())
       })
       .catch(err => console.log(err))
     }
