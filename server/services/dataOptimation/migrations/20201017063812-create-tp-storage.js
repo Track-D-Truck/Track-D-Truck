@@ -14,6 +14,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      address: {
+        type: Sequelize.INTEGER
+      },
       volume: {
         type: Sequelize.INTEGER
       },
