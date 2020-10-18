@@ -20,16 +20,21 @@ code {
 }
 
 .styleTrackingTruck{
-width: 80%;
-height: 450px;
+height: 400px;
 background: #FFF8CD;
+overflow: auto;
 }
 
 .styleMapsTracking {
 width: 100%;
-height: 450px;
+height: 400px;
 }
 
-.styleRouteStatus {
+.styleRoutes {
+  height: 400px;
+}
 
+#map {
+  height: 100%;
+  width: 100%;
 }

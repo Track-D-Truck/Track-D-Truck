@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Modal, Button, Form, Row, Col} from 'react-bootstrap'
+import {Modal, Button} from 'react-bootstrap'
 
 export default function ModalEditTruck() {
   const [show, setShow] = useState(false);

@@ -2,34 +2,25 @@ import React, { useState } from 'react'
 import {Modal, Button} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 
-import {CREATE_TRUCK} from '../store/actions/TrucksActions'
+import {CREATE_DUMP} from '../store/actions/DumpsAction'
 
-export default function ModalCreateTruck() {
-	const [show, setShow] = useState(false);
+export default function ModalCreateDump() {
 	const dispatch = useDispatch()
-	const getCurrentTrucks = useSelector(state => state.TruckReducer.trucks)
-	
-	const currentTrucks = getCurrentTrucks[getCurrentTrucks.length-1]
-	let currentTruckID
-	if(currentTrucks) currentTruckID = currentTrucks.id 
-	const nextTrucks = `truck-${currentTruckID+1}`
-
-	const [truck, setTruck] = useState({
-		truck_code: '',
-		capacity: '',
-		cost: '',
+	const [show, setShow] = useState(false)
+	const [dump, setDump] = useState({
+		name: '',
+		location: '',
 		status: '',
-		location: ''
+		volume: ''
 	})
 
   const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	
 	
-	function handleSubmitTruck(event) {
+	function handleSubmitDump(event) {
 		event.preventDefault()
-		truck.truck_code = nextTrucks
-		dispatch(CREATE_TRUCK(truck))
+		dispatch(CREATE_DUMP(dump))
 		setShow(false)
 	}
 
@@ -46,49 +37,70 @@ export default function ModalCreateTruck() {
           keyboard={false}
         >
           <Modal.Header closeButton>
-            <Modal.Title>Create Truck</Modal.Title>
+            <Modal.Title>Create Dump</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
 						<form>
 							<div className="form-group row">
-								<label for="inputEmail" className="col-sm-2 col-form-label">Truck Code</label>
+								<label for="inputEmail" className="col-sm-2 col-form-label">Name</label>
 								<div className="col-sm-10">
-									<input type="text" readonly className="form-control-plaintext" id="staticEmail" value={nextTrucks}/>
+									<input type="text" className="form-control" id="staticEmail" 
+										onChange={e => {
+											setDump({
+													...dump,
+													name: e.target.value
+											})
+									}}
+										
+										/>
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Capacity</label>
+								<label for="inputType" className="col-sm-2 col-form-label">Location</label>
 								<div className="col-sm-10">
 									<input type="text" className="form-control" id="staticType" 
 											onChange={e => {
-												setTruck({
-														...truck,
-														capacity: e.target.value
+												setDump({
+														...dump,
+														location: e.target.value
 												})
 										}}
 									/>
 								</div>
 							</div>
-
-							{/* <div className="form-group row">
-								<label for="inputCapacity" className="col-sm-2 col-form-label">Capacity</label>
+							<div className="form-group row">
+								<label for="inputCapacity" className="col-sm-2 col-form-label">Volume</label>
 								<div className="col-sm-10">
 									<input type="number" className="form-control" id="staticCapacity"
 										onChange={e => {
-												setTruck({
-														...truck,
-														capacity: e.target.value
+												setDump({
+														...dump,
+														volume: e.target.value
 												})
 											}} />
 								</div>
 							</div>
-							<div className="form-group row">
+
+							{/* <div className="form-group row">
+								<label for="inputCapacity" className="col-sm-2 col-form-label">Status</label>
+								<div className="col-sm-10">
+									<input type="number" className="form-control" id="staticCapacity"
+										onChange={e => {
+												setDump({
+														...dump,
+														status: e.target.value
+												})
+											}} />
+								</div>
+							</div> */}
+
+							{/* <div className="form-group row">
 								<label for="inputSchedule" className="col-sm-2 col-form-label">Schedule</label>
 								<div className="col-sm-10">
 									<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {
-											setTruck({
-													...truck,
+											setDump({
+													...dump,
 													schedule: e.target.value
 											})
 										}} >
@@ -108,7 +120,7 @@ export default function ModalCreateTruck() {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick= {handleSubmitTruck}>Submit</Button>
+            <Button variant="primary" onClick= {handleSubmitDump}>Submit</Button>
           </Modal.Footer>
         </Modal>
       </>

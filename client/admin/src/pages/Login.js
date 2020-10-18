@@ -24,7 +24,7 @@ export default function Login() {
                 <h1 style={style.title}>Track D'Truck</h1>
                 <div className="d-flex flex-row">
                     <div className="col-8 mt-3">
-                        <img src={loginImage}></img>
+                        <img src={loginImage} alt='loginComponent'></img>
                     </div>
                     <div className="col-4 my-auto">
                         <FormLogin/>
