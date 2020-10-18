@@ -13,13 +13,26 @@ const transporter = nodemailer.createTransport({
 })
 
 class DriverController {
+
+    static read(req, res, next) {
+        Truck.findAll()
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => {
+            // console.log(err)
+            next(err)
+        })
+    }
+
     static register(req, res, next) {
         const objUser = {
             name:req.body.name,
             email:req.body.email,
             password:req.body.password,
             phone:req.body.phone,
-            role:req.body.role || 'Driver'
+            role:req.body.role || 'Driver',
+            status:req.body.status
         }                 
         Driver.create(objUser)
         .then(result => {
@@ -57,7 +70,7 @@ class DriverController {
             if (result && comparePass(password, result.password)) {
                 let {id, name, email, role} = result
                 let access_token = encode({id, name, email, role})
-                res.status(200).json({access_token, name, id})
+                res.status(200).json({access_token, name, id, status, role})
             } else {
                 throw error
             }

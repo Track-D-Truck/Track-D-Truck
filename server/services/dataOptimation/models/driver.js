@@ -12,16 +12,6 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
 
-    static generateForm(data) {
-      let obj = {
-        name: data.name,
-        email: data.email,
-        password: data.password,
-        role: data.role
-      } 
-
-      return obj
-    }
 
     static associate(models) {
       // define association here
@@ -43,6 +33,8 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    phone:DataTypes.STRING,
+    status:DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
       allowNull: false,

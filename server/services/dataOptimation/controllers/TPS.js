@@ -14,9 +14,11 @@ class TPStorageController {
     }
 
     static add(req, res, next) {
+        const temp  = `${req.body.lat}. ${req.body.long}`
         const addTPStorage = {
             location:req.body.location,
             name:req.body.name,
+            address:req.body.address,
             volume:req.body.volume,
             status:req.body.status
         }
@@ -55,8 +57,9 @@ class TPStorageController {
 
     static edit(req, res, next) {
         const editTPStorage = {
-            location:req.body.location,
+            location:[req.body.location],
             name:req.body.name,
+            address:req.body.address,
             volume:req.body.volume,
             status:req.body.status
          }
