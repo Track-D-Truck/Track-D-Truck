@@ -57,7 +57,6 @@ class OptimationController {
     axios({
       method: "get",
       url: url,
-      // url: 'https://maps.googleapis.com/maps/api/directions/json?origin=-6.628841, 106.825732&destination=-6.628841, 106.825732&waypoints=optimize:true|-6.597405, 106.800600|-6.178126, 106.825345|-6.591607, 106.800182&sensor=false&key=AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc',
     })
       .then((response) => {
         let temp = response.data.routes[0].legs;
