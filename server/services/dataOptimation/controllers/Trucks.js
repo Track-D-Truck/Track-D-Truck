@@ -1,9 +1,9 @@
-const {Truck} = require(`../models`)
+const {Truck, Driver} = require(`../models`)
 
 class TruckController {
 
     static read(req, res, next) {
-        Truck.findAll({order: [['createdAt', 'ASC']]})
+        Truck.findAll({include: [Driver]})
         .then(result => {
             res.status(200).json(result)
         })
@@ -60,7 +60,9 @@ class TruckController {
             capacity: req.body.capacity,
             location: req.body.location,
             cost: +req.body.cost,
-            status: req.body.status        }
+            status: req.body.status,
+            DriverId: req.body.DriverId        
+        }
 
         let TruckId = req.params.id
         Truck.update(editTruck, {where: {id: TruckId}, returning: true})
