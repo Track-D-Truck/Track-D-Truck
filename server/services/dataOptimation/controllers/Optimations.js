@@ -2,6 +2,8 @@ const axios = require("axios");
 const { TPStorage } = require(`../models`);
 const { Truck, Driver } = require(`../models`);
 
+let GMAPS_API_KEY = ''
+
 class OptimationController {
   static async test(req, res, next) {
     //DATA REUCK ACTIVE
@@ -50,7 +52,7 @@ class OptimationController {
       destination = destination + "|" + element.location;
     });
 
-    let url = `https://maps.googleapis.com/maps/api/directions/json?origin=${pool.location}&destination=${tpa.location}&waypoints=optimize:true${destination}&sensor=false&key=AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc`;
+    let url = `https://maps.googleapis.com/maps/api/directions/json?origin=${pool.location}&destination=${tpa.location}&waypoints=optimize:true${destination}&sensor=false&key=${GMAPS_API_KEY}`;
 
     axios({
       method: "get",
