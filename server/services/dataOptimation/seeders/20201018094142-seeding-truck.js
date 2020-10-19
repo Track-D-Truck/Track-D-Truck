@@ -17,7 +17,7 @@ module.exports = {
         {
           truck_code: "truck-1",
           cost: 1000,
-          capacity: 10,
+          capacity: 8,
           status: "available",
           location: "-6.86666, 107.60000",
           DriverId: 2,
@@ -29,6 +29,7 @@ module.exports = {
           cost: 1000,
           capacity: 7,
           status: "unavailable",
+          DriverId: 4,
           location: "-6.86666, 107.60000",
           createdAt: new Date(),
           updatedAt: new Date(),
