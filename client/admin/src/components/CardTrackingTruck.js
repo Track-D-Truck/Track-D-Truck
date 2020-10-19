@@ -4,26 +4,35 @@ import {useDispatch, useSelector} from 'react-redux'
 import {FETCH_TRUCKS, SET_TRUCK} from '../store/actions/TrucksActions'
 import {FETCH_RESULT, SET_CHOSEN_RESULT} from '../store/actions/ResultAction'
 import Loading from './Loading'
+import { Maps } from '../components/Maps'
+
 export default function CardTrackingTruck(props) {
 
   const dispatch = useDispatch()
   // const trucks = useSelector(state => state.TruckReducer.trucks)
   const result = useSelector(state => state.ResultReducer.result)
   const loading = useSelector(state => state.TruckReducer.loadingStatus)
+  const chosenResult = useSelector(state => state.ResultReducer.chosenResult)
+  
   let truckActive = null
+ 
   useEffect(() => {
     dispatch(FETCH_RESULT())
   }, [dispatch])
+  if (loading) return <Loading/>
 
   if(result) truckActive = result.bestSchema.filter(e => e.truck.status === 'available')
 
-  // useEffect(() => {
-  //   dispatch(FETCH_TRUCKS())
-  // }, [dispatch])
-  if (loading) return <Loading/>
-
+  let routes = null
+  if(chosenResult) {
+     routes = chosenResult.route
+  } 
+  // console.log(routes,'check ini dahhhhh');  
   return (
-    <div className='card shadow styleTrackingTruck'>
+    <div className="row">
+
+    <div className="col-sm-4">
+      <div className='card shadow styleTrackingTruck'>
 								
       <div className="card-header">
         Tracking
@@ -41,7 +50,16 @@ export default function CardTrackingTruck(props) {
           )
         })}
 
+        </div>
       </div>
     </div>
+
+
+        <div className="col-sm-8">
+          <div className='card shadow'>
+           {routes && < Maps routes={routes} />}
+          </div>
+        </div>
+      </div>
   )
 }

@@ -63,8 +63,9 @@ export function CREATE_DUMP(data) {
       })
       .then((data) => {
         dumps.push(data)
-        dispatch(SET_DUMPS(dumps))
-        // dispatch(FETCH_DUMPS())
+        // console.log(dumps,'cek ini');
+        // dispatch(SET_DUMPS(dumps))
+        dispatch(FETCH_DUMPS())
       })
       .catch(err => console.log(err))
     }

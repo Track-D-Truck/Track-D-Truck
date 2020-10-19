@@ -34,7 +34,7 @@ export default function ModalEditTruck(props) {
 
 	function handleSubmitTruck(event) {
 		event.preventDefault()
-		truck.location = truck.location.join()
+		// truck.location = truck.location.join()
 		dispatch(UPDATE_TRUCK(truck, chosenTruck.id))
 		setShow(false)
     }
@@ -108,7 +108,7 @@ export default function ModalEditTruck(props) {
 									</div>
 								</div>
 						</form>
-
+{/* 
 						<div className="form-group row">
 							<label for="inputSchedule" className="col-sm-2 col-form-label">Driver</label>
 							<div className="col-sm-10">
@@ -126,7 +126,7 @@ export default function ModalEditTruck(props) {
 										})}
 									</select>
 							</div>
-						</div>
+						</div> */}
 
           </Modal.Body>
           <Modal.Footer>

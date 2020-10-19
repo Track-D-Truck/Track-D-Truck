@@ -7,7 +7,7 @@
       "password": "123456",
       "phone": 6281234567890,
       "role": "admin",
-      "status": "unavailable"
+      "status": "available"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "password": "123456",
       "phone": 6281234567891,
       "role": "driver",
-      "status": "available"
+      "status": "unavailable"
     },
     {
       "id": 3,
@@ -30,11 +30,13 @@
     {
       "id": 4,
       "name": "Alek",
+      "phone": "6281234567893",
+      "status": "available",
       "email": "alek@mail.com",
       "password": "123456",
-      "phone": 6281234567893,
       "role": "driver",
-      "status": "available"
+      "createdAt": "2020-10-18T16:59:41.232Z",
+      "updatedAt": "2020-10-18T16:59:41.232Z"
     }
   ],
   "Trucks": [

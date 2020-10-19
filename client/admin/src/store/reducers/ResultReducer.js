@@ -24,6 +24,7 @@ function ResultReducer(state = initState, action) {
         result: action.payload
       }
     case "SET_CHOSEN_RESULT":
+      console.log('masuk reducer');
       return {
         ...state,
         chosenResult: action.payload

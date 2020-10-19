@@ -54,13 +54,14 @@ class TruckController {
     }
 
     static edit(req, res, next) {
+        console.log(req.body,'<<<<<<<<<<<<<<<<<<<<<<<<');
         const editTruck = {
             truck_code: req.body.truck_code, 
             capacity: req.body.capacity,
             location: req.body.location,
             cost: +req.body.cost,
             status: req.body.status,
-            DriverId: req.body.DriverId        
+            DriverId: +req.body.DriverId        
         }
 
         let TruckId = req.params.id

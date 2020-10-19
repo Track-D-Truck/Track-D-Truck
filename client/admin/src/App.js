@@ -19,7 +19,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Route exact path="/" component={Dashboard}></Route>
+        <Route exact path="/" component={Report}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/trucks" component={Trucks}></Route>
         <Route path='/report' component={Report}/>

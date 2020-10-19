@@ -28,7 +28,7 @@ export default function ModalCreateTruck() {
 	
 	function handleSubmitTruck(event) {
 		event.preventDefault()
-		truck.truck_code = nextTrucks
+		truck.truck_code = 'bambang' // nextTrucks
 		truck.location = '-6.86666, 107.60000' // pool truck
 		truck.status = 'available'
 		dispatch(CREATE_TRUCK(truck))
@@ -53,12 +53,12 @@ export default function ModalCreateTruck() {
           <Modal.Body>
 
 						<form>
-							<div className="form-group row">
+							{/* <div className="form-group row">
 								<label for="inputEmail" className="col-sm-2 col-form-label">Truck Code</label>
 								<div className="col-sm-10">
 									<input type="text" readonly className="form-control-plaintext" id="staticEmail" value={nextTrucks}/>
 								</div>
-							</div>
+							</div> */}
 							<div className="form-group row">
 								<label for="inputType" className="col-sm-2 col-form-label">Capacity</label>
 								<div className="col-sm-10">
