@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   TPStorage.init({
     location: DataTypes.STRING,
     name: DataTypes.STRING,
+    address: DataTypes.STRING,
     volume: DataTypes.INTEGER,
     status: DataTypes.STRING
   }, {

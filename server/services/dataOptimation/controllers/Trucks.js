@@ -15,8 +15,8 @@ class TruckController {
     static add(req, res, next) {
         const addTruck = {
             truck_code: req.body.truck_code, 
-            capacity: +req.body.capacity,
-            location: "-6.86666, 107.60000",
+            capacity: req.body.capacity,
+            location: "-6.891205299999999, 107.6266582",
             cost: +req.body.cost,
             status: req.body.status
         }
@@ -57,8 +57,8 @@ class TruckController {
         console.log(req.body,'<<<<<<<<<<<<<<<<<<<<<<<<');
         const editTruck = {
             truck_code: req.body.truck_code, 
-            capacity: +req.body.capacity,
-            location: "-6.86666, 107.60000",
+            capacity: req.body.capacity,
+            location: req.body.location,
             cost: +req.body.cost,
             status: req.body.status,
             DriverId: +req.body.DriverId        
