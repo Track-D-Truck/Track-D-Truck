@@ -34,7 +34,7 @@ module.exports = {
           name: "GOR Saparua",
           location: "-6.9088007, 107.6158271",
           status: "active",
-          volume: 6,
+          volume: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

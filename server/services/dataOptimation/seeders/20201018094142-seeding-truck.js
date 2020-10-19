@@ -38,7 +38,7 @@ module.exports = {
           cost: 1000,
           capacity: 7,
           status: "available",
-          driverId: 3,
+          DriverId: 3,
           location: "-6.86666, 107.60000",
           createdAt: new Date(),
           updatedAt: new Date(),
