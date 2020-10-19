@@ -16,7 +16,7 @@ class TruckController {
         const addTruck = {
             truck_code: req.body.truck_code, 
             capacity: req.body.capacity,
-            location: "-6.86666, 107.60000",
+            location: "-6.891205299999999, 107.6266582",
             cost: +req.body.cost,
             status: req.body.status
         }

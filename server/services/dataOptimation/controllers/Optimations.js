@@ -27,13 +27,13 @@ class OptimationController {
 
     //DATA POOL, TPA & TPS ACTIVE
     let pool = {
-      name: "Pool Truck",
-      location: "-6.86666, 107.60000",
+      name: "Pool Dump Truck",
+      location: "-6.891205299999999, 107.6266582",
     };
 
     let tpa = {
-      name: "TPA",
-      location: "-7.001580400000001, 107.9028182",
+      name: "TPA Legok Nangka",
+      location: "-7.020695399999999, 107.9047481",
     };
 
     const activeTPS = await TPStorage.findAll({
@@ -48,6 +48,7 @@ class OptimationController {
         console.log(err, "<<eror filter TPS");
         next(err);
       });
+
 
     //HIT GMAPS API
     let destination = "";
@@ -70,6 +71,7 @@ class OptimationController {
         res.send(err);
       });
 
+
     //Route Optimation
     let routeOptimation = [];
     for (let x = 0; x < temp.length - 1; x++) {
@@ -89,7 +91,7 @@ class OptimationController {
     }
    
     let schemas = [];
-
+    // return res.send(routeOptimation)
     //Capacity Optimation
     let init = activeTruck;
     let fctrl = factorial(activeTruck.length);
