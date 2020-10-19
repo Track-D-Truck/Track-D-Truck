@@ -11,8 +11,8 @@ router.get('/', (req, res)=>{
 
 router.post(`/register`, DriverController.register)
 router.post(`/login`, DriverController.login)
-router.use(`/trucks`, TruckRoutes)
 router.get(`/drivers`, DriverController.read)
+router.use(`/trucks`, TruckRoutes)
 router.use(`/tps`, TPSRoutes)
 router.use(`/optimations`, OptimationRoutes)
 
