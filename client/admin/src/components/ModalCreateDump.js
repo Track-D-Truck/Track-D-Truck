@@ -22,6 +22,7 @@ export default function ModalCreateDump() {
 		event.preventDefault()
 		// dump.location = dump.location.join()
 		dump.status = 'inactive'
+		console.log(dump,'<<<<<<<<<');
 		dispatch(CREATE_DUMP(dump))
 		setShow(false)
 	}

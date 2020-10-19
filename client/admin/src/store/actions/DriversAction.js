@@ -69,6 +69,7 @@ export function UPDATE_DRIVERS(data) {
         return res.json()
       })
       .then((data) => {
+        dispatch(FETCH_DRIVERS())
         console.log(data,'success update');
       })
       .catch(err => console.log(err))

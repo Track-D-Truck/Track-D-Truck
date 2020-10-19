@@ -9,7 +9,7 @@ export default function TableResult() {
   if(chosenResult) {
      routes = chosenResult.route
      truck = chosenResult.truck
-     console.log(routes,'ini routes',truck);
+    //  console.log(routes,'ini routes',truck);
   } 
   return (
     <table className="table text-center thead-bg mt-3">

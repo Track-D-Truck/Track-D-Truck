@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import {FETCH_TRUCKS, SET_TRUCKS, DELETE_TRUCK, SET_TRUCK} from '../store/actions/TrucksActions'
+import {FETCH_TRUCKS, SET_TRUCKS, DELETE_TRUCK, UPDATE_TRUCK} from '../store/actions/TrucksActions'
 import {FETCH_DRIVERS} from '../store/actions/DriversAction'
 import ModalEditTruck from './ModalEditTruck'
 import Loading from './Loading'
@@ -15,6 +15,7 @@ export default function TableTruckDetail() {
     },[])
 
     const loading = useSelector(state => state.TruckReducer.loadingStatus)
+    const drivers = useSelector(state => state.DriverReducer.drivers)
     const trucks = useSelector(state => state.TruckReducer.trucks)
     if (loading) return <Loading/>
     return (
@@ -39,13 +40,30 @@ export default function TableTruckDetail() {
                         dispatch(SET_TRUCKS(filtered))
                     }
 
+                    function handleUpdateDriver(event) {
+                        truck.DriverId = event.target.value
+                      dispatch(UPDATE_TRUCK(truck, truck.id))
+                    }
                     return(
                         <tr key={i}>
                             <th scope="row">{truck.truck_code}</th>
-                            {truck.Driver ?
-                            <td>{truck.Driver}</td> :
-                            <td>..set driver.. </td> 
-                            }
+                            <td>  
+                            <div className="form-group row">
+                            <form >
+                            <div className="col-sm-10">
+                                <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" 
+                                        value={truck.DriverId} onChange={handleUpdateDriver}>
+                                            <option value=''>Set Driver...</option>
+                                            {drivers.map((driver) => {
+                                                    return(
+                                                        <option value={driver.id}>{driver.name}</option>
+                                                    )
+                                            })}
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
                             <td>{truck.capacity}</td>
                             <td>{truck.status}</td>
                             <td>{truck.location[0]}, {truck.location[1]}</td>

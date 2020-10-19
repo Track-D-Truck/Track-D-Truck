@@ -15,7 +15,7 @@ function Loading() {
         style={loadingStyle}>
         {/* <div class="p-2 bd-highlight">Flex item 1</div>
         <div class="p-2 bd-highlight">Flex item 2</div> */}
-        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_cbrbre30.json" mode="bounce" background="transparent"  speed="1"  
+        <lottie-player src="https://assets2.lottiefiles.com/datafiles/mNmtyo9inv5Ak3m/data.json" background="transparent"  speed="1"  
             style={{width: "300px", height: "300px"}} loop  autoplay></lottie-player>
         <h1 style={{color:"white"}}>Loading...</h1>
         </div>

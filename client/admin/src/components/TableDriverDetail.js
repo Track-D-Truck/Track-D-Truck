@@ -64,7 +64,7 @@ export default function TableDriverDetail() {
                                 </form>
 							</div></td>
                             <td>
-                                <button className="btn btn-secondary">Detail</button>
+                                {/* <button className="btn btn-secondary">Detail</button> */}
                                 {/* <ModalEditTruck/> */}
                                 <button className="btn btn-secondary" onClick={handleDeleteTruck}>Delete</button>
                             </td>
