@@ -57,7 +57,7 @@ class TruckController {
         const editTruck = {
             truck_code: req.body.truck_code, 
             capacity: req.body.capacity,
-            location: "-6.86666, 107.60000",
+            location: req.body.location,
             cost: +req.body.cost,
             status: req.body.status,
             DriverId: req.body.DriverId        
