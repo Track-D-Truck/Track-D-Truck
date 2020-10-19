@@ -19,7 +19,8 @@ describe(`User routes`, () => {
         email: `driver@email.com`,
         phone: '081391462098',
         password: `123456`,
-        role: `Driver`
+        role: `Driver`,
+        status: 'Available'
     }
 
     let userLogin = {
@@ -42,6 +43,7 @@ describe(`User routes`, () => {
                 expect(body).toHaveProperty(`password`, expect.stringMatching(/[$]/g))
                 expect(body).toHaveProperty(`phone`, userRegister.phone)
                 expect(body).toHaveProperty(`role`, userRegister.role)
+                expect(body).toHaveProperty(`role`, userRegister.status)
                 expect(body).toHaveProperty(`createdAt`, expect.anything())
                 expect(body).toHaveProperty(`updatedAt`, expect.anything())
                 done()
@@ -67,8 +69,9 @@ describe(`User routes`, () => {
             name: ``,
             email: ``,
             password: ``,
-            phone:'',
+            phone:``,
             role: ``,
+            status:``,
         }
 
         let userInvalidEmail = {    
@@ -76,6 +79,7 @@ describe(`User routes`, () => {
             email: `bos`,
             password: ``,
             role: ``,
+            status: ``,
         }
 
         const notNull = [
