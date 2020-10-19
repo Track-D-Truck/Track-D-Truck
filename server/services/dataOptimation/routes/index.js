@@ -15,6 +15,7 @@ router.post(`/login`, DriverController.login)
 //router.use(authentication)
 //router.use(authorization)
 router.use(`/trucks`, TruckRoutes)
+router.get(`/drivers`, DriverController.read)
 router.use(`/tps`, TPSRoutes)
 router.use(`/optimations`, OptimationRoutes)
 

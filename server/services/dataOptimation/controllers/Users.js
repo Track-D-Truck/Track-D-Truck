@@ -15,7 +15,8 @@ const transporter = nodemailer.createTransport({
 class DriverController {
 
     static read(req, res, next) {
-        Truck.findAll()
+        console.log('masuk bsss');
+        Driver.findAll()
         .then(result => {
             res.status(200).json(result)
         })
@@ -37,12 +38,12 @@ class DriverController {
         Driver.create(objUser)
         .then(result => {
             const emailSend = `
-            <p>Masuk dari Truck-d-Track</p>
+            <p>Masuk dari Driver-d-Track</p>
             `
             const emailFrom = {
                 from:process.env.EMAIL,
                 to: `${result.email}`,
-                subject:'Best regard from Truck-D-Track Teams',
+                subject:'Best regard from Driver-D-Track Teams',
                 html: emailSend
             }
             

@@ -6,7 +6,7 @@ const initState = {
 }
 
 function dumpReducer(state = initState, action) {
-
+  console.log(action,'<<<<<<<<<<<<<,');
   switch (action.type) {
 
     case "SET_LOADING":

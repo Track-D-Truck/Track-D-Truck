@@ -1,11 +1,11 @@
 const initState = {
   loadingStatus: false,
   errorStatus: false,
-  result: [],
-  // chosenTruck: ''
+  result: null,
+  chosenResult: null
 }
 
-function truckReducer(state = initState, action) {
+function ResultReducer(state = initState, action) {
   switch (action.type) {
 
     case "SET_LOADING":
@@ -23,14 +23,14 @@ function truckReducer(state = initState, action) {
         ...state,
         result: action.payload
       }
-    // case "SET_TRUCK":
-    //   return {
-    //     ...state,
-    //     chosenTruck: action.payload
-    //   }
+    case "SET_CHOSEN_RESULT":
+      return {
+        ...state,
+        chosenResult: action.payload
+      }
     default:
       return state
   }
 }
 
-export default truckReducer
+export default ResultReducer

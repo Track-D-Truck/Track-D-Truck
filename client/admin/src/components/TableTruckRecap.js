@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
+import Loading from './Loading'
 export default function TableTruckRecap() {
     const [dummyTrucks, setDummyTrucks] = useState([])
-
+    const loading = useSelector(state => state.TruckReducer.loadingStatus)
     useEffect(() => {
         setDummyTrucks([
             {code: 'Truck_02', status: 'Available', driver: 'Mang Jajang'},
@@ -11,6 +13,8 @@ export default function TableTruckRecap() {
         ])
     }, [])
 
+    if (loading) return <Loading/>
+    
     return (
         <table className="table table-striped text-center">
             <thead>

@@ -57,7 +57,7 @@ class TPStorageController {
 
     static edit(req, res, next) {
         const editTPStorage = {
-            location:[req.body.location],
+            location: req.body.location, //gabisa array
             name:req.body.name,
             address:req.body.address,
             volume:req.body.volume,
