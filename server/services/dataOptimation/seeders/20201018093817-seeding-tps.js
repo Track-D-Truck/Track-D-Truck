@@ -48,7 +48,7 @@ module.exports = {
         },
         {
           name: "Cieumbeluit",
-          location: "-6.875576, 107.604352",
+          location: "-6.8927743, 107.6166699",
           status: "inactive",
           volume: 3,
           createdAt: new Date(),
@@ -56,7 +56,7 @@ module.exports = {
         },
         {
           name: "Tamansari",
-          location: "-6.908792, 107.615854",
+          location: "-6.8927743, 107.6166699",
           status: "inactive",
           volume: 3,
           createdAt: new Date(),
