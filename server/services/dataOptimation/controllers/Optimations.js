@@ -24,6 +24,7 @@ class OptimationController {
         next(err);
       });
 
+
     //DATA POOL, TPA & TPS ACTIVE
     let pool = {
       name: "Pool Truck",
@@ -86,7 +87,7 @@ class OptimationController {
       }
       routeOptimation.push(tps);
     }
-
+   
     let schemas = [];
 
     //Capacity Optimation
@@ -136,6 +137,7 @@ class OptimationController {
           }
         }
 
+        //Jika truck sudah penuh
         if (t == t2) {
           t2 += 1;
           let destination = "";
@@ -171,16 +173,15 @@ class OptimationController {
             totalDistance = 0
           }
 
-          //Data yang terakhir
-
-          if (i == routeOptimation.length - 1) {
+          //Data yang terakhir && belum ketembak
+          if (i == routeOptimation.length - 1 && final[t]) {
             let destination = "";
             final[t].route.forEach((element) => {
               destination = destination + "|" + element.location;
             });
 
             final[t].destination = destination;
-
+            
             const dataSatuan = await axios({
               method: "get",
               url: `https://maps.googleapis.com/maps/api/directions/json?origin=${pool.location}&destination=${tpa.location}&waypoints=optimize:true${destination}&sensor=false&key=${GMAPS_API_KEY}`,
@@ -193,7 +194,7 @@ class OptimationController {
                 console.log(err);
                 res.send(err);
               });
-             
+              
             for (let j = 0; j < dataSatuan.length; j++) {
               totalDistance += dataSatuan[j].distance.value;
             }
@@ -203,6 +204,8 @@ class OptimationController {
             totalCostSchema += final[t].totalCost
             totalDistance = 0
           }
+
+
         }
 
 
