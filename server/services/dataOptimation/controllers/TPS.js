@@ -3,7 +3,9 @@ const {TPStorage} = require(`../models`)
 class TPStorageController {
 
     static read(req, res, next) {
-        TPStorage.findAll({order: [['createdAt', 'ASC']]})
+        TPStorage.findAll({
+            order: [['createdAt', 'ASC']]
+        })
         .then(result => {
             res.status(200).json(result)
         })

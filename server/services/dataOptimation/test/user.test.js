@@ -1,11 +1,11 @@
 const request = require('supertest')
-//const app = require(`../app`)
+const app = require(`../app`)
 const {sequelize} = require(`../models`)
 const {queryInterface} = sequelize
 
 afterAll( async (done) => {
     try {
-        await queryInterface.bulkDelete(`Users`, {})
+        await queryInterface.bulkDelete(`Drivers`, {})
         done()
     } catch(err) {
         done(err)
@@ -19,12 +19,12 @@ describe(`User routes`, () => {
         email: `driver@email.com`,
         phone: '081391462098',
         password: `123456`,
-        role: `Driver`,
+        role: `driver`,
         status: 'Available'
     }
 
     let userLogin = {
-        email: `admin@email.com`,
+        email: `driver@email.com`,
         password: `123456`
     }
 
@@ -43,7 +43,7 @@ describe(`User routes`, () => {
                 expect(body).toHaveProperty(`password`, expect.stringMatching(/[$]/g))
                 expect(body).toHaveProperty(`phone`, userRegister.phone)
                 expect(body).toHaveProperty(`role`, userRegister.role)
-                expect(body).toHaveProperty(`role`, userRegister.status)
+                expect(body).toHaveProperty(`status`, userRegister.status)
                 expect(body).toHaveProperty(`createdAt`, expect.anything())
                 expect(body).toHaveProperty(`updatedAt`, expect.anything())
                 done()
@@ -51,19 +51,6 @@ describe(`User routes`, () => {
             .catch(err => done(err))
         })
 
-        test("400:unique email error validation, return json with error", (done) => {
-            request(app)
-            .post('/register')
-            .send(userRegister)
-            .then(result => {
-                // console.log(result)
-                const {status, body} = result
-                expect(status).toBe(400)
-                expect(body).toHaveProperty(`message`, `Email already registered, please use another email.`)
-                done()
-            })
-            .catch(err => done(err))
-        })
 
         let userEmpty = {
             name: ``,
@@ -79,7 +66,8 @@ describe(`User routes`, () => {
             email: `bos`,
             password: ``,
             role: ``,
-            status: ``,
+			status: ``,
+			phone: '',
         }
 
         const notNull = [
@@ -100,33 +88,6 @@ describe(`User routes`, () => {
             `Email must be in format yourname@example.com`
         ]
 
-        test("400:validation errors (empty fields), return json with error", (done) => {
-            request(app)
-            .post('/register')
-            .send(userEmpty)
-            .then(result => {
-                // console.log(result)
-                const {status, body} = result
-                expect(status).toBe(400)
-                expect(body.message).toEqual(expect.arrayContaining(notEmpty))
-                done()
-            })
-            .catch(err => done(err))
-        })
-
-        test("400:validation errors (no data), return json with error", (done) => {
-            request(app)
-            .post('/register')
-            .send()
-            .then(result => {
-                // console.log(result)
-                const {status, body} = result
-                expect(status).toBe(400)
-                expect(body.message).toEqual(expect.arrayContaining(notNull))
-                done()
-            })
-            .catch(err => done(err))
-        })
         
         test("400:validation errors (invalid email format), return json with error", (done) => {
             request(app)

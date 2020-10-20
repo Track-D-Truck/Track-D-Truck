@@ -1,0 +1,3452 @@
+/* 19. Jelajahi */
+
+position: relative;
+width: 414px;
+height: 1339px;
+
+background: #F4F4F4;
+
+
+/* image 29 */
+
+position: absolute;
+width: 414px;
+height: 299px;
+left: 0px;
+top: 0px;
+
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%), url(image.png);
+
+
+/* Intersect */
+
+position: absolute;
+width: 98px;
+height: 91.24px;
+left: 0px;
+top: 207.76px;
+
+background: #FFBB00;
+
+
+/* Rectangle 1892 */
+
+position: absolute;
+width: 109.83px;
+height: 95.75px;
+left: 0px;
+top: 203.25px;
+
+background: #C4C4C4;
+
+
+/* Ellipse 200 */
+
+position: absolute;
+width: 113.21px;
+height: 113.21px;
+left: -15.21px;
+top: 207.76px;
+
+background: #FFAE38;
+
+
+/* DISKON 50% */
+
+position: absolute;
+width: 139px;
+height: 63px;
+left: 16px;
+top: 214px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 30px;
+/* or 125% */
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* Baru aja bergabung nih! */
+
+position: absolute;
+width: 184px;
+height: 24px;
+left: 16px;
+top: 602px;
+
+
+
+/* Baru aja bergabung nih! */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Restoran populer */
+
+position: absolute;
+width: 134px;
+height: 24px;
+left: 16px;
+top: 827px;
+
+
+
+/* Favourites! */
+
+position: absolute;
+left: 0%;
+right: 35.07%;
+top: 0%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 16 */
+
+position: absolute;
+left: 5.56%;
+right: 5.72%;
+top: 0.88%;
+bottom: 97.58%;
+
+
+
+/* Battery */
+
+position: absolute;
+left: 88.41%;
+right: 5.72%;
+top: 1.27%;
+bottom: 97.89%;
+
+
+
+/* Rectangle */
+
+position: absolute;
+width: 22px;
+height: 11.14px;
+left: 366px;
+top: 17.04px;
+
+mix-blend-mode: normal;
+opacity: 0.35;
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 2.66667px;
+
+
+/* Combined Shape */
+
+position: absolute;
+width: 1.33px;
+height: 3.93px;
+left: 389px;
+top: 20.65px;
+
+background: #FFFFFF;
+mix-blend-mode: normal;
+opacity: 0.4;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 18px;
+height: 7.21px;
+left: 368px;
+top: 19.01px;
+
+background: #FFFFFF;
+border-radius: 1.33333px;
+
+
+/* Wifi */
+
+position: absolute;
+left: 83.5%;
+right: 12.81%;
+top: 1.27%;
+bottom: 97.92%;
+
+background: #FFFFFF;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 15.27px;
+height: 4.66px;
+left: 345.69px;
+top: 17.04px;
+
+background: #DADADA;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 9.95px;
+height: 3.57px;
+left: 348.36px;
+top: 20.77px;
+
+background: #DADADA;
+
+
+/* Wifi-path */
+
+position: absolute;
+width: 4.63px;
+height: 3.32px;
+left: 351.02px;
+top: 24.5px;
+
+background: #DADADA;
+
+
+/* Mobile Signal */
+
+position: absolute;
+left: 78.18%;
+right: 17.71%;
+top: 1.3%;
+bottom: 97.92%;
+
+background: #FFFFFF;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 3.93px;
+left: 323.67px;
+top: 23.93px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 5.9px;
+left: 328.33px;
+top: 21.96px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 8.19px;
+left: 333px;
+top: 19.67px;
+
+background: #DADADA;
+
+
+/* Cellular_Connection-path */
+
+position: absolute;
+width: 3px;
+height: 10.49px;
+left: 337.67px;
+top: 17.37px;
+
+background: #DADADA;
+
+
+/* Time Style */
+
+position: absolute;
+width: 54px;
+height: 20.65px;
+left: 23px;
+top: 11.8px;
+
+
+
+/* 9:41 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 9.52%;
+bottom: 4.76%;
+
+font-family: SF Pro Text;
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+display: flex;
+align-items: flex-end;
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* Group 1099 */
+
+position: absolute;
+width: 382px;
+height: 36px;
+left: 16px;
+top: 97px;
+
+
+
+/* Group 1098 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Rectangle 36 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Group 1097 */
+
+position: absolute;
+left: 3.93%;
+right: 48.43%;
+top: 16.67%;
+bottom: 16.67%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 3.93%;
+right: 91.88%;
+top: 27.78%;
+bottom: 27.78%;
+
+background: #D8D8D8;
+
+
+/* Hari ini mau makan apa? */
+
+position: absolute;
+left: 9.95%;
+right: 48.43%;
+top: 16.67%;
+bottom: 16.67%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Group 1096 */
+
+position: absolute;
+width: 214px;
+height: 24px;
+left: 100px;
+top: 59px;
+
+
+
+/* Group 425 */
+
+position: absolute;
+left: 9.35%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Kec. Mertoyudan, Magelang */
+
+position: absolute;
+left: 9.35%;
+right: 5.61%;
+top: 0%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* Arrow 1 */
+
+position: absolute;
+left: 100%;
+right: -0.23%;
+top: 58.33%;
+bottom: 41.67%;
+
+border: 1.5px solid #FFFFFF;
+box-sizing: border-box;
+transform: matrix(0, 1, 1, 0, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 94.56%;
+top: 16.67%;
+bottom: 16.67%;
+
+background: #FFFFFF;
+
+
+/* Group */
+
+position: absolute;
+left: 3.86%;
+right: 90.47%;
+top: 4.56%;
+bottom: 93.95%;
+
+
+
+/* Vector */
+
+position: absolute;
+width: 23.47px;
+height: 20px;
+left: 16px;
+top: 61px;
+
+background: #FFFFFF;
+
+
+/* Component 55 */
+
+position: absolute;
+width: 382px;
+height: 133px;
+left: 16px;
+top: 283px;
+
+
+
+/* Rectangle 32 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06);
+border-radius: 10px;
+
+
+/* Kategori */
+
+position: absolute;
+left: 3.93%;
+right: 78.53%;
+top: 8.27%;
+bottom: 73.68%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 763 */
+
+position: absolute;
+left: 3.93%;
+right: 80.89%;
+top: 33.83%;
+bottom: 7.52%;
+
+
+
+/* Restaurant */
+
+position: absolute;
+left: 4.71%;
+right: 81.68%;
+top: 33.83%;
+bottom: 27.07%;
+
+background: url(Restaurant.png);
+
+
+/* Restoran */
+
+position: absolute;
+left: 3.93%;
+right: 80.89%;
+top: 74.44%;
+bottom: 7.52%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Cafe */
+
+position: absolute;
+left: 33.25%;
+right: 58.64%;
+top: 74.44%;
+bottom: 7.52%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Hotel */
+
+position: absolute;
+left: 58.12%;
+right: 32.72%;
+top: 74.44%;
+bottom: 7.52%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 681 */
+
+position: absolute;
+left: 81.68%;
+right: 4.71%;
+top: 33.83%;
+bottom: 7.52%;
+
+
+
+/* Group 623 */
+
+position: absolute;
+left: 81.94%;
+right: 4.97%;
+top: 74.44%;
+bottom: 7.52%;
+
+
+
+/* Lainnya */
+
+position: absolute;
+left: 81.94%;
+right: 4.97%;
+top: 74.44%;
+bottom: 7.52%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* lain 2 */
+
+position: absolute;
+left: 81.68%;
+right: 4.71%;
+top: 33.83%;
+bottom: 27.07%;
+
+background: url(lain.png);
+
+
+/* Cafe */
+
+position: absolute;
+left: 30.37%;
+right: 55.83%;
+top: 33.83%;
+bottom: 27.07%;
+
+background: url(Cafe.png);
+
+
+/* hotel 3 */
+
+position: absolute;
+left: 56.02%;
+right: 30.37%;
+top: 33.83%;
+bottom: 27.07%;
+
+background: url(hotel.png);
+
+
+/* Component 56 */
+
+position: absolute;
+width: 504px;
+height: 147px;
+left: 16px;
+top: 436px;
+
+
+
+/* Cabang Toko */
+
+position: absolute;
+left: 0%;
+right: 79.76%;
+top: 0%;
+bottom: 83.67%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Rectangle 1784 */
+
+position: absolute;
+left: 0%;
+right: 76.19%;
+top: 23.13%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Waroeng Steak and Shake */
+
+position: absolute;
+left: 2.18%;
+right: 78.37%;
+top: 53.74%;
+bottom: 21.77%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* image 22 */
+
+position: absolute;
+left: 8.73%;
+right: 84.92%;
+top: 28.57%;
+bottom: 49.66%;
+
+background: url(image.png);
+border-radius: 40px;
+
+
+/* Rectangle 1785 */
+
+position: absolute;
+left: 0%;
+right: 76.19%;
+top: 80.95%;
+bottom: 0%;
+
+background: #00A3E0;
+border-radius: 0px 0px 10px 10px;
+
+
+/* 100 Toko */
+
+position: absolute;
+left: 5.95%;
+right: 82.14%;
+top: 84.35%;
+bottom: 3.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* Group 1173 */
+
+position: absolute;
+left: 25.4%;
+right: 50.79%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Group 1107 */
+
+position: absolute;
+left: 25.4%;
+right: 50.79%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Rectangle 1784 */
+
+position: absolute;
+left: 25.4%;
+right: 50.79%;
+top: 23.13%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Bale Bakaran */
+
+position: absolute;
+left: 28.97%;
+right: 54.17%;
+top: 59.86%;
+bottom: 27.89%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Rectangle 1785 */
+
+position: absolute;
+left: 25.4%;
+right: 50.79%;
+top: 80.95%;
+bottom: 0%;
+
+background: #00A3E0;
+border-radius: 0px 0px 10px 10px;
+
+
+/* 10 Toko */
+
+position: absolute;
+left: 32.14%;
+right: 57.54%;
+top: 84.35%;
+bottom: 3.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* image 13 */
+
+position: absolute;
+left: 34.13%;
+right: 59.52%;
+top: 28.57%;
+bottom: 49.66%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 1174 */
+
+position: absolute;
+left: 76.19%;
+right: 0%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Group 1107 */
+
+position: absolute;
+left: 76.19%;
+right: 0%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Rectangle 1784 */
+
+position: absolute;
+left: 76.19%;
+right: 0%;
+top: 23.13%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Bale Bakaran */
+
+position: absolute;
+left: 79.76%;
+right: 3.37%;
+top: 59.86%;
+bottom: 27.89%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Rectangle 1785 */
+
+position: absolute;
+left: 76.19%;
+right: 0%;
+top: 80.95%;
+bottom: 0%;
+
+background: #00A3E0;
+border-radius: 0px 0px 10px 10px;
+
+
+/* 10 Toko */
+
+position: absolute;
+left: 82.94%;
+right: 6.75%;
+top: 84.35%;
+bottom: 3.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* image 13 */
+
+position: absolute;
+left: 84.92%;
+right: 8.73%;
+top: 28.57%;
+bottom: 49.66%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 1171 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Group 761 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Rectangle 1784 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Waroeng Steak and Shake */
+
+position: absolute;
+left: 52.98%;
+right: 27.58%;
+top: 53.74%;
+bottom: 21.77%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* image 22 */
+
+position: absolute;
+left: 59.52%;
+right: 34.13%;
+top: 28.57%;
+bottom: 49.66%;
+
+background: url(image.png);
+border-radius: 40px;
+
+
+/* Rectangle 1785 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 80.95%;
+bottom: 0%;
+
+background: #C1EDFF;
+border-radius: 0px 0px 10px 10px;
+
+
+/* 100 Toko */
+
+position: absolute;
+left: 56.75%;
+right: 31.35%;
+top: 84.35%;
+bottom: 3.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #15B8FE;
+
+
+
+/* Rectangle 1784 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Waroeng Steak and Shake */
+
+position: absolute;
+left: 52.98%;
+right: 27.58%;
+top: 53.74%;
+bottom: 21.77%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* image 22 */
+
+position: absolute;
+left: 59.52%;
+right: 34.13%;
+top: 28.57%;
+bottom: 49.66%;
+
+background: url(image.png);
+border-radius: 40px;
+
+
+/* Rectangle 1785 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 80.95%;
+bottom: 0%;
+
+background: #00A3E0;
+border-radius: 0px 0px 10px 10px;
+
+
+/* 100 Toko */
+
+position: absolute;
+left: 56.75%;
+right: 31.35%;
+top: 84.35%;
+bottom: 3.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* Group 1172 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Group 761 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+
+
+/* Rectangle 1784 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Waroeng Steak and Shake */
+
+position: absolute;
+left: 52.98%;
+right: 27.58%;
+top: 53.74%;
+bottom: 21.77%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* image 22 */
+
+position: absolute;
+left: 59.52%;
+right: 34.13%;
+top: 28.57%;
+bottom: 49.66%;
+
+background: url(image.png);
+border-radius: 40px;
+
+
+/* Rectangle 1785 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 80.95%;
+bottom: 0%;
+
+background: #C1EDFF;
+border-radius: 0px 0px 10px 10px;
+
+
+/* 100 Toko */
+
+position: absolute;
+left: 56.75%;
+right: 31.35%;
+top: 84.35%;
+bottom: 3.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #15B8FE;
+
+
+
+/* Rectangle 1784 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 23.13%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Waroeng Steak and Shake */
+
+position: absolute;
+left: 52.98%;
+right: 27.58%;
+top: 53.74%;
+bottom: 21.77%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* image 22 */
+
+position: absolute;
+left: 59.52%;
+right: 34.13%;
+top: 28.57%;
+bottom: 49.66%;
+
+background: url(image.png);
+border-radius: 40px;
+
+
+/* Rectangle 1785 */
+
+position: absolute;
+left: 50.79%;
+right: 25.4%;
+top: 80.95%;
+bottom: 0%;
+
+background: #00A3E0;
+border-radius: 0px 0px 10px 10px;
+
+
+/* 100 Toko */
+
+position: absolute;
+left: 56.75%;
+right: 31.35%;
+top: 84.35%;
+bottom: 3.4%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+
+
+/* Group 1105 */
+
+position: absolute;
+width: 288px;
+height: 172px;
+left: 16px;
+top: 636px;
+
+
+
+/* Rectangle 249 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Mask Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+
+
+/* Rectangle 180 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.33) 100%), url(baner.png);
+border-radius: 10px 10px 0px 0px;
+
+
+/* image 13 */
+
+position: absolute;
+left: 0%;
+right: -17.19%;
+top: -19.19%;
+bottom: 2.91%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 65.25%), url(image.png);
+
+
+/* Group 625 */
+
+position: absolute;
+left: 16.67%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* 5.0 (3) */
+
+position: absolute;
+left: 22.57%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FFBB00;
+
+
+
+/* Star 3 */
+
+position: absolute;
+left: 16.67%;
+right: 78.82%;
+top: 86.63%;
+bottom: 5.81%;
+
+background: #FFBB00;
+
+
+/* Bale Bakaran Godean */
+
+position: absolute;
+left: 1.74%;
+right: 40.97%;
+top: 63.95%;
+bottom: 22.09%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 931 */
+
+position: absolute;
+left: 84.72%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+
+
+/* 3 */
+
+position: absolute;
+left: 94.44%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FF4A4A;
+
+
+
+/* Path 1250 */
+
+position: absolute;
+left: 84.72%;
+right: 7.83%;
+top: 72.09%;
+bottom: 16.28%;
+
+background: #FF4A4A;
+
+
+/* 9 */
+
+position: absolute;
+left: 9.72%;
+right: 87.15%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Frame */
+
+position: absolute;
+left: 3.12%;
+right: 92.6%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Path 1167 */
+
+position: absolute;
+left: 0%;
+right: -0.01%;
+top: 0%;
+bottom: -0.01%;
+
+background: #AAAAAA;
+
+
+/* Group 1102 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+
+
+/* Rectangle 252 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+background: #FFFFFF;
+border-radius: 0px 0px 22px 22px;
+
+
+/* image 12 */
+
+position: absolute;
+left: 43.75%;
+right: 43.75%;
+top: 2.33%;
+bottom: 76.74%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 869 */
+
+position: absolute;
+left: 40.97%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* Rp10.000 */
+
+position: absolute;
+left: 48.26%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Group */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+background: #00A3E0;
+
+
+/* Group 1142 */
+
+position: absolute;
+width: 288px;
+height: 172px;
+left: 320px;
+top: 636px;
+
+
+
+/* Rectangle 249 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Mask Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+
+
+/* Rectangle 180 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.33) 100%), url(baner.png);
+border-radius: 10px 10px 0px 0px;
+
+
+/* image 13 */
+
+position: absolute;
+left: 0%;
+right: -17.19%;
+top: -19.19%;
+bottom: 2.91%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 65.25%), url(image.png);
+
+
+/* Group 625 */
+
+position: absolute;
+left: 16.67%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* 5.0 (3) */
+
+position: absolute;
+left: 22.57%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FFBB00;
+
+
+
+/* Star 3 */
+
+position: absolute;
+left: 16.67%;
+right: 78.82%;
+top: 86.63%;
+bottom: 5.81%;
+
+background: #FFBB00;
+
+
+/* Bale Bakaran Godean */
+
+position: absolute;
+left: 1.74%;
+right: 40.97%;
+top: 63.95%;
+bottom: 22.09%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 931 */
+
+position: absolute;
+left: 84.72%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+
+
+/* 3 */
+
+position: absolute;
+left: 94.44%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FF4A4A;
+
+
+
+/* Path 1250 */
+
+position: absolute;
+left: 84.72%;
+right: 7.83%;
+top: 72.09%;
+bottom: 16.28%;
+
+background: #FF4A4A;
+
+
+/* 9 */
+
+position: absolute;
+left: 9.72%;
+right: 87.15%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Frame */
+
+position: absolute;
+left: 3.12%;
+right: 92.6%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Path 1167 */
+
+position: absolute;
+left: 0%;
+right: -0.01%;
+top: 0%;
+bottom: -0.01%;
+
+background: #AAAAAA;
+
+
+/* Group 1102 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+
+
+/* Rectangle 252 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+background: #FFFFFF;
+border-radius: 0px 0px 22px 22px;
+
+
+/* image 12 */
+
+position: absolute;
+left: 43.75%;
+right: 43.75%;
+top: 2.33%;
+bottom: 76.74%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 869 */
+
+position: absolute;
+left: 40.97%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* Rp10.000 */
+
+position: absolute;
+left: 48.26%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Group */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+background: #00A3E0;
+
+
+/* Group 1143 */
+
+position: absolute;
+width: 288px;
+height: 172px;
+left: 16px;
+top: 861px;
+
+
+
+/* Rectangle 249 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Mask Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+
+
+/* Rectangle 180 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.33) 100%), url(baner.png);
+border-radius: 10px 10px 0px 0px;
+
+
+/* image 13 */
+
+position: absolute;
+left: 0%;
+right: -17.19%;
+top: -19.19%;
+bottom: 2.91%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 65.25%), url(image.png);
+
+
+/* Group 625 */
+
+position: absolute;
+left: 16.67%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* 5.0 (3) */
+
+position: absolute;
+left: 22.57%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FFBB00;
+
+
+
+/* Star 3 */
+
+position: absolute;
+left: 16.67%;
+right: 78.82%;
+top: 86.63%;
+bottom: 5.81%;
+
+background: #FFBB00;
+
+
+/* Bale Bakaran Godean */
+
+position: absolute;
+left: 1.74%;
+right: 40.97%;
+top: 63.95%;
+bottom: 22.09%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 931 */
+
+position: absolute;
+left: 84.72%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+
+
+/* 3 */
+
+position: absolute;
+left: 94.44%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FF4A4A;
+
+
+
+/* Path 1250 */
+
+position: absolute;
+left: 84.72%;
+right: 7.83%;
+top: 72.09%;
+bottom: 16.28%;
+
+background: #FF4A4A;
+
+
+/* 9 */
+
+position: absolute;
+left: 9.72%;
+right: 87.15%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Frame */
+
+position: absolute;
+left: 3.12%;
+right: 92.6%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Path 1167 */
+
+position: absolute;
+left: 0%;
+right: -0.01%;
+top: 0%;
+bottom: -0.01%;
+
+background: #AAAAAA;
+
+
+/* Group 1102 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+
+
+/* Rectangle 252 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+background: #FFFFFF;
+border-radius: 0px 0px 22px 22px;
+
+
+/* image 12 */
+
+position: absolute;
+left: 43.75%;
+right: 43.75%;
+top: 2.33%;
+bottom: 76.74%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 869 */
+
+position: absolute;
+left: 40.97%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* Rp10.000 */
+
+position: absolute;
+left: 48.26%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Group */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+background: #00A3E0;
+
+
+/* Group 1144 */
+
+position: absolute;
+width: 288px;
+height: 172px;
+left: 320px;
+top: 861px;
+
+
+
+/* Rectangle 249 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Mask Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+
+
+/* Rectangle 180 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.33) 100%), url(baner.png);
+border-radius: 10px 10px 0px 0px;
+
+
+/* image 13 */
+
+position: absolute;
+left: 0%;
+right: -17.19%;
+top: -19.19%;
+bottom: 2.91%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 65.25%), url(image.png);
+
+
+/* Group 625 */
+
+position: absolute;
+left: 16.67%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* 5.0 (3) */
+
+position: absolute;
+left: 22.57%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FFBB00;
+
+
+
+/* Star 3 */
+
+position: absolute;
+left: 16.67%;
+right: 78.82%;
+top: 86.63%;
+bottom: 5.81%;
+
+background: #FFBB00;
+
+
+/* Bale Bakaran Godean */
+
+position: absolute;
+left: 1.74%;
+right: 40.97%;
+top: 63.95%;
+bottom: 22.09%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 931 */
+
+position: absolute;
+left: 84.72%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+
+
+/* 3 */
+
+position: absolute;
+left: 94.44%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FF4A4A;
+
+
+
+/* Path 1250 */
+
+position: absolute;
+left: 84.72%;
+right: 7.83%;
+top: 72.09%;
+bottom: 16.28%;
+
+background: #FF4A4A;
+
+
+/* 9 */
+
+position: absolute;
+left: 9.72%;
+right: 87.15%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Frame */
+
+position: absolute;
+left: 3.12%;
+right: 92.6%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Path 1167 */
+
+position: absolute;
+left: 0%;
+right: -0.01%;
+top: 0%;
+bottom: -0.01%;
+
+background: #AAAAAA;
+
+
+/* Group 1102 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+
+
+/* Rectangle 252 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+background: #FFFFFF;
+border-radius: 0px 0px 22px 22px;
+
+
+/* image 12 */
+
+position: absolute;
+left: 43.75%;
+right: 43.75%;
+top: 2.33%;
+bottom: 76.74%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 869 */
+
+position: absolute;
+left: 40.97%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* Rp10.000 */
+
+position: absolute;
+left: 48.26%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Group */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+background: #00A3E0;
+
+
+/* Group 1145 */
+
+position: absolute;
+width: 288px;
+height: 172px;
+left: 16px;
+top: 1091px;
+
+
+
+/* Rectangle 249 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Mask Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+
+
+/* Rectangle 180 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.33) 100%), url(baner.png);
+border-radius: 10px 10px 0px 0px;
+
+
+/* image 13 */
+
+position: absolute;
+left: 0%;
+right: -17.19%;
+top: -19.19%;
+bottom: 2.91%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 65.25%), url(image.png);
+
+
+/* Group 625 */
+
+position: absolute;
+left: 16.67%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* 5.0 (3) */
+
+position: absolute;
+left: 22.57%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FFBB00;
+
+
+
+/* Star 3 */
+
+position: absolute;
+left: 16.67%;
+right: 78.82%;
+top: 86.63%;
+bottom: 5.81%;
+
+background: #FFBB00;
+
+
+/* Bale Bakaran Godean */
+
+position: absolute;
+left: 1.74%;
+right: 40.97%;
+top: 63.95%;
+bottom: 22.09%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 931 */
+
+position: absolute;
+left: 84.72%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+
+
+/* 3 */
+
+position: absolute;
+left: 94.44%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FF4A4A;
+
+
+
+/* Path 1250 */
+
+position: absolute;
+left: 84.72%;
+right: 7.83%;
+top: 72.09%;
+bottom: 16.28%;
+
+background: #FF4A4A;
+
+
+/* 9 */
+
+position: absolute;
+left: 9.72%;
+right: 87.15%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Frame */
+
+position: absolute;
+left: 3.12%;
+right: 92.6%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Path 1167 */
+
+position: absolute;
+left: 0%;
+right: -0.01%;
+top: 0%;
+bottom: -0.01%;
+
+background: #AAAAAA;
+
+
+/* Group 1102 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+
+
+/* Rectangle 252 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+background: #FFFFFF;
+border-radius: 0px 0px 22px 22px;
+
+
+/* image 12 */
+
+position: absolute;
+left: 43.75%;
+right: 43.75%;
+top: 2.33%;
+bottom: 76.74%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 869 */
+
+position: absolute;
+left: 40.97%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* Rp10.000 */
+
+position: absolute;
+left: 48.26%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Group */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+background: #00A3E0;
+
+
+/* Group 1146 */
+
+position: absolute;
+width: 288px;
+height: 172px;
+left: 320px;
+top: 1091px;
+
+
+
+/* Rectangle 249 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 10px;
+
+
+/* Mask Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+
+
+/* Rectangle 180 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 43.6%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.33) 100%), url(baner.png);
+border-radius: 10px 10px 0px 0px;
+
+
+/* image 13 */
+
+position: absolute;
+left: 0%;
+right: -17.19%;
+top: -19.19%;
+bottom: 2.91%;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 65.25%), url(image.png);
+
+
+/* Group 625 */
+
+position: absolute;
+left: 16.67%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* 5.0 (3) */
+
+position: absolute;
+left: 22.57%;
+right: 62.85%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FFBB00;
+
+
+
+/* Star 3 */
+
+position: absolute;
+left: 16.67%;
+right: 78.82%;
+top: 86.63%;
+bottom: 5.81%;
+
+background: #FFBB00;
+
+
+/* Bale Bakaran Godean */
+
+position: absolute;
+left: 1.74%;
+right: 40.97%;
+top: 63.95%;
+bottom: 22.09%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 931 */
+
+position: absolute;
+left: 84.72%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+
+
+/* 3 */
+
+position: absolute;
+left: 94.44%;
+right: 2.43%;
+top: 71.51%;
+bottom: 14.53%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #FF4A4A;
+
+
+
+/* Path 1250 */
+
+position: absolute;
+left: 84.72%;
+right: 7.83%;
+top: 72.09%;
+bottom: 16.28%;
+
+background: #FF4A4A;
+
+
+/* 9 */
+
+position: absolute;
+left: 9.72%;
+right: 87.15%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Frame */
+
+position: absolute;
+left: 3.12%;
+right: 92.6%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Path 1167 */
+
+position: absolute;
+left: 0%;
+right: -0.01%;
+top: 0%;
+bottom: -0.01%;
+
+background: #AAAAAA;
+
+
+/* Group 1102 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+
+
+/* Rectangle 252 */
+
+position: absolute;
+left: 42.36%;
+right: 42.36%;
+top: 0%;
+bottom: 74.42%;
+
+background: #FFFFFF;
+border-radius: 0px 0px 22px 22px;
+
+
+/* image 12 */
+
+position: absolute;
+left: 43.75%;
+right: 43.75%;
+top: 2.33%;
+bottom: 76.74%;
+
+background: url(image.png);
+border-radius: 55px;
+
+
+/* Group 869 */
+
+position: absolute;
+left: 40.97%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+
+
+/* Rp10.000 */
+
+position: absolute;
+left: 48.26%;
+right: 30.21%;
+top: 83.72%;
+bottom: 2.33%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height, or 160% */
+letter-spacing: -0.02em;
+
+color: #AAAAAA;
+
+
+
+/* Group */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 40.97%;
+right: 53.59%;
+top: 86.63%;
+bottom: 6.4%;
+
+background: #00A3E0;
+
+
+/* Restoran populer */
+
+position: absolute;
+width: 134px;
+height: 24px;
+left: 16px;
+top: 1057px;
+
+
+
+/* Favourites! */
+
+position: absolute;
+visibility: hidden;
+left: 0%;
+right: 35.07%;
+top: 0%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Ada menu sarapan nih! */
+
+position: absolute;
+width: 178px;
+height: 24px;
+left: 16px;
+top: 1057px;
+
+
+
+/* Dont miss out */
+
+position: absolute;
+left: 0%;
+right: 39.33%;
+top: 0%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Group 1121 */
+
+position: absolute;
+width: 414px;
+height: 64px;
+left: 0px;
+top: 958px;
+
+
+
+/* Rectangle 243 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+
+
+/* Group 639 */
+
+position: absolute;
+left: 25.12%;
+right: 61.84%;
+top: 17.19%;
+bottom: 14.06%;
+
+
+
+/* Path 1137 */
+
+position: absolute;
+left: 29.23%;
+right: 66.04%;
+top: 17.19%;
+bottom: 46.33%;
+
+background: #BBBBBB;
+
+
+/* Peta Toko */
+
+position: absolute;
+left: 25.12%;
+right: 61.84%;
+top: 64.06%;
+bottom: 14.06%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+text-align: center;
+
+color: #AAAAAA;
+
+
+
+/* Group 637 */
+
+position: absolute;
+left: 8.45%;
+right: 81.16%;
+top: 18.75%;
+bottom: 14.06%;
+
+
+
+/* Path 1149 */
+
+position: absolute;
+left: 10.63%;
+right: 83.67%;
+top: 18.75%;
+bottom: 47.48%;
+
+background: #00A3E0;
+
+
+/* Jelajahi */
+
+position: absolute;
+left: 8.45%;
+right: 81.16%;
+top: 64.06%;
+bottom: 14.06%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+color: #00A3E0;
+
+
+
+/* Group 1118 */
+
+position: absolute;
+left: 62.56%;
+right: 26.09%;
+top: 18.75%;
+bottom: 14.06%;
+
+
+
+/* Group 641 */
+
+position: absolute;
+left: 62.56%;
+right: 26.09%;
+top: 64.06%;
+bottom: 14.06%;
+
+
+
+/* Pesanan */
+
+position: absolute;
+left: 62.56%;
+right: 26.09%;
+top: 64.06%;
+bottom: 14.06%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+text-align: center;
+
+color: #AAAAAA;
+
+
+
+/* Path 1245 */
+
+position: absolute;
+left: 65.7%;
+right: 29.66%;
+top: 18.75%;
+bottom: 47.89%;
+
+background: #BBBBBB;
+
+
+/* Group 1115 */
+
+position: absolute;
+left: 45.65%;
+right: 45.41%;
+top: 18.75%;
+bottom: 14.06%;
+
+
+
+/* Favorit */
+
+position: absolute;
+left: 45.65%;
+right: 45.41%;
+top: 64.06%;
+bottom: 14.06%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+text-align: center;
+
+color: #AAAAAA;
+
+
+
+/* Group */
+
+position: absolute;
+left: 47.34%;
+right: 47.28%;
+top: 18.75%;
+bottom: 47.89%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 47.34%;
+right: 47.28%;
+top: 18.75%;
+bottom: 47.89%;
+
+background: #BBBBBB;
+
+
+/* Group 1117 */
+
+position: absolute;
+left: 81.4%;
+right: 8.45%;
+top: 18.75%;
+bottom: 14.06%;
+
+
+
+/* Union */
+
+position: absolute;
+left: 83.82%;
+right: 11.03%;
+top: 18.75%;
+bottom: 47.89%;
+
+background: #BBBBBB;
+
+
+/* Vector */
+
+position: absolute;
+left: 83.82%;
+right: 12.57%;
+top: 18.75%;
+bottom: 54.21%;
+
+background: #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 84.84%;
+right: 13.62%;
+top: 25.39%;
+bottom: 66.23%;
+
+background: #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 86.92%;
+right: 11.81%;
+top: 33.77%;
+bottom: 57.85%;
+
+background: #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 85.36%;
+right: 11.03%;
+top: 28.71%;
+bottom: 47.89%;
+
+background: #000000;
+
+
+/* Group 1116 */
+
+position: absolute;
+left: 81.4%;
+right: 8.45%;
+top: 64.06%;
+bottom: 14.06%;
+
+
+
+/* Riwayat */
+
+position: absolute;
+left: 81.4%;
+right: 8.45%;
+top: 64.06%;
+bottom: 14.06%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+text-align: center;
+
+color: #AAAAAA;
+
+
+
+/* Group 1112 */
+
+position: absolute;
+width: 58px;
+height: 58px;
+left: 342px;
+top: 883px;
+
+
+
+/* Ellipse 201 */
+
+position: absolute;
+width: 58px;
+height: 58px;
+left: 342px;
+top: 883px;
+
+background: #00A3E0;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+
+/* Group 1111 */
+
+position: absolute;
+width: 30px;
+height: 41px;
+left: 354px;
+top: 895px;
+
+
+
+/* Vector */
+
+position: absolute;
+width: 30px;
+height: 25px;
+left: 354px;
+top: 895px;
+
+background: #FFFFFF;
+
+
+/* 3 */
+
+position: absolute;
+width: 6px;
+height: 13px;
+left: 368px;
+top: 923px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+display: flex;
+align-items: flex-end;
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+

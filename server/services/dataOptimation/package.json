@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --runInBand --detectOpenHandles --forceExit",
-    "initdb": "sequelize db:create --env=test && sequelize db:migrate && sequelize db:seed:all --env=test"
+    "initdb": "sequelize db:create --env=test && sequelize db:migrate --env=test",
+    "coverage" : "nyc npm run test"
   },
   "keywords": [],
   "author": "",
