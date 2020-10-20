@@ -1,7 +1,7 @@
 const request = require('supertest')
 const app = require(`../app`)
 const {sequelize} = require(`../models`)
-const {User, tps} = require(`../models`)
+const {Driver, TPStorage} = require(`../models`)
 const {encode} = require(`../helpers/jwt`)
 const {queryInterface} = sequelize
 
@@ -12,7 +12,7 @@ let tpsId = ``
 let newtps = {
     location: "-6.133.123, 113.123.11",
     name: "TOS",
-    address: "Jalan Raya Pokoknya",
+    address: 2,
     volume: 91,
     status: "Available"
 }
@@ -20,7 +20,7 @@ let newtps = {
 let editedtps = {
     location: "-6.133.123",
     name: "TOS",
-    address: "Jalan Raya Pokoknya",
+    address: 1,
     volume: 91,
     status: "Available"
 }
@@ -45,20 +45,19 @@ beforeAll((done) => {
         status: 'Available'
     }
 
-
-    User.create(user) 
+    Driver.create(user) 
     .then(result => {
         // console.log(result)
         let {id, name, email, phone, role} = result
         access_token = encode({id, name, phone, email, role})
         // console.log(access_token, `ini access token`)
-        return User.create(user2)
+        return Driver.create(user2)
     })
     .then(result => {
         let {id, name, email, phone, role} = result
         tokenLain = encode({id, name, email,phone, role})
         // console.log(access_token, `ini access token`)
-        return tps.create(newtps)
+        return TPStorage.create(newtps)
     }) 
     .then(result => {
         tpsId = result.id
@@ -72,7 +71,7 @@ beforeAll((done) => {
 
 afterAll( async (done) => {
     try {
-        await queryInterface.bulkDelete(`tps`, {})
+        await queryInterface.bulkDelete(`TPStorages`, {})
         await queryInterface.bulkDelete(`Drivers`, {})
         done()
     } catch(err) {
@@ -86,8 +85,9 @@ describe(`tps routes`, () => {
         test("401:failed to pass auth, return json with error", (done) => {
             request(app)
             .get('/tps')
-            .set(`access_token`, ``)
+            .set(`access_token`, `-`)
             .then(result => {
+                console.log(result, 'dari result TPS');
                 const {status, body} = result
                 expect(status).toBe(401)
                 expect(body.message).toEqual(expect.stringContaining(`Please login to access this page.`))

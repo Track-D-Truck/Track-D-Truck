@@ -107,7 +107,7 @@ module.exports = {
         {
           name: "Perhutani",
           location: "-6.9366075, 107.700182",
-          status: "active",
+          status: "inactive",
           volume: 2,
           address:
             "Street Jl. Soekarno-Hatta No.740, Mekar Mulya, Kec. Gedebage, Kota Bandung, Jawa Barat 40292, Indonesia",
@@ -117,7 +117,7 @@ module.exports = {
         {
           name: "Ranca Meong",
           location: "-6.9391703, 107.6884252",
-          status: "active",
+          status: "inactive",
           volume: 2,
           address:
             "Jl. Rancameong No.27-29, Babakan Penghulu, Cinambo, Kota Bandung, Jawa Barat 40295, Indonesia",

@@ -16,7 +16,11 @@ class DriverController {
 
     static read(req, res, next) {
         console.log('masuk bsss');
-        Driver.findAll()
+        Driver.findAll({
+            where: {
+                role: "driver"
+              }
+        })
         .then(result => {
             res.status(200).json(result)
         })
@@ -69,15 +73,86 @@ class DriverController {
         Driver.findOne({where: {email}})
         .then(result => {
             if (result && comparePass(password, result.password)) {
-                let {id, name, email, role} = result
-                let access_token = encode({id, name, email, role})
-                res.status(200).json({access_token, name, id, status, role})
+                let {id, name, email, phone} = result
+                let access_token = encode({id, name, email})
+                res.status(200).json({access_token, name, id, phone, email})
             } else {
                 throw error
             }
         })
         .catch(err => {
              console.log(err)
+            next(err)
+        })
+    }
+
+    static find(req, res, next) {
+        let DriverId = req.params.id
+        let error = {
+            name: `otherError`,
+            statusCode: 404,
+            message: `Can't find the data.`
+        }
+
+        Driver.findByPk(DriverId)
+        .then(result => {
+            if(result) {
+                // console.log(`ini result`, result)
+                res.status(200).json(result)
+            } else {
+                throw error
+            }
+        })
+        .catch(err => {
+            next(err)
+        })
+    }
+
+    static edit(req, res, next) {
+        const editDriver = {
+            name:req.body.name,
+            email:req.body.email,
+            password:req.body.password,
+            phone:req.body.phone,
+            role:req.body.role || 'Driver',
+            status:req.body.status
+         }
+
+        let DriverId = req.params.id
+        Driver.update(editDriver, {where: {id: DriverId}, returning: true})
+        .then(result => {
+            console.log(result);
+            res.status(200).json(result )
+        })
+        .catch(err => {
+            console.log(err, 'dari edit Driver');
+            next(err)
+        })
+    }
+
+    static delete(req, res, next) {
+        let DriverId = req.params.id
+        let error = {
+            name: `otherError`,
+            statusCode: 404,
+            message: `Can't find the data.`
+        }
+        let deletedData;
+        // console.log(`ini di dalam delete`)
+        Driver.findByPk(DriverId)
+        .then(result => {
+            if(!result) {
+                throw error
+            } else {
+                deletedData = result
+                return Driver.destroy({where: {id: DriverId}})
+            }
+        })
+        .then(result => {
+            // console.log(`ini result`, result)
+            res.status(200).json({message: `Successfully delete Driver '${deletedData.name}'!`})
+        })
+        .catch(err => {
             next(err)
         })
     }
