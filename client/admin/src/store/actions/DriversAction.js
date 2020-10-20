@@ -56,10 +56,8 @@ export function DELETE_DRIVER(id) {
 }
 
 
-export function UPDATE_DRIVERS(id) {
-  const data = {
-    status: 'unavailable'
-  }
+export function UPDATE_DRIVERS(data, id) {
+
   return (dispatch, getState) => {
     fetch(`http://localhost:3000/drivers/${id}`, {
       method: "PUT",
