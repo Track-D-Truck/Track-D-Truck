@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Dimensions, StyleSheet } from 'react-native';
 import MapView from 'react-native-maps'
 import MapViewDirections from 'react-native-maps-directions';
-import GOOGLE_MAPS_APIKEY from '../../gmapskey'
+// import GOOGLE_MAPS_APIKEY from '../../gmapskey'
 import { positionReducer } from '../store/reducers/positionReducer';
 
 const { width, height } = Dimensions.get('window');
@@ -40,7 +40,7 @@ const Map = ({ waypoints }) => {
                 origin={origin}
                 waypoints={waypoints}
                 destination={destination}
-                apikey={GOOGLE_MAPS_APIKEY}
+                apikey="AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc"
                 strokeWidth={3}
                 strokeColor="#27ae60"
                 mode="DRIVING"

@@ -97,7 +97,7 @@ export function CREATE_TRUCK(data) {
 }
 
 export function UPDATE_TRUCK(data, id) {
-  console.log(data,'<<<<<<<<<<<<<,');
+  console.log(data, id,'<<<<<<<< ini maam,');
   return (dispatch, getState) => {
     fetch(`http://localhost:3000/trucks/${id}`, {
       method: "PUT",

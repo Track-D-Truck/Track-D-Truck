@@ -1,5 +1,5 @@
 "use strict";
-
+const {hashPass} = require(`../helpers/bcrypt`)
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**
@@ -18,7 +18,7 @@ module.exports = {
         {
           name: "Ari",
           email: "ari@mail.com",
-          password: "123456",
+          password: hashPass("123456"),
           phone: 6281234567890,
           role: "admin",
           status: "unavailable",
@@ -28,7 +28,7 @@ module.exports = {
         {
           name: "Rijal",
           email: "rijal@mail.com",
-          password: "123456",
+          password: hashPass("123456"),
           phone: 6281234567891,
           role: "driver",
           status: "available",
@@ -38,7 +38,7 @@ module.exports = {
         {
           name: "Ginanjar",
           email: "ginanjar@mail.com",
-          password: "123456",
+          password: hashPass("123456"),
           phone: 6281234567892,
           role: "driver",
           status: "available",
@@ -48,7 +48,7 @@ module.exports = {
         {
           name: "Alek",
           email: "alek@mail.com",
-          password: "123456",
+          password: hashPass("123456"),
           phone: 6281234567893,
           role: "driver",
           status: "available",

@@ -21,9 +21,9 @@ const io = require("socket.io").listen(server)
 
 io.on("connection", socket => {
     console.log("a use connected");
-    socket.on("CURRENT_COORDINATE", chat => {
-        console.log(chat);
-        io.emit("CURRENT_COORDINATE", chat)
+    socket.on("SET_COORDINATE", payload => {
+        console.log(payload, "<<socket di server");
+        io.emit("SET_COORDINATE", payload)
     })
 })
 

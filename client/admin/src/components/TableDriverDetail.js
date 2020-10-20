@@ -35,7 +35,7 @@ export default function TableDriverDetail() {
             </thead>
             <tbody style={{backgroundColor:'#FFF8CD'}}>
                 {drivers.map((driver,i) => {
-                    
+                    console.log(driver, "<<ini driver")
                     const  driverTruck = trucks.filter(truck => truck.DriverId == driver.id)
 
                     function handleDeleteTruck() {

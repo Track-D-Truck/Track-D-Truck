@@ -9,19 +9,19 @@ import socket from '../config/socket'
 
 export default function TableTruckDetail() {
     const dispatch = useDispatch()
-    const [chat, setChat] = useState('')
-    const [coordinate, setCoordinate] = useState([])
+    // const [chat, setChat] = useState('')
+    const [coordinates, setCoordinates] = useState('')
     useEffect(() => {
         dispatch(FETCH_TRUCKS())
         dispatch(FETCH_DRIVERS())
     },[])
 
     useEffect(()=> {
-        socket.on('CURRENT_COORDINATE', chat => {
+        socket.on('SET_COORDINATE', coordinate => {
 
-            setCoordinate([...coordinate, chat])
+            setCoordinates(coordinate)
           });
-    },[coordinate])
+    },[coordinates])
 
     
     const loading = useSelector(state => state.TruckReducer.loadingStatus)
@@ -31,19 +31,19 @@ export default function TableTruckDetail() {
 
     // const coordinate = null 
     
-    function handleChat(event) {
-        setChat(event.target.value)
-        // socket.emit('CURRENT_COORDINATE', coordinate)
-    }
+    // function handleChat(event) {
+    //     setChat(event.target.value)
+    //     socket.emit('CURRENT_COORDINATE', coordinate)
+    // }
 
-    function submitChat(event) {
-        event.preventDefault()
-        socket.emit('CURRENT_COORDINATE', chat)
-    }
+    // function submitChat(event) {
+    //     event.preventDefault()
+    //     socket.emit('SET_COORDINATE', chat)
+    // }
 
     return (
         <>
-        <form onSubmit={submitChat}>
+        {/* <form onSubmit={submitChat}>
             <input onChange={handleChat}/>
             <button className="btn">test </button>
         </form>
@@ -52,7 +52,8 @@ export default function TableTruckDetail() {
                     <h1>{e}</h1>
 
                 )
-            })}
+            })} */}
+            <h1>{coordinates}</h1>
 
         <table className="table text-center thead-bg">
             <thead className='trucklist'>
