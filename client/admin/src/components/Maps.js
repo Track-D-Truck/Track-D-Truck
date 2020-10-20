@@ -48,7 +48,7 @@ export const Maps = compose(
 		  waypoints: tpsLocations,
 		  travelMode: window.google.maps.TravelMode.DRIVING,
 		}, (result, status) => {
-			console.log(result,'<<<<<<<<<<,');
+			// console.log(result,'<<<<<<<<<<,');
 		  if (status === window.google.maps.DirectionsStatus.OK) {
 
 			props.setDirections(result);

@@ -13,8 +13,8 @@ router.get('/', (req, res)=>{
 
 router.post(`/register`, DriverController.register)
 router.post(`/login`, DriverController.login)
-router.use(authentication)
-router.use(authorization)
+// router.use(authentication)
+// router.use(authorization)
 router.use(`/optimations`, OptimationRoutes)
 router.use(`/drivers`, DriverRoutes)
 router.use(`/trucks`, TruckRoutes)
