@@ -11,6 +11,7 @@ import socket from '../config/socket'
 
 
 const FlatlistItem = ({ item, truckData }) => {
+    console.log(truckData, "<<ini truck data")
 
     const dispatch = useDispatch()
     // const position = useSelector(state => state.positionReducer.updatedPosition)
@@ -27,18 +28,23 @@ const FlatlistItem = ({ item, truckData }) => {
     //         break
     //     }
     // } 
+    
 
     const update = (location) => {
-        socket.emit("SET_COORDINATE", location)
+        let payload = {
+            location,
+            truckId: truckData.id
+        }
+        socket.emit("SET_COORDINATE", payload)
         setIsDone(true)
-        // dispatch(updatePosition(truckData, location))        
+        dispatch(updatePosition(truckData, location))        
     }
 
     
     //scoket io
     useEffect(()=> {
-        socket.on("SET_COORDINATE", coordinate => {
-            setCurrentCoordinate(coordinate)
+        socket.on("SET_COORDINATE", payload => {
+            setCurrentCoordinate(payload.location)
         })
     }, [currentCoordinate])
 

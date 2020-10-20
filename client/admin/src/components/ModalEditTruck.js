@@ -34,7 +34,7 @@ export default function ModalEditTruck(props) {
 
 	function handleSubmitTruck(event) {
 		event.preventDefault()
-		// truck.location = truck.location.join()
+		truck.location = truck.location.join()
 		dispatch(UPDATE_TRUCK(truck, chosenTruck.id))
 		setShow(false)
     }
@@ -82,11 +82,11 @@ export default function ModalEditTruck(props) {
 								<div className="form-group row">
 									<label for="inputEmail" className="col-sm-2 col-form-label">Cost</label>
 									<div className="col-sm-10 form-inline"><span style={{fontSize:"17px"}}>Rp</span>
-										<input type="text" className="form-control  mx-2" id="staticEmail" value={truck.status}
+										<input type="text" className="form-control  mx-2" id="staticEmail" value={truck.cost}
 											onChange={e => {
 												setTruck({
 														...truck,
-														status: e.target.value
+														cost: e.target.value
 												})
 										}}
 											

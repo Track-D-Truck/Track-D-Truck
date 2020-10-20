@@ -1,3 +1,5 @@
+import { FETCH_RESULT } from './ResultAction'
+
 export function SET_LOADING(status) {
   return {
     type: "SET_LOADING",
@@ -101,6 +103,7 @@ export function UPDATE_DUMP(data, id) {
         return res.json()
       })
       .then((data) => {
+        dispatch(FETCH_RESULT())
         dispatch(FETCH_DUMPS())
       })
       .catch(err => console.log(err))
