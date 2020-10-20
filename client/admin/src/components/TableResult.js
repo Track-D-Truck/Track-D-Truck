@@ -18,8 +18,9 @@ export default function TableResult() {
     //  console.log(routes,'ini routes',truck);
   } 
   return (
-    <table className="table text-center thead-bg mt-3">
-            <thead className='trucklist'>
+    <div className="noBorder shadow"  > 
+    <table className="table text-center mt-3">
+            <thead className='table-borderless thead-bg 'style={{color:'white'}} >
             <tr>
                 <th scope="col">Truck Code</th>
                 <th scope="col">Driver</th>
@@ -30,7 +31,7 @@ export default function TableResult() {
             </tr>
             </thead>
             {chosenResult &&
-              <tbody style={{backgroundColor:'#FFF8CD'}}>
+              <tbody style={{backgroundColor: 'rgb(245 245 245)'}}>
                 <tr>
                   <th scope="row">{truck.truck_code}</th>
                   {truck.Driver ?
@@ -45,5 +46,6 @@ export default function TableResult() {
               </tbody>
             }
         </table>
+        </div>
   )
 }

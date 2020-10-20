@@ -6,6 +6,10 @@ import {FETCH_DRIVERS, UPDATE_DRIVERS} from '../store/actions/DriversAction'
 import ModalEditTruck from './ModalEditTruck'
 import Loading from './Loading'
 import socket from '../config/socket'
+import ModalCreateTruck from '../components/ModalCreateTruck'  
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash} from '@fortawesome/free-solid-svg-icons'
 
 export default function TableTruckDetail() {
     const dispatch = useDispatch()
@@ -42,32 +46,30 @@ export default function TableTruckDetail() {
     // }
 
     return (
-        <>
-        {/* <form onSubmit={submitChat}>
-            <input onChange={handleChat}/>
-            <button className="btn">test </button>
-        </form>
-            {coordinate.map((e) => {
-                return(
-                    <h1>{e}</h1>
-
-                )
-            })} */}
-            <h1>{coordinates}</h1>
-
-        <table className="table text-center thead-bg">
-            <thead className='trucklist'>
+        <div className="p-5">
+	
+        <div className="card tableHeadBackground mx-auto noBorder shadow-sm"> 
+            <div className="ml-3 text-white row">
+            {/* <FontAwesomeIcon icon={['fas', 'Coffee']} /> */}
+                <h2 className="mb-0 mt-1">Trucks List</h2>
+                <ModalCreateTruck/>
+                {/* <p class="font-weight-lighter font-italic">Table Driver</p> */}
+            </div>
+        </div>
+        <div className="card tableBackground noBorder shadow" >
+            <table className="table text-center mt-4 ">
+            <thead className='table-borderless' style={{color:'#65AE07'}}>
             <tr>
                 <th scope="col">Truck Code</th>
                 <th scope="col">Driver</th>
                 <th scope="col">Capacity</th>
-                <th scope="col">Status</th>
                 <th scope="col">Coordinate</th>
                 <th scope="col">Cost</th>
+                <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
-            <tbody style={{backgroundColor:'#FFF8CD'}}>
+            <tbody>
 
                 {trucks.map((truck,i) => {
                     function handleDeleteTruck() {
@@ -91,15 +93,23 @@ export default function TableTruckDetail() {
                             // dispatch(UPDATE_TRUCK(truck, truck.id))
                         }
                     }
+                    function handleUpdateStatus(event) {
+                        if(event.target.value == 'available') {
+                            dispatch(UPDATE_TRUCK({status: event.target.value, DriverId: null}, truck.id))
+                            dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
+                        } else if (event.target.value == 'unavailable') {
+                            dispatch(UPDATE_TRUCK({status: event.target.value}, truck.id))
+                        }
+                    }
                       
                     return(
                         <tr key={i}>
                             <th scope="row">{truck.truck_code}</th>
                             <td>  
-                            <div className="form-group row">
-                            <form >
-                            <div className="col-sm-10">
-                                <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" 
+                            <div className="form-group row my-0  noBorder">
+                            <form className="mx-auto noBorder" >
+                            <div className="col-sm-10 noBorder">
+                                <select className="custom-select mr-sm-2 noBorder" id="inlineFormCustomSelect" 
                                         value={truck.DriverId} onChange={handleUpdateDriver} style={{width:"150px"}}> 
                                             {truck.DriverId ? 
                                         <option value={truck.DriverId} disabled>{truck.Driver.name}</option>
@@ -118,21 +128,37 @@ export default function TableTruckDetail() {
                             </div>
                         </td>
                             <td>{truck.capacity} m³</td>
-                            <td>{truck.status}</td>
                             <td>
                                 <span>lat:  {truck.location[0]}</span><br/>
                                 <span>long:  {truck.location[1]}</span>
                                 </td>
                             <td>Rp {truck.cost} / meter</td>
                             <td>
+                                <div className="form-group row my-0  noBorder">
+                                <form className="mx-auto noBorder" >
+                                <div className="col-sm-10 noBorder">
+                                    <select className="custom-select mr-sm-2 noBorder" id="inlineFormCustomSelect" 
+                                        value={truck.status} onChange={handleUpdateStatus} style={{width:"150px"}}> 
+                                                <option >Choose...</option>
+												<option value="available">Available</option>
+												<option value="unavailable">Unavailable</option>
+                                        </select>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </td>
+                            <td>
                                 <ModalEditTruck chosenTruck={truck} />
-                                <button className="btn btn-secondary" onClick={handleDeleteTruck}>Delete</button>
+                                <button className="btn noBorder" onClick={handleDeleteTruck}>
+                                    <FontAwesomeIcon icon={faTrash} color="#65AE07" className="shadow" size="lg"/>
+                                    </button>
                             </td>
                         </tr>
-                    )
-                })}
-            </tbody>
-        </table>
-        </>
+                        )
+                    })}
+                </tbody>
+            </table>
+        </div>
+    </div>
     )
 }

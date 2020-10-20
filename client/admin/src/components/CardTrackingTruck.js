@@ -35,33 +35,39 @@ export default function CardTrackingTruck(props) {
   return (
     <div className="row">
 
-    <div className="col-sm-4">
-      <div className='card shadow styleTrackingTruck'>
+    <div className="col-sm-4 cardReport">
 								
-      <div className="card-header">
-        Tracking
+      <div className="card headCardReport mx-auto noBorder shadow-sm"> 
+            <div className="ml-3 text-white row mx-auto">
+                <h2 className="mb-0 mt-1">Trucks List</h2>
+
+            </div>
         </div>
-      <div className="card-body">
+        <div className="card mx-auto bodyCardReport noBorder shadow" >
+          <div className="mt-4 ml-4">
+
+          {truckActive && truckActive.map((e,i) => {
+            function handleChangeTruck() {
+              // console.log(e,'<<<<<<<<<<<<<<<<,,');
+                dispatch(SET_CHOSEN_RESULT(e))
+            }
+            return(
+              <span key={i} className='row mb-3'>
+                <h5 className='btn' onClick={handleChangeTruck}>{ e.truck.truck_code}</h5>
+              </span>
+            )
+          })}
+
+          </div>
         
-        {truckActive && truckActive.map((e,i) => {
-          function handleChangeTruck() {
-            // console.log(e,'<<<<<<<<<<<<<<<<,,');
-              dispatch(SET_CHOSEN_RESULT(e))
-          }
-          return(
-            <span key={i} className='row mb-3'>
-              <h5 className='btn' onClick={handleChangeTruck}>{ e.truck.truck_code}</h5>
-            </span>
-          )
-        })}
 
         </div>
       </div>
-    </div>
+
 
 
         <div className="col-sm-8">
-          <div className='card shadow'>
+          <div className='card shadow mt-3'>
            {routes && < Maps routes={routes} />}
           </div>
         </div>
