@@ -13,7 +13,6 @@ export default function CardTrackingTruck(props) {
   const result = useSelector(state => state.ResultReducer.result)
   const loading = useSelector(state => state.TruckReducer.loadingStatus)
   const chosenResult = useSelector(state => state.ResultReducer.chosenResult)
-  
   let truckActive = null
  
   useEffect(() => {
@@ -21,7 +20,7 @@ export default function CardTrackingTruck(props) {
   }, [dispatch])
   if (loading) return <Loading/>
 
-  if(result) truckActive = result.bestSchema.filter(e => e.truck.status === 'available')
+  if(result) truckActive = result.BEST.bestSchema
 
   let routes = null
   if(chosenResult) {
@@ -41,6 +40,7 @@ export default function CardTrackingTruck(props) {
         
         {truckActive && truckActive.map((e,i) => {
           function handleChangeTruck() {
+            // console.log(e,'<<<<<<<<<<<<<<<<,,');
               dispatch(SET_CHOSEN_RESULT(e))
           }
           return(

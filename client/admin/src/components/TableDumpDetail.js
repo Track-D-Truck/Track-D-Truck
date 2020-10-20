@@ -22,7 +22,8 @@ export default function TableDumpDetail() {
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">Location</th>
+                <th scope="col">Address</th>
+                <th scope="col">Coordinate</th>
                 <th scope="col">Volume</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
@@ -39,8 +40,12 @@ export default function TableDumpDetail() {
                         <tr key={i}>
                             <th scope="row">{dump.id}</th>
                             <td>{dump.name}</td>
-                            <td>{dump.location[0]}, {dump.location[1]}</td>
-                            <td>{dump.volume}</td>
+                            <td>{dump.address}</td>
+                            <td>
+                                <span>lat:  {dump.location[0]}</span><br/>
+                                <span>long:  {dump.location[1]}</span>
+                                </td>
+                            <td>{dump.volume}  m³</td>
                             <td>{dump.status}</td>
                             <td>
                                 <ModalEditDump chosenDump={dump} />

@@ -11,7 +11,8 @@ export default function ModalCreateDump() {
 		name: '',
 		location: '',
 		status: '',
-		volume: ''
+		volume: '',
+		address: ''
 	})
 
   const handleClose = () => setShow(false);
@@ -60,7 +61,20 @@ export default function ModalCreateDump() {
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Location</label>
+								<label for="inputType" className="col-sm-2 col-form-label">Address</label>
+								<div className="col-sm-10">
+									<input type="text" className="form-control" id="staticType" 
+											onChange={e => {
+												setDump({
+														...dump,
+														address: e.target.value
+												})
+										}}
+									/>
+								</div>
+							</div>
+							<div className="form-group row">
+								<label for="inputType" className="col-sm-2 col-form-label">Coordinate</label>
 								<div className="col-sm-10">
 									<input type="text" className="form-control" id="staticType" 
 											onChange={e => {
@@ -74,14 +88,14 @@ export default function ModalCreateDump() {
 							</div>
 							<div className="form-group row">
 								<label for="inputCapacity" className="col-sm-2 col-form-label">Volume</label>
-								<div className="col-sm-10">
-									<input type="number" className="form-control" id="staticCapacity"
+								<div className="col-sm-10 form-inline">
+									<input type="number" className="form-control mr-2" id="staticCapacity"
 										onChange={e => {
 												setDump({
 														...dump,
 														volume: e.target.value
 												})
-											}} />
+											}} /><span style={{fontSize:"17px"}}>/m³</span>
 								</div>
 							</div>
 

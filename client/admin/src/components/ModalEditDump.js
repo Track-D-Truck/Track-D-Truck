@@ -12,7 +12,8 @@ export default function ModalEditDump(props) {
 		name: '',
 		location: '',
 		volume: '',
-		status: ''
+		status: '',
+		address: ''
 	})
 
 	useEffect(()=> {
@@ -20,7 +21,8 @@ export default function ModalEditDump(props) {
 			name: chosenDump.name,
 			location: chosenDump.location,
 			volume: chosenDump.volume,
-			status: chosenDump.status
+			status: chosenDump.status,
+			address: chosenDump.address
 		})
 	}, [])
 
@@ -68,6 +70,22 @@ export default function ModalEditDump(props) {
 										/>
 								</div>
 							</div>
+
+							<div className="form-group row">
+								<label for="inputType" className="col-sm-2 col-form-label">Address</label>
+								<div className="col-sm-10">
+									<input type="text" className="form-control" id="staticType" value={dump.address}
+											onChange={e => {
+												setDump({
+														...dump,
+														address: e.target.value
+												})
+										}}
+									/>
+								</div>
+							</div>
+
+
 							<div className="form-group row">
 								<label for="inputType" className="col-sm-2 col-form-label">Location</label>
 								<div className="col-sm-10">
@@ -83,18 +101,19 @@ export default function ModalEditDump(props) {
 							</div>
 							<div className="form-group row">
 								<label for="inputCapacity" className="col-sm-2 col-form-label">Volume</label>
-								<div className="col-sm-10">
-									<input type="number" className="form-control" id="staticCapacity" value={dump.volume}
+								<div className="col-sm-10 form-inline">
+									<input type="number" className="form-control mr-2" id="staticCapacity" 
+										value={dump.volume} style={{width:'100px'}}
 										onChange={e => {
 												setDump({
 														...dump,
 														volume: e.target.value
 												})
-											}} />
+											}} /> <span style={{fontSize:"17px"}}>/m³</span>
 								</div>
 							</div>
 
-							<div className="form-group row">
+							{/* <div className="form-group row">
 								<label for="inputCapacity" className="col-sm-2 col-form-label">Status</label>
 								<div className="col-sm-10">
 									<input type="text" className="form-control" id="staticCapacity" value={dump.status}
@@ -105,8 +124,25 @@ export default function ModalEditDump(props) {
 												})
 											}} />
 								</div>
+							</div> */}
+							<div className="form-group row">
+							<label for="inputCapacity" className="col-sm-2 col-form-label">Status</label>
+									<form >
+											<div className="col-sm-10">
+													<select className="custom-select mr-sm-2" id="inlineFormCustomSelect" 
+															value={dump.status} onChange={e => {
+																setDump({
+																		...dump,
+																		status: e.target.value
+																})
+															}}>
+																	<option value=''>Choose...</option>
+																	<option value="active">Active</option>
+																	<option value="inactive">Inactive</option>
+															</select>
+											</div>
+									</form>
 							</div>
-
 
 							{/* <div className="form-group row">
 								<label for="inputSchedule" className="col-sm-2 col-form-label">Status</label>

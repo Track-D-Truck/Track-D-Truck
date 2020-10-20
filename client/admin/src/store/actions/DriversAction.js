@@ -22,7 +22,7 @@ export function SET_DRIVERS(data) {
 export function FETCH_DRIVERS() {
 
   return (dispatch, getState) => {
-    fetch(`http://localhost:3005/Drivers`, {
+    fetch(`http://localhost:3000/drivers`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ export function FETCH_DRIVERS() {
 
 export function DELETE_DRIVER(id) {
   return (dispatch, getState) => {
-    fetch(`http://localhost:3005/Drivers/${id}`, {
+    fetch(`http://localhost:3000/drivers/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
@@ -56,9 +56,12 @@ export function DELETE_DRIVER(id) {
 }
 
 
-export function UPDATE_DRIVERS(data) {
+export function UPDATE_DRIVERS(id) {
+  const data = {
+    status: 'unavailable'
+  }
   return (dispatch, getState) => {
-    fetch(`http://localhost:3005/Drivers/${data.id}`, {
+    fetch(`http://localhost:3000/drivers/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
