@@ -25,8 +25,6 @@ const MapScreen = ({ navigation }) => {
         dispatch(fetchResult())
     }, [dispatch, userId])
 
-    useEffect
-
     useEffect(() => {  
         if(result){
             const temp = []

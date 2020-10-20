@@ -4,9 +4,13 @@ const _ = require('lodash')
 export function fetchResult() {
     return ( dispatch, getState ) => {
         const driverId = getState().userReducer.id
+        const access_token = getState().userReducer.access_token
         axios({
             url: '/optimations/test',
-            method: 'GET'
+            method: 'GET',
+            headers: {
+              access_token
+            }
         })
         .then(({data}) => {
             dispatch({

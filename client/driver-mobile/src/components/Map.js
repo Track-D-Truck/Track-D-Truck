@@ -18,7 +18,6 @@ const Map = ({ waypoints }) => {
     const currentPosition = useSelector(state => state.positionReducer.currentPosition)
     const origin = useSelector(state => state.positionReducer.startPosition)
     const destination = useSelector(state => state.positionReducer.lastDestination)
-    console.log(currentPosition);
 
     return (
         <MapView
