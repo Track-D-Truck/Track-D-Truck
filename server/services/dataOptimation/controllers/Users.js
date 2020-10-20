@@ -69,9 +69,9 @@ class DriverController {
         Driver.findOne({where: {email}})
         .then(result => {
             if (result && comparePass(password, result.password)) {
-                let {id, name, email, role} = result
-                let access_token = encode({id, name, email, role})
-                res.status(200).json({access_token, name, id, status, role})
+                let {id, name, email, phone} = result
+                let access_token = encode({id, name, email})
+                res.status(200).json({access_token, name, id, phone, email})
             } else {
                 throw error
             }
