@@ -29,7 +29,7 @@ export function SET_CHOSEN_RESULT(data) {
 export function FETCH_RESULT() {
   return (dispatch, getState) => {
     dispatch(SET_LOADING(true))
-    fetch(`http://localhost:3004/BEST`, {
+    fetch(`http://localhost:3000/optimations/test`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"

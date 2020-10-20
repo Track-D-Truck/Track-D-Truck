@@ -66,23 +66,23 @@ export default function ModalEditTruck(props) {
 
 								<div className="form-group row">
 									<label for="inputType" className="col-sm-2 col-form-label">Capacity</label>
-									<div className="col-sm-10">
-										<input type="number" className="form-control" id="staticType" 
+									<div className="col-sm-10 form-inline">
+										<input type="number" className="form-control mr-2" id="staticType" 
 											onChange={e => {
 												setTruck({
 														...truck,
 														capacity: e.target.value
 												})
 										}}  
-										value={truck.capacity}
-										/>
+										value={truck.capacity}  style={{width:'100px'}}
+										/><span style={{fontSize:"17px"}}>/m³</span>
 									</div>
 								</div>
 								
 								<div className="form-group row">
 									<label for="inputEmail" className="col-sm-2 col-form-label">Cost</label>
-									<div className="col-sm-10">
-										<input type="text" className="form-control" id="staticEmail" value={truck.status}
+									<div className="col-sm-10 form-inline"><span style={{fontSize:"17px"}}>Rp</span>
+										<input type="text" className="form-control  mx-2" id="staticEmail" value={truck.status}
 											onChange={e => {
 												setTruck({
 														...truck,
@@ -90,12 +90,12 @@ export default function ModalEditTruck(props) {
 												})
 										}}
 											
-											/>
+											/><span style={{fontSize:"17px"}}>/ meter</span>
 									</div>
 								</div>
 								
 								<div className="form-group row">
-									<label for="inputType" className="col-sm-2 col-form-label">Location</label>
+									<label for="inputType" className="col-sm-2 col-form-label">Coordinate</label>
 									<div className="col-sm-10">
 										<input type="text" className="form-control" id="staticType" value={truck.location}
 												onChange={e => {

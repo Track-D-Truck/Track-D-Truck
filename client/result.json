@@ -1,259 +1,325 @@
 {
-  "BEST": {
-    "bestCost": 70387080,
-    "bestSchema": [
-      {
-        "truck": {
-          "id": 3,
-          "truck_code": "truck-3",
-          "capacity": 9,
-          "cost": 201,
-          "status": "available",
-          "location": "-6.86666, 107.60000",
-          "DriverId": 3,
-          "createdAt": "2020-10-18T11:50:47.825Z",
-          "updatedAt": "2020-10-18T11:50:47.825Z",
-          "Driver": {
-            "id": 3,
-            "name": "Ginanjar",
-            "email": "ginanjar@mail.com",
-            "password": "123456",
-            "role": "driver",
-            "createdAt": "2020-10-18T11:50:47.807Z",
-            "updatedAt": "2020-10-18T11:50:47.807Z"
-          }
-        },
-        "route": [
-          {
-            "address": "Jl. Cihampelas No.250-264, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131, Indonesia",
-            "location": "-6.8881609, 107.6039859",
-            "name": "Cihampeulas",
-            "volume": 3
-          },
-          {
-            "address": "Jl. Dago Elos II No.115, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135, Indonesia",
-            "location": "-6.8672104, 107.6213954",
-            "name": "Terminal Dago",
-            "volume": 3
-          },
-          {
-            "address": "Jl. Tengku Angkasa No.18, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
-            "location": "-6.8927743, 107.6166699",
-            "name": "Dipatiukur",
-            "volume": 2
-          }
-        ],
-        "totalVolume": 8,
-        "destination": "|-6.8881609, 107.6039859|-6.8672104, 107.6213954|-6.8927743, 107.6166699",
-        "totalDistance": 76080,
-        "totalCost": 15292080
-      },
-      {
-        "truck": {
-          "id": 1,
-          "truck_code": "truck-1",
-          "capacity": 8,
-          "cost": 1000,
-          "status": "available",
-          "location": "-6.86666, 107.60000",
-          "DriverId": 2,
-          "createdAt": "2020-10-18T11:50:47.825Z",
-          "updatedAt": "2020-10-18T11:50:47.825Z",
-          "Driver": {
-            "id": 2,
-            "name": "Rijal",
-            "email": "rijal@mail.com",
-            "password": "123456",
-            "role": "driver",
-            "createdAt": "2020-10-18T11:50:47.807Z",
-            "updatedAt": "2020-10-18T11:50:47.807Z"
-          }
-        },
-        "route": [
-          {
-            "address": "Jl. Saparua, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115, Indonesia",
-            "location": "-6.9088007, 107.6158271",
-            "name": "GOR Saparua",
-            "volume": 4
-          }
-        ],
-        "totalVolume": 4,
-        "destination": "|-6.9088007, 107.6158271",
-        "totalDistance": 55095,
-        "totalCost": 55095000
-      }
-    ]
-  },
-  "ALL": [
-    {
-      "totalCostSchema": 87154095,
-      "schema": [
-        {
-          "truck": {
-            "id": 1,
-            "truck_code": "truck-1",
-            "capacity": 8,
-            "cost": 1000,
-            "status": "available",
-            "location": "-6.86666, 107.60000",
-            "DriverId": 2,
-            "createdAt": "2020-10-18T11:50:47.825Z",
-            "updatedAt": "2020-10-18T11:50:47.825Z",
-            "Driver": {
-              "id": 2,
-              "name": "Rijal",
-              "email": "rijal@mail.com",
-              "password": "123456",
-              "role": "driver",
-              "createdAt": "2020-10-18T11:50:47.807Z",
-              "updatedAt": "2020-10-18T11:50:47.807Z"
-            }
-          },
-          "route": [
+    "BEST": {
+        "bestCost": 106573000,
+        "bestSchema": [
             {
-              "address": "Jl. Cihampelas No.250-264, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131, Indonesia",
-              "location": "-6.8881609, 107.6039859",
-              "name": "Cihampeulas",
-              "volume": 3
+                "truck": {
+                    "id": 3,
+                    "truck_code": "truck-3",
+                    "capacity": 12,
+                    "cost": 1000,
+                    "status": "available",
+                    "location": "-6.86666, 107.60000",
+                    "DriverId": 3,
+                    "createdAt": "2020-10-19T12:22:36.100Z",
+                    "updatedAt": "2020-10-19T12:22:36.100Z",
+                    "Driver": {
+                        "id": 3,
+                        "name": "Ginanjar",
+                        "phone": "6281234567892",
+                        "status": "available",
+                        "email": "ginanjar@mail.com",
+                        "password": "123456",
+                        "role": "driver",
+                        "createdAt": "2020-10-19T12:22:36.080Z",
+                        "updatedAt": "2020-10-19T12:22:36.080Z"
+                    }
+                },
+                "route": [
+                    {
+                        "address": "Jl. Tengku Angkasa No.18, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
+                        "location": "-6.8927743, 107.6166699",
+                        "name": "Dipatiukur",
+                        "volume": 2
+                    },
+                    {
+                        "address": "Jl. Dago Elos II No.115, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135, Indonesia",
+                        "location": "-6.8672104, 107.6213954",
+                        "name": "Terminal Dago",
+                        "volume": 3
+                    },
+                    {
+                        "address": "Jl. Cihampelas No.250-264, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131, Indonesia",
+                        "location": "-6.8881609, 107.6039859",
+                        "name": "Cihampeulas",
+                        "volume": 3
+                    },
+                    {
+                        "address": "Jl. Saparua, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115, Indonesia",
+                        "location": "-6.9088007, 107.6158271",
+                        "name": "GOR Saparua",
+                        "volume": 3
+                    }
+                ],
+                "totalVolume": 11,
+                "destination": "|-6.8927743, 107.6166699|-6.8672104, 107.6213954|-6.8881609, 107.6039859|-6.9088007, 107.6158271",
+                "totalDistance": 60993,
+                "totalCost": 60993000
             },
             {
-              "address": "Jl. Dago Elos II No.115, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135, Indonesia",
-              "location": "-6.8672104, 107.6213954",
-              "name": "Terminal Dago",
-              "volume": 3
-            },
-            {
-              "address": "Jl. Tengku Angkasa No.18, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
-              "location": "-6.8927743, 107.6166699",
-              "name": "Dipatiukur",
-              "volume": 2
+                "truck": {
+                    "id": 1,
+                    "truck_code": "truck-1",
+                    "capacity": 10,
+                    "cost": 1000,
+                    "status": "available",
+                    "location": "-6.86666, 107.60000",
+                    "DriverId": 2,
+                    "createdAt": "2020-10-19T12:22:36.100Z",
+                    "updatedAt": "2020-10-19T12:22:36.100Z",
+                    "Driver": {
+                        "id": 2,
+                        "name": "Rijal",
+                        "phone": "6281234567891",
+                        "status": "available",
+                        "email": "rijal@mail.com",
+                        "password": "123456",
+                        "role": "driver",
+                        "createdAt": "2020-10-19T12:22:36.080Z",
+                        "updatedAt": "2020-10-19T12:22:36.080Z"
+                    }
+                },
+                "route": [
+                    {
+                        "address": "Jl. Simpangsari No.51, Sukamiskin, Kec. Arcamanik, Kota Bandung, Jawa Barat 40293, Indonesia",
+                        "location": "-6.9061884, 107.6685101",
+                        "name": "Simpang Sari",
+                        "volume": 2
+                    },
+                    {
+                        "address": "Jl. Terjun Tandom No.62, Cisaranten Endah, Kec. Arcamanik, Kota Bandung, Jawa Barat 40293, Indonesia",
+                        "location": "-6.9253771, 107.6747138",
+                        "name": "Komplek Arcamanik",
+                        "volume": 2
+                    },
+                    {
+                        "address": "Jl. Soekarno-Hatta No.819, Babakan Penghulu, Cinambo, Kota Bandung, Jawa Barat 40293, Indonesia",
+                        "location": "-6.9365806, 107.6961952",
+                        "name": "Pasar Gede Bage",
+                        "volume": 2
+                    }
+                ],
+                "totalVolume": 6,
+                "destination": "|-6.9061884, 107.6685101|-6.9253771, 107.6747138|-6.9365806, 107.6961952",
+                "totalDistance": 45580,
+                "totalCost": 45580000
             }
-          ],
-          "totalVolume": 8,
-          "destination": "|-6.8881609, 107.6039859|-6.8672104, 107.6213954|-6.8927743, 107.6166699",
-          "totalDistance": 76080,
-          "totalCost": 76080000
-        },
-        {
-          "truck": {
-            "id": 3,
-            "truck_code": "truck-3",
-            "capacity": 9,
-            "cost": 201,
-            "status": "available",
-            "location": "-6.86666, 107.60000",
-            "DriverId": 3,
-            "createdAt": "2020-10-18T11:50:47.825Z",
-            "updatedAt": "2020-10-18T11:50:47.825Z",
-            "Driver": {
-              "id": 3,
-              "name": "Ginanjar",
-              "email": "ginanjar@mail.com",
-              "password": "123456",
-              "role": "driver",
-              "createdAt": "2020-10-18T11:50:47.807Z",
-              "updatedAt": "2020-10-18T11:50:47.807Z"
-            }
-          },
-          "route": [
-            {
-              "address": "Jl. Saparua, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115, Indonesia",
-              "location": "-6.9088007, 107.6158271",
-              "name": "GOR Saparua",
-              "volume": 4
-            }
-          ],
-          "totalVolume": 4,
-          "destination": "|-6.9088007, 107.6158271",
-          "totalDistance": 55095,
-          "totalCost": 11074095
-        }
-      ]
+        ]
     },
-    {
-      "totalCostSchema": 70387080,
-      "schema": [
+    "ALL": [
         {
-          "truck": {
-            "id": 3,
-            "truck_code": "truck-3",
-            "capacity": 9,
-            "cost": 201,
-            "status": "available",
-            "location": "-6.86666, 107.60000",
-            "DriverId": 3,
-            "createdAt": "2020-10-18T11:50:47.825Z",
-            "updatedAt": "2020-10-18T11:50:47.825Z",
-            "Driver": {
-              "id": 3,
-              "name": "Ginanjar",
-              "email": "ginanjar@mail.com",
-              "password": "123456",
-              "role": "driver",
-              "createdAt": "2020-10-18T11:50:47.807Z",
-              "updatedAt": "2020-10-18T11:50:47.807Z"
-            }
-          },
-          "route": [
-            {
-              "address": "Jl. Cihampelas No.250-264, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131, Indonesia",
-              "location": "-6.8881609, 107.6039859",
-              "name": "Cihampeulas",
-              "volume": 3
-            },
-            {
-              "address": "Jl. Dago Elos II No.115, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135, Indonesia",
-              "location": "-6.8672104, 107.6213954",
-              "name": "Terminal Dago",
-              "volume": 3
-            },
-            {
-              "address": "Jl. Tengku Angkasa No.18, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
-              "location": "-6.8927743, 107.6166699",
-              "name": "Dipatiukur",
-              "volume": 2
-            }
-          ],
-          "totalVolume": 8,
-          "destination": "|-6.8881609, 107.6039859|-6.8672104, 107.6213954|-6.8927743, 107.6166699",
-          "totalDistance": 76080,
-          "totalCost": 15292080
+            "totalCostSchema": 121705000,
+            "schema": [
+                {
+                    "truck": {
+                        "id": 1,
+                        "truck_code": "truck-1",
+                        "capacity": 10,
+                        "cost": 1000,
+                        "status": "available",
+                        "location": "-6.86666, 107.60000",
+                        "DriverId": 2,
+                        "createdAt": "2020-10-19T12:22:36.100Z",
+                        "updatedAt": "2020-10-19T12:22:36.100Z",
+                        "Driver": {
+                            "id": 2,
+                            "name": "Rijal",
+                            "phone": "6281234567891",
+                            "status": "available",
+                            "email": "rijal@mail.com",
+                            "password": "123456",
+                            "role": "driver",
+                            "createdAt": "2020-10-19T12:22:36.080Z",
+                            "updatedAt": "2020-10-19T12:22:36.080Z"
+                        }
+                    },
+                    "route": [
+                        {
+                            "address": "Jl. Tengku Angkasa No.18, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
+                            "location": "-6.8927743, 107.6166699",
+                            "name": "Dipatiukur",
+                            "volume": 2
+                        },
+                        {
+                            "address": "Jl. Dago Elos II No.115, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135, Indonesia",
+                            "location": "-6.8672104, 107.6213954",
+                            "name": "Terminal Dago",
+                            "volume": 3
+                        },
+                        {
+                            "address": "Jl. Cihampelas No.250-264, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131, Indonesia",
+                            "location": "-6.8881609, 107.6039859",
+                            "name": "Cihampeulas",
+                            "volume": 3
+                        }
+                    ],
+                    "totalVolume": 8,
+                    "destination": "|-6.8927743, 107.6166699|-6.8672104, 107.6213954|-6.8881609, 107.6039859",
+                    "totalDistance": 71589,
+                    "totalCost": 71589000
+                },
+                {
+                    "truck": {
+                        "id": 3,
+                        "truck_code": "truck-3",
+                        "capacity": 12,
+                        "cost": 1000,
+                        "status": "available",
+                        "location": "-6.86666, 107.60000",
+                        "DriverId": 3,
+                        "createdAt": "2020-10-19T12:22:36.100Z",
+                        "updatedAt": "2020-10-19T12:22:36.100Z",
+                        "Driver": {
+                            "id": 3,
+                            "name": "Ginanjar",
+                            "phone": "6281234567892",
+                            "status": "available",
+                            "email": "ginanjar@mail.com",
+                            "password": "123456",
+                            "role": "driver",
+                            "createdAt": "2020-10-19T12:22:36.080Z",
+                            "updatedAt": "2020-10-19T12:22:36.080Z"
+                        }
+                    },
+                    "route": [
+                        {
+                            "address": "Jl. Saparua, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115, Indonesia",
+                            "location": "-6.9088007, 107.6158271",
+                            "name": "GOR Saparua",
+                            "volume": 3
+                        },
+                        {
+                            "address": "Jl. Simpangsari No.51, Sukamiskin, Kec. Arcamanik, Kota Bandung, Jawa Barat 40293, Indonesia",
+                            "location": "-6.9061884, 107.6685101",
+                            "name": "Simpang Sari",
+                            "volume": 2
+                        },
+                        {
+                            "address": "Jl. Terjun Tandom No.62, Cisaranten Endah, Kec. Arcamanik, Kota Bandung, Jawa Barat 40293, Indonesia",
+                            "location": "-6.9253771, 107.6747138",
+                            "name": "Komplek Arcamanik",
+                            "volume": 2
+                        },
+                        {
+                            "address": "Jl. Soekarno-Hatta No.819, Babakan Penghulu, Cinambo, Kota Bandung, Jawa Barat 40293, Indonesia",
+                            "location": "-6.9365806, 107.6961952",
+                            "name": "Pasar Gede Bage",
+                            "volume": 2
+                        }
+                    ],
+                    "totalVolume": 9,
+                    "destination": "|-6.9088007, 107.6158271|-6.9061884, 107.6685101|-6.9253771, 107.6747138|-6.9365806, 107.6961952",
+                    "totalDistance": 50116,
+                    "totalCost": 50116000
+                }
+            ]
         },
         {
-          "truck": {
-            "id": 1,
-            "truck_code": "truck-1",
-            "capacity": 8,
-            "cost": 1000,
-            "status": "available",
-            "location": "-6.86666, 107.60000",
-            "DriverId": 2,
-            "createdAt": "2020-10-18T11:50:47.825Z",
-            "updatedAt": "2020-10-18T11:50:47.825Z",
-            "Driver": {
-              "id": 2,
-              "name": "Rijal",
-              "email": "rijal@mail.com",
-              "password": "123456",
-              "role": "driver",
-              "createdAt": "2020-10-18T11:50:47.807Z",
-              "updatedAt": "2020-10-18T11:50:47.807Z"
-            }
-          },
-          "route": [
-            {
-              "address": "Jl. Saparua, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115, Indonesia",
-              "location": "-6.9088007, 107.6158271",
-              "name": "GOR Saparua",
-              "volume": 4
-            }
-          ],
-          "totalVolume": 4,
-          "destination": "|-6.9088007, 107.6158271",
-          "totalDistance": 55095,
-          "totalCost": 55095000
+            "totalCostSchema": 106573000,
+            "schema": [
+                {
+                    "truck": {
+                        "id": 3,
+                        "truck_code": "truck-3",
+                        "capacity": 12,
+                        "cost": 1000,
+                        "status": "available",
+                        "location": "-6.86666, 107.60000",
+                        "DriverId": 3,
+                        "createdAt": "2020-10-19T12:22:36.100Z",
+                        "updatedAt": "2020-10-19T12:22:36.100Z",
+                        "Driver": {
+                            "id": 3,
+                            "name": "Ginanjar",
+                            "phone": "6281234567892",
+                            "status": "available",
+                            "email": "ginanjar@mail.com",
+                            "password": "123456",
+                            "role": "driver",
+                            "createdAt": "2020-10-19T12:22:36.080Z",
+                            "updatedAt": "2020-10-19T12:22:36.080Z"
+                        }
+                    },
+                    "route": [
+                        {
+                            "address": "Jl. Tengku Angkasa No.18, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
+                            "location": "-6.8927743, 107.6166699",
+                            "name": "Dipatiukur",
+                            "volume": 2
+                        },
+                        {
+                            "address": "Jl. Dago Elos II No.115, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135, Indonesia",
+                            "location": "-6.8672104, 107.6213954",
+                            "name": "Terminal Dago",
+                            "volume": 3
+                        },
+                        {
+                            "address": "Jl. Cihampelas No.250-264, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131, Indonesia",
+                            "location": "-6.8881609, 107.6039859",
+                            "name": "Cihampeulas",
+                            "volume": 3
+                        },
+                        {
+                            "address": "Jl. Saparua, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115, Indonesia",
+                            "location": "-6.9088007, 107.6158271",
+                            "name": "GOR Saparua",
+                            "volume": 3
+                        }
+                    ],
+                    "totalVolume": 11,
+                    "destination": "|-6.8927743, 107.6166699|-6.8672104, 107.6213954|-6.8881609, 107.6039859|-6.9088007, 107.6158271",
+                    "totalDistance": 60993,
+                    "totalCost": 60993000
+                },
+                {
+                    "truck": {
+                        "id": 1,
+                        "truck_code": "truck-1",
+                        "capacity": 10,
+                        "cost": 1000,
+                        "status": "available",
+                        "location": "-6.86666, 107.60000",
+                        "DriverId": 2,
+                        "createdAt": "2020-10-19T12:22:36.100Z",
+                        "updatedAt": "2020-10-19T12:22:36.100Z",
+                        "Driver": {
+                            "id": 2,
+                            "name": "Rijal",
+                            "phone": "6281234567891",
+                            "status": "available",
+                            "email": "rijal@mail.com",
+                            "password": "123456",
+                            "role": "driver",
+                            "createdAt": "2020-10-19T12:22:36.080Z",
+                            "updatedAt": "2020-10-19T12:22:36.080Z"
+                        }
+                    },
+                    "route": [
+                        {
+                            "address": "Jl. Simpangsari No.51, Sukamiskin, Kec. Arcamanik, Kota Bandung, Jawa Barat 40293, Indonesia",
+                            "location": "-6.9061884, 107.6685101",
+                            "name": "Simpang Sari",
+                            "volume": 2
+                        },
+                        {
+                            "address": "Jl. Terjun Tandom No.62, Cisaranten Endah, Kec. Arcamanik, Kota Bandung, Jawa Barat 40293, Indonesia",
+                            "location": "-6.9253771, 107.6747138",
+                            "name": "Komplek Arcamanik",
+                            "volume": 2
+                        },
+                        {
+                            "address": "Jl. Soekarno-Hatta No.819, Babakan Penghulu, Cinambo, Kota Bandung, Jawa Barat 40293, Indonesia",
+                            "location": "-6.9365806, 107.6961952",
+                            "name": "Pasar Gede Bage",
+                            "volume": 2
+                        }
+                    ],
+                    "totalVolume": 6,
+                    "destination": "|-6.9061884, 107.6685101|-6.9253771, 107.6747138|-6.9365806, 107.6961952",
+                    "totalDistance": 45580,
+                    "totalCost": 45580000
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

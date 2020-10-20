@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {FETCH_TRUCKS, SET_TRUCKS, DELETE_TRUCK, UPDATE_TRUCK} from '../store/actions/TrucksActions'
-import {FETCH_DRIVERS} from '../store/actions/DriversAction'
+import {FETCH_DRIVERS, UPDATE_DRIVERS} from '../store/actions/DriversAction'
 import ModalEditTruck from './ModalEditTruck'
 import Loading from './Loading'
 
@@ -26,7 +26,7 @@ export default function TableTruckDetail() {
                 <th scope="col">Driver</th>
                 <th scope="col">Capacity</th>
                 <th scope="col">Status</th>
-                <th scope="col">Location</th>
+                <th scope="col">Coordinate</th>
                 <th scope="col">Cost</th>
                 <th scope="col">Action</th>
             </tr>
@@ -43,6 +43,7 @@ export default function TableTruckDetail() {
                     function handleUpdateDriver(event) {
                         truck.DriverId = event.target.value
                       dispatch(UPDATE_TRUCK(truck, truck.id))
+                      dispatch(UPDATE_DRIVERS(truck.DriverId))
                     }
                     return(
                         <tr key={i}>
@@ -56,7 +57,7 @@ export default function TableTruckDetail() {
                                             <option value=''>Set Driver...</option>
                                             {drivers.map((driver) => {
                                                     return(
-                                                        <option value={driver.id}>{driver.name}</option>
+                                                        <option  value={driver.id}>{driver.name}</option>
                                                     )
                                             })}
                                         </select>
@@ -64,10 +65,13 @@ export default function TableTruckDetail() {
                                 </form>
                             </div>
                         </td>
-                            <td>{truck.capacity}</td>
+                            <td>{truck.capacity} m³</td>
                             <td>{truck.status}</td>
-                            <td>{truck.location[0]}, {truck.location[1]}</td>
-                            <td>{truck.cost}</td>
+                            <td>
+                                <span>lat:  {truck.location[0]}</span><br/>
+                                <span>long:  {truck.location[1]}</span>
+                                </td>
+                            <td>Rp {truck.cost} / meter</td>
                             <td>
                                 <ModalEditTruck chosenTruck={truck} />
                                 <button className="btn btn-secondary" onClick={handleDeleteTruck}>Delete</button>
