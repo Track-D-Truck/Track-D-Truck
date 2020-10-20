@@ -9,6 +9,7 @@ import DetailRoute from './pages/DetailRoute'
 import store from './store/'
 import GarbageDump from './pages-admin/GarbageDump'
 import AddGarbageDump from './pages-admin/AddGarbageDump'
+// import MapPage from './pages/MapPage'
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
               <Route path="/garbagedump/add" exact>
                 <AddGarbageDump />
               </Route>
+              {/* <Route path="/maps" exact>
+                <MapPage />
+              </Route> */}
             </Switch>
         </div>
       </Router>

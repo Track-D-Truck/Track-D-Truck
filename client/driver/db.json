@@ -1,0 +1,254 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Ari",
+            "email": "ari@mail.com",
+            "password": "123456",
+            "role": "admin"
+        },
+        {
+            "id": 2,
+            "name": "Rijal",
+            "email": "rijal@mail.com",
+            "password": "123456",
+            "role": "driver"
+        },
+        {
+            "id": 3,
+            "name": "Ginanjar",
+            "email": "ginanjar@mail.com",
+            "password": "123456",
+            "role": "driver"
+        },
+        {
+            "id": 4,
+            "name": "Alek",
+            "email": "alek@mail.com",
+            "password": "123456",
+            "role": "driver"
+        }
+    ],
+    "trucks": [
+        {
+            "id": 1,
+            "code": "truck-1",
+            "driver": "Rijal",
+            "cost": 1000,
+            "capacity": 7,
+            "available": [
+                "Monday",
+                "Wednesday"
+            ]
+        },
+        {
+            "id": 2,
+            "code": "truck-2",
+            "driver": "Ginanjar",
+            "cost": 1000,
+            "capacity": 7,
+            "available": [
+                "Monday",
+                "Wednesday"
+            ]
+        },
+        {
+            "id": 3,
+            "code": "truck-3",
+            "driver": "Alek",
+            "cost": 1000,
+            "capacity": 7,
+            "available": [
+                "Monday",
+                "Wednesday"
+            ]
+        }
+    ],
+    "tps": [
+        {
+            "id": 1,
+            "name": "Terminal Dago",
+            "lat": -6.867195,
+            "long": 107.621516,
+            "status": "active",
+            "volume": 3,
+            "schedule": [
+                "Monday",
+                "Wednesday"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Pasteur",
+            "lat": -6.896963,
+            "long": 107.59194,
+            "status": "active",
+            "volume": 3,
+            "schedule": [
+                "Monday",
+                "Wednesday"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Suci",
+            "lat": -6.900163,
+            "long": 107.64465,
+            "status": "active",
+            "volume": 3,
+            "schedule": [
+                "Monday",
+                "Wednesday"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Dipatiukur",
+            "lat": -6.895688,
+            "long": 107.616884,
+            "status": "active",
+            "volume": 3,
+            "schedule": [
+                "Monday",
+                "Wednesday"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Cieumbeluit",
+            "lat": -6.875576,
+            "long": 107.604352,
+            "status": "active",
+            "volume": 3,
+            "schedule": [
+                "Monday",
+                "Wednesday"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "GOR Saparua",
+            "lat": -6.908792,
+            "long": 107.615854,
+            "status": "active",
+            "volume": 3,
+            "schedule": [
+                "Monday",
+                "Wednesday"
+            ]
+        }
+    ],
+    "results": [
+        {
+            "id": 1,
+            "code": "truck-1",
+            "driver": "Rijal",
+            "cost": 1000,
+            "capacity": 7,
+            "available": [
+                "Monday",
+                "Wednesday"
+            ],
+            "route": [
+                {
+                    "id": 1,
+                    "name": "Terminal Dago",
+                    "lat": -6.867195,
+                    "long": 107.621516,
+                    "status": "active",
+                    "volume": 3,
+                    "schedule": [
+                        "Monday",
+                        "Wednesday"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Pasteur",
+                    "lat": -6.896963,
+                    "long": 107.59194,
+                    "status": "active",
+                    "volume": 3,
+                    "schedule": [
+                        "Monday",
+                        "Wednesday"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "code": "truck-2",
+            "driver": "Ginanjar",
+            "cost": 1000,
+            "capacity": 7,
+            "available": [
+                "Monday",
+                "Wednesday"
+            ],
+            "route": [
+                {
+                    "id": 3,
+                    "name": "Suci",
+                    "lat": -6.900163,
+                    "long": 107.64465,
+                    "status": "active",
+                    "volume": 3,
+                    "schedule": [
+                        "Monday",
+                        "Wednesday"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Dipatiukur",
+                    "lat": -6.895688,
+                    "long": 107.616884,
+                    "status": "active",
+                    "volume": 3,
+                    "schedule": [
+                        "Monday",
+                        "Wednesday"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "code": "truck-3",
+            "driver": "Alek",
+            "cost": 1000,
+            "capacity": 7,
+            "available": [
+                "Monday",
+                "Wednesday"
+            ],
+            "route": [
+                {
+                    "id": 5,
+                    "name": "Cieumbeluit",
+                    "lat": -6.875576,
+                    "long": 107.604352,
+                    "status": "active",
+                    "volume": 3,
+                    "schedule": [
+                        "Monday",
+                        "Wednesday"
+                    ]
+                },
+                {
+                    "id": 6,
+                    "name": "GOR Saparua",
+                    "lat": -6.908792,
+                    "long": 107.615854,
+                    "status": "active",
+                    "volume": 3,
+                    "schedule": [
+                        "Monday",
+                        "Wednesday"
+                    ]
+                }
+            ]
+        }
+    ]
+}
