@@ -14,7 +14,7 @@ export default function TrucksPage() {
             <div className="container">
                 
                 <h1 className="text-center">Driver List</h1>
-                <ModalCreateDriver/>
+                {/* <ModalCreateDriver/> */}
                 {/* <button onClick={handleCreateTruck} className="btn btn-secondary my-3">Add New</button> */}
                 <TableDriverDetail/>
             </div>

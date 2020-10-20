@@ -8,7 +8,6 @@ class TruckController {
             res.status(200).json(result)
         })
         .catch(err => {
-            // console.log(err)
             next(err)
         })
     }
@@ -17,7 +16,7 @@ class TruckController {
         const addTruck = {
             truck_code: req.body.truck_code, 
             capacity: req.body.capacity,
-            location: req.body.location,
+            location: "-6.891205299999999, 107.6266582",
             cost: +req.body.cost,
             status: req.body.status
         }
@@ -55,13 +54,14 @@ class TruckController {
     }
 
     static edit(req, res, next) {
+        console.log(req.body,'<<<<<<<<<<<<<<<<<<<<<<<<');
         const editTruck = {
             truck_code: req.body.truck_code, 
             capacity: req.body.capacity,
             location: req.body.location,
             cost: +req.body.cost,
             status: req.body.status,
-            DriverId: req.body.DriverId        
+            DriverId: +req.body.DriverId        
         }
 
         let TruckId = req.params.id

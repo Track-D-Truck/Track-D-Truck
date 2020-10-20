@@ -5,7 +5,6 @@ OptimationRoutes.get('/', (req, res, next) => {
     return res.status(200).json({message: "Hellow"})
 })
 
-// OptimationRoutes.get('/logic', OptimationController.runAll)
 OptimationRoutes.get('/test', OptimationController.test)
 
 

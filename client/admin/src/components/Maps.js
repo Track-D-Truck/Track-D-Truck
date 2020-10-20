@@ -1,8 +1,23 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import { withScriptjs, DirectionsRenderer, withGoogleMap, GoogleMap } from "react-google-maps"
-import { compose, withProps, lifecycle } from "recompose"
+import { compose, withProps, lifecycle, withPropsOnChange, withState } from "recompose"
+
+const mapStateToProps = state => ({
+	chosenResult: state.ResultReducer.chosenResult,
+});
+
 
 export const Maps = compose(
+	connect(
+    mapStateToProps,
+    {}
+	),
+	withState(
+		'directions',
+		'setDirections',
+		[]
+	),
 	withProps({
 	  googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc&v=3.exp&libraries=geometry,drawing,places",
 	  loadingElement: <div style={{ height: `100%` }} />,
@@ -11,43 +26,68 @@ export const Maps = compose(
 	}),
 	withScriptjs,
 	withGoogleMap,
-	lifecycle({
-	  componentDidMount() {
-		const DirectionsService = new window.google.maps.DirectionsService();
-  
-		DirectionsService.route({
-		  origin: new window.google.maps.LatLng(-6.568547, 106.855339),
-		  destination: new window.google.maps.LatLng(-6.583503,  106.817120),
-		  waypoints: [
-			{
-				location: new window.google.maps.LatLng( -6.243962, 106.873797)
-			},
-			{
-				location: new window.google.maps.LatLng(-6.265696, 106.767345)
-			},
-			{
-				location: new window.google.maps.LatLng( -6.424015, 106.732453)
-			}
-	   ],
-		//   destination: new window.google.maps.LatLng( -6.560559,  106.769020), 
+	withPropsOnChange(
+		['chosenResult'], (props) => {
+			let tpsLocations = []
+			props.routes.forEach(route => {
+				// console.log(route.location,'<<<<<<<<<<<<<<<,');
+				let [lat, lng] = route.location.split(',')
+				// console.log(lat,lng,'cekcekckecke');
+				tpsLocations.push(
+					{
+					location: new window.google.maps.LatLng(+lat,+lng)
+					}
+				)
+			})
+			
+			const DirectionsService = new window.google.maps.DirectionsService();
+		
+			DirectionsService.route({
+		  origin: new window.google.maps.LatLng(-6.86666, 107.60000),
+		  destination: new window.google.maps.LatLng(-7.0015804, 107.9028182),
+		  waypoints: tpsLocations,
 		  travelMode: window.google.maps.TravelMode.DRIVING,
 		}, (result, status) => {
+			console.log(result,'<<<<<<<<<<,');
 		  if (status === window.google.maps.DirectionsStatus.OK) {
-			  console.log(result,'<<<<<<<<<<<<<<<');
-			this.setState({
-			  directions: result,
-			});
+
+			props.setDirections(result);
 		  } else {
-			console.error(`error fetching directions ${result}`);
+				console.error(`error fetching directions ${result}`);
 		  }
 		});
+		}
+		
+	), 
+	lifecycle({
+	  componentDidMount() {
+			// console.log(this.props.chosenResult,'props di maps <<<<<<<<<<<<<<<<<<<<<<<<<<')
+
+			// let tpsLocations = []
+
+			// this.props.routes.forEach(route => {
+			// 	route.location = route.location.split(',')
+			// 	tpsLocations.push(
+			// 		{
+			// 		location: new window.google.maps.LatLng(+route.location[0], +route.location[1])
+			// 		}
+			// 	)
+			// });
+			// console.log(tpsLocations,'<<<<<<<<<<<<<')
+			
+		
 	  }
 	})
-  )(props =>
-	<GoogleMap
-	  defaultZoom={7}
-	  defaultCenter={new window.google.maps.LatLng( -6.260786, 106.781563)}
-	>
-	  {props.directions && <DirectionsRenderer directions={props.directions}/> }
-	</GoogleMap>
-  );
+	)(props =>
+
+		<div>
+			{/* {JSON.stringify(props.chosenResult)} */}
+			<GoogleMap
+				defaultZoom={7}
+				defaultCenter={new window.google.maps.LatLng( -6.260786, 106.781563)}
+			>
+				{props.directions && <DirectionsRenderer directions={props.directions}/> }
+			</GoogleMap>
+		</div>
+
+  )

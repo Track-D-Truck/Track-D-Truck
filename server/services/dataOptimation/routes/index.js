@@ -2,7 +2,6 @@ const router = require(`express`).Router()
 const TruckRoutes = require(`./truck`)
 const TPSRoutes = require(`./tps`)
 const OptimationRoutes = require('./optimation')
-//const {authentication, authorization} = require(`../middlewares/auth`)
 const DriverController = require(`../controllers/Users`)
 
 
@@ -12,8 +11,7 @@ router.get('/', (req, res)=>{
 
 router.post(`/register`, DriverController.register)
 router.post(`/login`, DriverController.login)
-//router.use(authentication)
-//router.use(authorization)
+router.get(`/drivers`, DriverController.read)
 router.use(`/trucks`, TruckRoutes)
 router.use(`/tps`, TPSRoutes)
 router.use(`/optimations`, OptimationRoutes)

@@ -6,6 +6,7 @@ import CardTrackingTruck from '../components/CardTrackingTruck'
 import CardTruckRoutes from '../components/CardTruckRoutes'
 import TableResult from '../components/TableResult'
 
+
 export default function Report() {
 
 	return (
@@ -14,15 +15,15 @@ export default function Report() {
 					<div className='container mt-2'>
 						<div className="row">
 
-							<div className="col-sm-4">
+							<div className="col-sm-10">
 								<CardTrackingTruck />
 							</div>
 
-							<div className="col-sm-6">
+							{/* <div className="col-sm-6">
 								<div className='card shadow'>
-									<Maps />
+									<Maps maps={routes}/>
 								</div>
-							</div>
+							</div> */}
 
 							<div className="col-sm-2">
 								<CardTruckRoutes/>

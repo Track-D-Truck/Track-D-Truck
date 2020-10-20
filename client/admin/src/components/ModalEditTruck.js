@@ -1,24 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Modal, Button} from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 
-export default function ModalEditTruck() {
-  const [show, setShow] = useState(false);
-	// const [name, setName] = useState('')
-	// const [capacity, setCapacity] = useState('')
-	// const [schedule, setSchedule] = useState('')
-	// const [type, setType] = useState('')
+import  {UPDATE_TRUCK} from '../store/actions/TrucksActions'
+
+export default function ModalEditTruck(props) {
+	const dispatch = useDispatch()
+	const [show, setShow] = useState(false)
+	const chosenTruck = props.chosenTruck
 	const [truck, setTruck] = useState({
-		name: '',
+		truck_code: '',
 		capacity: '',
-		schedule: '',
-		type: ''
+		cost: '',
+		status: '',
+		location: '',
+		Driver: ''
 	})
   const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-	
+	const drivers = useSelector(state => state.DriverReducer.drivers)
+
+	useEffect(()=> {
+		setTruck({
+		truck_code: chosenTruck.truck_code,
+		capacity: chosenTruck.capacity,
+		cost: chosenTruck.cost,
+		status: chosenTruck.status,
+		location: chosenTruck.location,
+		})
+	}, [setTruck])
+
+
+
 	function handleSubmitTruck(event) {
 		event.preventDefault()
-		console.log(truck)
+		// truck.location = truck.location.join()
+		dispatch(UPDATE_TRUCK(truck, chosenTruck.id))
 		setShow(false)
     }
     
@@ -40,67 +57,76 @@ export default function ModalEditTruck() {
           <Modal.Body>
 
 					<form>
-							<div className="form-group row">
-								<label for="inputEmail" className="col-sm-2 col-form-label">Name</label>
-								<div className="col-sm-10">
-									<input type="text" className="form-control" id="staticEmail" 
-										onChange={e => {
-											setTruck({
-													...truck,
-													name: e.target.value
-											})
-									}}
-										
-										/>
+						<div className="form-group row">
+									<label for="inputEmail" className="col-sm-2 col-form-label">Truck Code</label>
+									<div className="col-sm-10">
+										<input type="text" readonly className="form-control-plaintext" id="staticEmail" value={truck.truck_code}/>
+									</div>
 								</div>
-							</div>
-							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Type</label>
-								<div className="col-sm-10">
-									<input type="text" className="form-control" id="staticType" 
+
+								<div className="form-group row">
+									<label for="inputType" className="col-sm-2 col-form-label">Capacity</label>
+									<div className="col-sm-10 form-inline">
+										<input type="number" className="form-control mr-2" id="staticType" 
 											onChange={e => {
-												setTruck({
-														...truck,
-														type: e.target.value
-												})
-										}}
-									/>
-								</div>
-							</div>
-							<div className="form-group row">
-								<label for="inputCapacity" className="col-sm-2 col-form-label">Capacity</label>
-								<div className="col-sm-10">
-									<input type="number" className="form-control" id="staticCapacity"
-										onChange={e => {
 												setTruck({
 														...truck,
 														capacity: e.target.value
 												})
-											}} />
+										}}  
+										value={truck.capacity}  style={{width:'100px'}}
+										/><span style={{fontSize:"17px"}}>/m³</span>
+									</div>
 								</div>
-							</div>
-							<div className="form-group row">
-								<label for="inputSchedule" className="col-sm-2 col-form-label">Schedule</label>
-								<div className="col-sm-10">
-									<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {
-											setTruck({
-													...truck,
-													schedule: e.target.value
-											})
-										}} >
-											<option selected>Choose...</option>
-											<option value="Sunday">Sunday</option>
-											<option value="Monday">Monday</option>
-											<option value="Tuesday">Tuesday</option>
-											<option value="Wednesday">Wednesday</option>
-											<option value="Thursday">Thursday</option>
-											<option value="Friday">Friday</option>
-											<option value="Saturday">Saturday </option>
-										</select>
+								
+								<div className="form-group row">
+									<label for="inputEmail" className="col-sm-2 col-form-label">Cost</label>
+									<div className="col-sm-10 form-inline"><span style={{fontSize:"17px"}}>Rp</span>
+										<input type="text" className="form-control  mx-2" id="staticEmail" value={truck.status}
+											onChange={e => {
+												setTruck({
+														...truck,
+														status: e.target.value
+												})
+										}}
+											
+											/><span style={{fontSize:"17px"}}>/ meter</span>
+									</div>
 								</div>
-							</div>
-
+								
+								<div className="form-group row">
+									<label for="inputType" className="col-sm-2 col-form-label">Coordinate</label>
+									<div className="col-sm-10">
+										<input type="text" className="form-control" id="staticType" value={truck.location}
+												onChange={e => {
+													setTruck({
+															...truck,
+															location: e.target.value
+													})
+											}}
+										/>
+									</div>
+								</div>
 						</form>
+{/* 
+						<div className="form-group row">
+							<label for="inputSchedule" className="col-sm-2 col-form-label">Driver</label>
+							<div className="col-sm-10">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e => {
+										setTruck({
+												...truck,
+												Driver: e.target.value
+										})
+									}} >
+										<option selected>Choose...</option>
+										{ drivers.map((driver) => {
+											return(
+												<option value={driver.name}>{driver.id} - {driver.name}</option>
+											)
+										})}
+									</select>
+							</div>
+						</div> */}
 
           </Modal.Body>
           <Modal.Footer>
