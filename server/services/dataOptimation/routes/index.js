@@ -3,6 +3,7 @@ const TruckRoutes = require(`./truck`)
 const TPSRoutes = require(`./tps`)
 const {authentication, authorization} = require(`../middlewares/auth`)
 const OptimationRoutes = require('./optimation')
+const DriverRoutes = require('./driver')
 const DriverController = require(`../controllers/Users`)
 
 
@@ -15,7 +16,7 @@ router.post(`/login`, DriverController.login)
 router.use(authentication)
 router.use(authorization)
 router.use(`/optimations`, OptimationRoutes)
-router.get(`/drivers`, DriverController.read)
+router.use(`/drivers`, DriverRoutes)
 router.use(`/trucks`, TruckRoutes)
 router.use(`/tps`, TPSRoutes)
 
