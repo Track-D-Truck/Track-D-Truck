@@ -75,10 +75,9 @@ export default function TableTruckDetail() {
                         const filtered = trucks.filter( e => e.id !== truck.id)
                         dispatch(SET_TRUCKS(filtered))
                     }
-                    console.log(truck,'cek truck');
                     function handleUpdateDriver(event) {
                         if(event.target.value) {
-                            dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
+                            console.log(truck,'cek truck');
                             truck.DriverId = event.target.value
                             truck.location = truck.location.join()
                             dispatch(UPDATE_TRUCK(truck, truck.id))
@@ -87,8 +86,9 @@ export default function TableTruckDetail() {
                         else {
                             truck.DriverId = 0
                             truck.location = truck.location.join()
+                            console.log('masuk');
                             dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
-                            dispatch(UPDATE_TRUCK(truck, truck.id))
+                            // dispatch(UPDATE_TRUCK(truck, truck.id))
                         }
                     }
                       
@@ -107,7 +107,7 @@ export default function TableTruckDetail() {
                                     }
                                         <option value=''>Set Driver...</option>
                                             {drivers.filter(driver => driver.status == 'available').map((driver) => {
-                                                console.log(driver.status,'cekkkk');
+                                                // console.log(driver,'cekkkk');
                                                     return(
                                                         <option  value={driver.id}>{driver.name}</option>
                                                     )
