@@ -4,7 +4,7 @@ class TPStorageController {
 
     static read(req, res, next) {
         TPStorage.findAll({
-            order: [['createdAt', 'ASC']]
+            order: [['id', 'ASC']]
         })
         .then(result => {
             res.status(200).json(result)
