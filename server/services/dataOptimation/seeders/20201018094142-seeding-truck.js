@@ -17,7 +17,7 @@ module.exports = {
         {
           truck_code: "truck-1",
           cost: 1000,
-          capacity: 18,
+          capacity: 14,
           status: "available",
           location: "-6.86666, 107.60000",
           DriverId: 2,
@@ -27,7 +27,7 @@ module.exports = {
         {
           truck_code: "truck-2",
           cost: 1000,
-          capacity: 15,
+          capacity: 10,
           status: "unavailable",
           location: "-6.86666, 107.60000",
           DriverId: 4,
@@ -37,7 +37,7 @@ module.exports = {
         {
           truck_code: "truck-3",
           cost: 1000,
-          capacity: 15,
+          capacity: 12,
           status: "available",
           location: "-6.86666, 107.60000",
           DriverId: 3,
