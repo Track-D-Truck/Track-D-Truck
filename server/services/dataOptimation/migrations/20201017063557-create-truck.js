@@ -4,8 +4,8 @@ module.exports = {
     await queryInterface.createTable('Trucks', {
       id: {
         allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
+        autoIncrement: true,  
+        primaryKey: true, 
         type: Sequelize.INTEGER
       },
       truck_code: {
@@ -13,12 +13,12 @@ module.exports = {
         unique:true
       },
       capacity: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER 
       },
       cost: {
         type: Sequelize.INTEGER
       },
-      status: {
+      status: { 
         type: Sequelize.STRING
       },
       location: {
