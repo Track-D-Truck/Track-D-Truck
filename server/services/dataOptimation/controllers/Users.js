@@ -17,6 +17,7 @@ class DriverController {
     static read(req, res, next) {
         console.log('masuk bsss');
         Driver.findAll({
+            order: [['id', 'ASC']],
             where: {
                 role: "driver"
               }
