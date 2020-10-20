@@ -110,18 +110,13 @@ class DriverController {
 
     static edit(req, res, next) {
         const editDriver = {
-            name:req.body.name,
-            email:req.body.email,
-            password:req.body.password,
-            phone:req.body.phone,
-            role:req.body.role || 'Driver',
             status:req.body.status
-         }
-
-        let DriverId = req.params.id
+        }
+        
+        let DriverId = +req.params.id
+        // console.log(editDriver,DriverId,' <<<<<<<<<<<<<<<<<<<<<<<<<<<');
         Driver.update(editDriver, {where: {id: DriverId}, returning: true})
         .then(result => {
-            console.log(result);
             res.status(200).json(result )
         })
         .catch(err => {

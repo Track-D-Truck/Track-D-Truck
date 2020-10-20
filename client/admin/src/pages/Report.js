@@ -15,7 +15,7 @@ export default function Report() {
 					<div className='container mt-2'>
 						<div className="row">
 
-							<div className="col-sm-10">
+							<div className="col-sm-9">
 								<CardTrackingTruck />
 							</div>
 
@@ -25,7 +25,7 @@ export default function Report() {
 								</div>
 							</div> */}
 
-							<div className="col-sm-2">
+							<div className="col-sm-3">
 								<CardTruckRoutes/>
 							</div>
 
