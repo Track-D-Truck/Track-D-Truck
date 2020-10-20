@@ -9,13 +9,13 @@ export default function Navbar() {
 	}
 	
     return (
-        <nav className="navbar navbar-expand-lg navbar-light">
-					<Link className="navbar-brand" to="/">Track D'Truck</Link>
+        <nav className="navbar navbar-expand-lg navbar-light" >
+					<Link className="navbar-brand" to="/" style={{color:'white', fontSize:'1.4em', fontWeight: 'bold'}}>Track D'Truck</Link>
 					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse" id="navbarNav">
-							<ul className="navbar-nav">
+					<div className="collapse navbar-collapse" id="navbarNav" >
+							<ul className="navbar-nav" >
 								<li className="nav-item">
 										<Link className="nav-link" to="/trucks">Trucks</Link>
 								</li>
@@ -32,7 +32,7 @@ export default function Navbar() {
 										<Link className="nav-link" to="/report">Report</Link>
 								</li>
 							</ul>
-							<button className="ml-auto btn btn-secondary" onClick={logout}>
+							<button className="ml-auto btn btn-secondary noBorder" id="greenColor" onClick={logout}>
 								Logout
 							</button>
 					</div>

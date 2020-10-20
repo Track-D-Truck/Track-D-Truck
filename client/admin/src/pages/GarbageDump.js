@@ -5,7 +5,7 @@ import React from 'react'
 // import TableTruckDetail from '../components/TableTruckDetail'
 import Navbar from '../components/Navbar' 
 import TableDumpDetail from '../components/TableDumpDetail'
-import ModalCreateDump from '../components/ModalCreateDump'
+
 // export default function TrucksPage() {
 //     // const history = useHistory()
 
@@ -29,8 +29,7 @@ export default function GarbageDump() {
         <>
         <Navbar/>
         <div className="container">
-            <h1 className="text-center">Dumps List</h1>
-            <ModalCreateDump/>
+            
             <TableDumpDetail/>
          </div>      
         </>
