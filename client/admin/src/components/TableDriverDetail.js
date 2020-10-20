@@ -49,8 +49,8 @@ export default function TableDriverDetail() {
                         // console.log(driverTruck[0]);
                         driverTruck[0].DriverId = 0
                         driverTruck[0].location = driverTruck[0].location.join()
-                        // console.log(driverTruck[0],'kok gabisa');
-                        // console.log(changedStatus);
+                        console.log(driverTruck[0],'kok gabisa');
+                        console.log(changedStatus);
                         dispatch(UPDATE_TRUCK(driverTruck[0], driverTruck[0].id))
                         dispatch(UPDATE_DRIVERS({status: changedStatus}, driver.id))
                     }
