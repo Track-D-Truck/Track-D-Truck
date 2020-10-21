@@ -31,6 +31,7 @@ function IndexHeader() {
     result.BEST.bestCost = currencyFormat.split(',')
   }
 
+
   const style = {
     title: {
         fontFamily: 'Russo One',
@@ -49,10 +50,6 @@ function IndexHeader() {
         className="page-header"
         data-parallax={true}
       >
-   
-
-
-        {/* <div className="filter" /> */}
         <div className="container">
                 <h1 style={style.title} className="m-0">Track D'Truck</h1>
                 <img src={loginImage} alt='loginComponent' style={{margin:'auto', paddingLeft: '50px'}}></img>
