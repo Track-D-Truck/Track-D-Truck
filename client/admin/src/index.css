@@ -141,6 +141,13 @@ height: 400px;
   border-width: 2px;
 }
 
+#gifLogin {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  z-index: -1;
+}
+
 /* bootstrap */
 .noBorder {
   border: 0 !important;

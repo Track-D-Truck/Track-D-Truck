@@ -9,7 +9,7 @@ export default function FormLogin() {
         history.push(`/`);
     }
     return (
-        <form onSubmit={handleSubmitLogin} className="align-self-center">
+        <form onSubmit={handleSubmitLogin} className="align-self-center pt-5 mt-5 mx-auto" style={{width:"30%"}}>
             <div className="form-group">
                 
                 <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Email..."/>
