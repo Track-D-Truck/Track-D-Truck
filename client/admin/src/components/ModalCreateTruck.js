@@ -21,8 +21,8 @@ export default function ModalCreateTruck() {
 
 	const [truck, setTruck] = useState({
 		truck_code: '',
-		capacity: '',
-		cost: '',
+		capacity: 0,
+		cost: 0,
 		status: '',
 		location: ''
 	})
@@ -92,9 +92,9 @@ export default function ModalCreateTruck() {
 							</div>
 							
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-3 col-form-label">Capacity</label>
+								<label for="inputType" className="col-sm-3 col-form-label" >Capacity</label>
 								<div className="col-sm-9 form-inline">
-									<input type="number" className="form-control mr-3 noBorder" id="staticType" 
+									<input type="number" style={{width:'100px'}} value={truck.capacity} className="form-control mr-3 noBorder" id="staticType" 
 											onChange={e => {
 												setTruck({
 														...truck,
@@ -102,19 +102,37 @@ export default function ModalCreateTruck() {
 												})
 										}} 
 									/> <span style={{fontSize:"17px"}}>/m³</span>
+									<input className="ml-4" value={truck.capacity} type="range" id="vol" name="vol" min="0" max="1000"
+											onChange={e => {
+												setTruck({
+														...truck,
+														capacity: e.target.value
+												})
+											}}
+											></input>
 								</div>
 							</div>
 
 							<div className="form-group row">
 								<label for="inputCapacity" className="col-sm-2 col-form-label ">Cost</label>
-									<div className="col-sm-10 form-inline"><span style={{fontSize:"17px"}}>Rp</span>
-									<input type="number" className="form-control mx-3 noBorder" id="staticCapacity" style={{width:'100px'}}
+									<div className="col-sm-10 form-inline"><span style={{fontSize:"17px"}}>
+										Rp </span>
+									<input type="number" value={truck.cost} className="form-control mx-3 noBorder" id="staticCapacity" style={{width:'100px'}}
 										onChange={e => {
 												setTruck({
 														...truck,
 														cost: e.target.value
 												})
-											}}/> <span style={{fontSize:"17px"}}>/ meter</span>
+											}}/> 
+												<span style={{fontSize:"17px"}}>/ m  </span>
+											<input className="ml-4" value={truck.cost} type="range" id="vol" name="vol" min="0" max="100000"
+											onChange={e => {
+												setTruck({
+														...truck,
+														cost: e.target.value
+												})
+											}}
+											></input>
 								</div>
 							</div>
 							{/* <div className="form-group row">

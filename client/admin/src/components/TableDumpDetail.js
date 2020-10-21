@@ -15,7 +15,7 @@ export default function TableDumpDetail() {
   const loading = useSelector(state => state.DumpReducer.loadingStatus)
 
   useEffect(() => {
-    dispatch(FETCH_DUMPS())
+    if(dumps.length == 0) dispatch(FETCH_DUMPS())
   },[dispatch])
 
   if (loading) return <Loading/>

@@ -1,4 +1,4 @@
-import "./assets/css/paper-kit ke2.css";
+import "./assets/css/paper-kit.css"
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -43,6 +43,7 @@ function IndexHeader() {
     }
 }
 
+if (loading) return <Loading/>
 
   return (
     <>
@@ -82,12 +83,7 @@ function IndexHeader() {
             <br/>
             <br/>
             <br/>
-            {loading && 
-            <div className="d-flex justify-content-center" style={{border:'1px'}}> 
-              <lottie-player className="mx-auto px-auto" src="https://assets2.lottiefiles.com/datafiles/mNmtyo9inv5Ak3m/data.json" background="transparent"  speed="1"  
-              style={{width: "300px", height: "300px"}} loop  autoplay></lottie-player>
-            </div>
-            }
+         
             {result && !loading &&
             <Row className="text-center">
             <Col className="ml-auto mr-auto" md="12">
