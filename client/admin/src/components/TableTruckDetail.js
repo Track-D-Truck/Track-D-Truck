@@ -51,21 +51,26 @@ export default function TableTruckDetail() {
         <div className="p-5">
 	
         <div className="card tableHeadBackground mx-auto noBorder shadow-sm"> 
-            <div className="ml-3 text-white row">
+            <div className="text-white row">
             {/* <FontAwesomeIcon icon={['fas', 'Coffee']} /> */}
-                <h2 className="mb-0 mt-1">Trucks List</h2>
-                <ModalCreateTruck/>
+            <span className="mx-auto">
+                <h2 className="mb-0 mt-1 font-weight-bold">Trucks List</h2>
+            </span>
+                <span>
+                    <ModalCreateTruck />
+
+                </span>
                 {/* <p class="font-weight-lighter font-italic">Table Driver</p> */}
             </div>
         </div>
         <div className="card tableBackground noBorder shadow" >
             <table className="table text-center mt-4 ">
-            <thead className='table-borderless' style={{color:'#65AE07', fontWeight:'bold', fontSize:'1.2em'}}>
+            <thead className='table-borderless abuColor' style={{fontWeight:'bold', fontSize:'1.2em'}}>
             <tr>
                 <th scope="col">Truck Code</th>
                 <th scope="col">Driver</th>
                 <th scope="col">Capacity</th>
-                <th scope="col">Coordinate</th>
+                {/* <th scope="col">Coordinate</th> */}
                 <th scope="col">Cost</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
@@ -105,7 +110,7 @@ export default function TableTruckDetail() {
                       
                     return(
                         <tr key={i}>
-                            <th scope="row">{truck.truck_code}</th>
+                            <th scope="row abuColor">{truck.truck_code}</th>
                             <td>  
                             <div className="form-group row my-0  noBorder">
                             <form className="mx-auto noBorder" >
@@ -129,11 +134,11 @@ export default function TableTruckDetail() {
                             </div>
                         </td>
                             <td>{truck.capacity} m³</td>
-                            <td>
+                            {/* <td>
                                 <span>lat:  {truck.location[0]}</span><br/>
                                 <span>long:  {truck.location[1]}</span>
-                                </td>
-                            <td>Rp {truck.cost} / meter</td>
+                                </td> */}
+                            <td>Rp {truck.cost} / m</td>
                             <td>
                                 <div className="form-group row my-0  noBorder">
                                 <form className="mx-auto noBorder" >
@@ -151,7 +156,7 @@ export default function TableTruckDetail() {
                             <td>
                                 <ModalEditTruck chosenTruck={truck} />
                                 <button className="btn noBorder" onClick={handleDeleteTruck}>
-                                    <FontAwesomeIcon icon={faTrash} color="#65AE07" className="shadow" size="lg"/>
+                                    <FontAwesomeIcon icon={faTrash} color="#212529" className="shadow iconHover" size="lg"/>
                                     </button>
                             </td>
                         </tr>

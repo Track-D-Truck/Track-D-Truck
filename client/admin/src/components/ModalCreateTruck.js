@@ -43,7 +43,7 @@ export default function ModalCreateTruck() {
     return (
         <>
         	<Button className="btn ml-auto mr-4 mt-1" 
-					style={{backgroundColor:"rgb(255 255 255 / 0%)", fontWeight:"bold", borderColor:"white"}}
+					style={{backgroundColor:"rgb(255 255 255 / 0%)", fontWeight:"bold", borderColor:"white" ,borderWidth:"2px"}}
 					variant="primary" onClick={handleShow}>
          <FontAwesomeIcon icon={faPlus} color="white"/>
         </Button>
@@ -54,12 +54,15 @@ export default function ModalCreateTruck() {
           backdrop="static"
           keyboard={false}
         >
-					<div className="card modalHeadBackground noBorder shadow"> 
-						<div className="ml-3 text-white row my-auto">
-						<Modal.Title>Create Truck</Modal.Title>
+					<div className="card modalHeadBackground noBorder shadow mx-auto"> 
+						<div className=" text-white row my-auto" >
+						<span className="mx-auto">
+						<Modal.Title className="font-weight-bold  ml-5">Create Truck</Modal.Title>
+						</span>
+                <span>
 						<Modal.Header className="noBorder ml-auto mr-4 mt-1 p-0" closeButton>
-							
 						</Modal.Header>
+						</span>
                 {/* <h2 className="mb-0 mt-1">Trucks List</h2>
                 <ModalCreateTruck/> */}
 						</div>
@@ -74,8 +77,8 @@ export default function ModalCreateTruck() {
 									<input type="text" readonly className="form-control-plaintext" id="staticEmail" value={nextTrucks}/>
 								</div>
 							</div> */}
-							<div className="form-group row">
-								<label for="inputType" className="col-sm-3 col-form-label">Truck Code</label>
+							<div className="form-group row" >
+								<label for="inputType" className="col-sm-3 col-form-label" style={{width:'200px'}}>Truck Code</label>
 								<div className="col-sm-9 pr-5">
 									<input type="text" className="form-control noBorder" id="staticType" 
 											onChange={e => {
@@ -139,7 +142,7 @@ export default function ModalCreateTruck() {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button className="noBorder" style={{backgroundColor: "#65AE07"}} onClick= {handleSubmitTruck}>Submit</Button>
+            <Button className="noBorder" id="greenColor" onClick= {handleSubmitTruck}>Submit</Button>
           </Modal.Footer>
 					</div>
 

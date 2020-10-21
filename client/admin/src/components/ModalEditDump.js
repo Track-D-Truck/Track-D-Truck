@@ -44,7 +44,7 @@ export default function ModalEditDump(props) {
         <>
         <Button className="btn noBorder" variant="primary" onClick={handleShow}
 						style={{backgroundColor:"rgb(255 255 255 / 0%)"}}>
-        	<FontAwesomeIcon icon={faEdit} color="#65AE07" size="lg"/>
+        	<FontAwesomeIcon icon={faEdit} color="#212529" size="lg"/>
         </Button>
   
         <Modal
