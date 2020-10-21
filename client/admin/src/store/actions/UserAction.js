@@ -22,7 +22,7 @@ export function SET_USER(data) {
 }
 
 export function LOGIN_USER(data) {
-  
+
   return (dispatch, getState) => {
     dispatch(SET_LOADING(true))
     fetch(`http://localhost:3000/login`, {
@@ -37,10 +37,14 @@ export function LOGIN_USER(data) {
       })
       .then((data) => {
         // {access_token, name, id, phone, email}
-        localStorage.setItem(access_token)
-        dispatch(SET_TRUCKS(data))
+        localStorage.setItem('access_token', data.access_token)
+        data = {name : data.name , id: data.id, phone: data.id, email: data.email}
+        dispatch(SET_USER(data))
       })
       .catch(err => console.log(err))
-      .finally(() => dispatch(SET_LOADING(false)))
+      .finally(() => {
+        dispatch(SET_LOADING(false))
+
+      })
     }
 }

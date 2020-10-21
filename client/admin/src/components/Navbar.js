@@ -5,6 +5,7 @@ export default function Navbar() {
 	const history = useHistory()
 	
 	function logout() {
+		localStorage.clear()
 		history.push('/login')
 	}
 	

@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from 'react-redux'
 
 import {FETCH_TRUCKS, SET_TRUCK} from '../store/actions/TrucksActions'
 import {FETCH_RESULT, SET_CHOSEN_RESULT} from '../store/actions/ResultAction'
-import Loading from './Loading'
 import { Maps } from '../components/Maps'
 import {MyMapComponent} from '../components/MapsDefault'
 import truck1 from '../assets/shipping-truck11.png'
@@ -16,7 +15,7 @@ export default function CardTrackingTruck(props) {
   const dispatch = useDispatch()
   // const trucks = useSelector(state => state.TruckReducer.trucks)
   const result = useSelector(state => state.ResultReducer.result)
-  const loading = useSelector(state => state.TruckReducer.loadingStatus)
+
   const chosenResult = useSelector(state => state.ResultReducer.chosenResult)
   let truckActive = null
   let looping = -1
@@ -24,11 +23,10 @@ export default function CardTrackingTruck(props) {
   // useEffect(() => {
   //   dispatch(FETCH_RESULT())
   // }, [])
+  console.log(result);
   useEffect(() => {
-    dispatch(FETCH_RESULT())
+    if(!result) dispatch(FETCH_RESULT())
   }, [dispatch])
-  
-  if (loading) return <Loading/>
 
   if(result) truckActive = result.BEST.bestSchema
 
@@ -45,7 +43,7 @@ export default function CardTrackingTruck(props) {
 								
       <div className="card headCardReport resultBorderRadius mx-auto noBorder "> 
             <div className="ml-3 text-white row mx-auto">
-                <h2 className="mb-0 mt-1">Trucks List</h2>
+                <h3 className="mb-0 mt-2 font-weight-bold">Trucks List</h3>
 
             </div>
         </div>
@@ -84,14 +82,14 @@ export default function CardTrackingTruck(props) {
 
 
         <div className="col-sm-8">
-          <div className='card shadow mt-3'>
+          <div className='card shadow mt-2'>
           
            {routes ? < Maps routes={routes}/> : 
                 <MyMapComponent
                 isMarkerShown
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc&v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `380px` }} />}
+                containerElement={<div style={{ height: `370px` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
               />
            }

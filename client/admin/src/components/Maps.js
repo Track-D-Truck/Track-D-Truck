@@ -21,7 +21,7 @@ export const Maps = compose(
 	withProps({
 	  googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc&v=3.exp&libraries=geometry,drawing,places",
 	  loadingElement: <div style={{ height: `100%` }} />,
-	  containerElement: <div style={{ height: `380px` }} />,
+	  containerElement: <div style={{ height: `370px` }} />,
 	  mapElement: <div style={{ height: `100%` }} />,
 	}),
 	withScriptjs,
@@ -30,9 +30,7 @@ export const Maps = compose(
 		['chosenResult'], (props) => {
 			let tpsLocations = []
 			props.routes.forEach(route => {
-				// console.log(route.location,'<<<<<<<<<<<<<<<,');
 				let [lat, lng] = route.location.split(',')
-				// console.log(lat,lng,'cekcekckecke');
 				tpsLocations.push(
 					{
 					location: new window.google.maps.LatLng(+lat,+lng)

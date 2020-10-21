@@ -3,7 +3,7 @@ import { Provider, useSelector } from 'react-redux'
 
 import {
   BrowserRouter as Router,
-  // Switch,
+  Redirect,
   Route,
 } from "react-router-dom";
 
@@ -20,9 +20,12 @@ import CheckOptimation from './components/CheckOptimation'
 
 function App() {
   const status = useSelector(state => state.ResultReducer.status)
+  const access_token = localStorage.access_token
+
   return (
 
     <Router>
+      {!access_token && <Redirect to="/login"/>}
     <Route path="/login" component={Login}></Route>
     {/* {!status && <CheckOptimation/>} */}
         <Route exact path="/" component={Landing}></Route>

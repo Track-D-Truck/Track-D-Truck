@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import Chart from '../components/Cart'
 import TableTruckRecap from '../components/TableTruckRecap'
 import Navbar from '../components/Navbar'    
-import {PlacesWithStandaloneSearchBox} from  '../components/MapsFunctional'
+
 export default function Dashboard() {
     const history = useHistory()
     
@@ -15,7 +15,7 @@ export default function Dashboard() {
         <>  
         <Navbar/>
         <div className="d-flex flex-row" style={{backgroundColor: '#e2f1de', height:"90vh"}}>
-            {/* <PlacesWithStandaloneSearchBox/> */}
+            
             <div className="mx-auto my-auto" >
                 <Chart/>
             </div>

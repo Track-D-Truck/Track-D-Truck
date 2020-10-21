@@ -15,9 +15,16 @@ export default function TableTruckDetail() {
     const dispatch = useDispatch()
     // const [chat, setChat] = useState('')
     const [coordinates, setCoordinates] = useState('')
+    const loading = useSelector(state => state.TruckReducer.loadingStatus)
+    const drivers = useSelector(state => state.DriverReducer.drivers)
+    const trucks = useSelector(state => state.TruckReducer.trucks)
+
     useEffect(() => {
-        dispatch(FETCH_TRUCKS())
-        dispatch(FETCH_DRIVERS())
+
+        if(trucks.length == 0  || drivers.length == 0) {
+            dispatch(FETCH_TRUCKS())
+            dispatch(FETCH_DRIVERS())
+        }
     },[])
 
     useEffect(()=> {
@@ -28,11 +35,9 @@ export default function TableTruckDetail() {
     },[coordinates])
 
     
-    const loading = useSelector(state => state.TruckReducer.loadingStatus)
-    const drivers = useSelector(state => state.DriverReducer.drivers)
-    const trucks = useSelector(state => state.TruckReducer.trucks)
-    console.log(drivers)
-    console.log(trucks);
+
+    // console.log(drivers,'cek driver dulu')
+    // console.log(trucks,'ceck truck dulu');
     if (loading) return <Loading/>
 
     // const coordinate = null 
@@ -80,31 +85,38 @@ export default function TableTruckDetail() {
 
                 {trucks.map((truck,i) => {
                     function handleDeleteTruck() {
-                        dispatch(DELETE_TRUCK(truck.id))
+                        dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
                         const filtered = trucks.filter( e => e.id !== truck.id)
+                        dispatch(DELETE_TRUCK(truck.id))
                         dispatch(SET_TRUCKS(filtered))
                     }
                     function handleUpdateDriver(event) {
                         if(event.target.value) {
-                            console.log(truck,'cek truck');
                             truck.DriverId = event.target.value
                             truck.location = truck.location.join()
+                            // console.log(truck,'cek ini dulu');
                             dispatch(UPDATE_TRUCK(truck, truck.id))
                             dispatch(UPDATE_DRIVERS( {status: 'unavailable'}, truck.DriverId))
                         }
                         else {
                             dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
                             truck.DriverId = null
+                            truck.Driver = null
                             truck.location = truck.location.join()
                             dispatch(UPDATE_TRUCK(truck, truck.id))
                         }
                     }
                     function handleUpdateStatus(event) {
+                        const driverId = truck.DriverId
+                        truck.status = event.target.value
+                        truck.DriverId= null 
+                        truck.Driver= null
+                        truck.location = truck.location.join()
                         if(event.target.value == 'available') {
-                            dispatch(UPDATE_TRUCK({status: event.target.value, DriverId: null}, truck.id))
-                            dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
+                            dispatch(UPDATE_TRUCK(truck, truck.id))
                         } else if (event.target.value == 'unavailable') {
-                            dispatch(UPDATE_TRUCK({status: event.target.value}, truck.id))
+                            dispatch(UPDATE_DRIVERS( {status: 'available'}, driverId))
+                            dispatch(UPDATE_TRUCK(truck, truck.id))
                         }
                     }
                       
@@ -122,12 +134,15 @@ export default function TableTruckDetail() {
                                         : null    
                                     }
                                         <option value=''>Set Driver...</option>
-                                            {drivers.filter(driver => driver.status == 'available').map((driver) => {
+                                            {truck.status =='available' ? drivers.filter(driver => driver.status == 'available').map((driver) => {
                                                 // console.log(driver,'cekkkk');
                                                     return(
                                                         <option  value={driver.id}>{driver.name}</option>
                                                     )
-                                            })}
+                                            })
+                                        :
+                                        null
+                                        }
                                         </select>
                                     </div>
                                 </form>
@@ -145,7 +160,7 @@ export default function TableTruckDetail() {
                                 <div className="col-sm-10 noBorder">
                                     <select className="custom-select mr-sm-2 noBorder" id="inlineFormCustomSelect" 
                                         value={truck.status} onChange={handleUpdateStatus} style={{width:"150px"}}> 
-                                                <option >Choose...</option>
+                                                <option disabled>Choose...</option>
 												<option value="available">Available</option>
 												<option value="unavailable">Unavailable</option>
                                         </select>
