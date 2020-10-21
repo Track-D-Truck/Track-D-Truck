@@ -31,6 +31,8 @@ export default function TableTruckDetail() {
     const loading = useSelector(state => state.TruckReducer.loadingStatus)
     const drivers = useSelector(state => state.DriverReducer.drivers)
     const trucks = useSelector(state => state.TruckReducer.trucks)
+    console.log(drivers)
+    console.log(trucks);
     if (loading) return <Loading/>
 
     // const coordinate = null 
@@ -58,7 +60,7 @@ export default function TableTruckDetail() {
         </div>
         <div className="card tableBackground noBorder shadow" >
             <table className="table text-center mt-4 ">
-            <thead className='table-borderless' style={{color:'#65AE07'}}>
+            <thead className='table-borderless' style={{color:'#65AE07', fontWeight:'bold', fontSize:'1.2em'}}>
             <tr>
                 <th scope="col">Truck Code</th>
                 <th scope="col">Driver</th>
@@ -86,11 +88,10 @@ export default function TableTruckDetail() {
                             dispatch(UPDATE_DRIVERS( {status: 'unavailable'}, truck.DriverId))
                         }
                         else {
-                            truck.DriverId = 0
-                            truck.location = truck.location.join()
-                            console.log('masuk');
                             dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
-                            // dispatch(UPDATE_TRUCK(truck, truck.id))
+                            truck.DriverId = null
+                            truck.location = truck.location.join()
+                            dispatch(UPDATE_TRUCK(truck, truck.id))
                         }
                     }
                     function handleUpdateStatus(event) {

@@ -2,7 +2,8 @@ const initState = {
   loadingStatus: false,
   errorStatus: false,
   result: null,
-  chosenResult: null
+  chosenResult: null,
+  status: null
 }
 
 function ResultReducer(state = initState, action) {
@@ -24,10 +25,15 @@ function ResultReducer(state = initState, action) {
         result: action.payload
       }
     case "SET_CHOSEN_RESULT":
-      console.log('masuk reducer');
       return {
         ...state,
         chosenResult: action.payload
+      }
+      
+    case "SET_STATUS":
+      return {
+        ...state,
+        status: action.payload
       }
     default:
       return state

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Quicksand','Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Russo One',
-    sans-serif;
+    sans-serif,  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./assets/wave.svg');
@@ -105,6 +106,13 @@ height: 400px;
   background-color: #A8DDA8 !important;
 }
 
+.buttonGenerate {
+  background: rgb(9,144,71);
+background: linear-gradient(27deg, rgba(9,144,71,1) 0%, rgba(19,217,110,1) 49%, rgba(0,252,148,1) 72%, rgba(255,255,255,1) 100%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
 
 /* bootstrap */
 .noBorder {

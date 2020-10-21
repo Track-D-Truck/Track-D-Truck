@@ -36,7 +36,7 @@ export default function TableDriverDetail() {
 				</div>
 				<div className="card tableBackground noBorder shadow" >
 				<table className="table text-center mt-4 ">
-							<thead className='table-borderless' style={{color:'#65AE07'}}>
+							<thead className='table-borderless' style={{color:'#65AE07', fontSize:'1.1em'}} >
 							<tr> 
 									<th scope="col">ID</th>
 									<th scope="col">Name</th>
@@ -46,7 +46,7 @@ export default function TableDriverDetail() {
 									<th scope="col">Action</th>
 							</tr>
 							</thead>
-							<tbody >
+							<tbody style={{fontSize:'0.9em'}}>
 									{drivers.map((driver,i) => {
 											console.log(driver, "<<ini driver")
 											const  driverTruck = trucks.filter(truck => truck.DriverId == driver.id)
