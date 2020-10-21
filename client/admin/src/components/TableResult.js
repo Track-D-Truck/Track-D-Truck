@@ -24,7 +24,7 @@ export default function TableResult() {
             <tr>
                 <th scope="col">Truck Code</th>
                 <th scope="col">Driver</th>
-                <th scope="col">Vol Waste / Vol Truck</th>
+                <th scope="col">Waste Vol / Truck Capacity</th>
                 <th scope="col">Cost/Distance</th>
                 <th scope="col">Total Distance</th>
                 <th scope="col">Total Cost</th>
