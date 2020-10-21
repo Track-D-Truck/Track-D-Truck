@@ -3,7 +3,9 @@ const {Truck, Driver} = require(`../models`)
 class TruckController {
 
     static read(req, res, next) {
-        Truck.findAll({include: [Driver]})
+        Truck.findAll({
+            include: [Driver],
+            order: [['id', 'ASC']]})
         .then(result => {
             res.status(200).json(result)
         })
@@ -54,7 +56,7 @@ class TruckController {
     }
 
     static edit(req, res, next) {
-        // console.log(req.body,'<<<<<<<<<<<<<<<<<<<<<<<<');
+        console.log(req.body,'<<<<<<<<<<<<<ini di controller');
         const editTruck = {
             truck_code: req.body.truck_code, 
             capacity: req.body.capacity,

@@ -7,7 +7,8 @@ import {
     TouchableOpacity,
     TextInput,
     Alert,
-    Dimensions
+    Dimensions,
+    SafeAreaView
   } from 'react-native'
 
 const { width, height } = Dimensions.get('window');
@@ -27,9 +28,10 @@ const LoginScreen = ({ navigation }) => {
 
     const login = () => {
         dispatch(loginAccount(userData))
-        setTimeout(() => {
-            navigation.navigate('Home')
-        }, 2000);        
+        // setTimeout(() => {
+        //     navigation.replace('Home')
+        // }, 2000);   
+        navigation.replace('Loading')     
         setUserData({
             email: '',
             password: ''
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         width: 100,
-        backgroundColor: '#28ABB9',
+        backgroundColor: '#27ae60',
         borderRadius: 5,
         shadowColor: '#000',
         shadowRadius: 10,

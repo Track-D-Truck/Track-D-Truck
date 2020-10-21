@@ -21,32 +21,14 @@ const io = require("socket.io").listen(server)
 
 io.on("connection", socket => {
     console.log("a use connected");
-    socket.on("CURRENT_COORDINATE", chat => {
-        console.log(chat);
-        io.emit("CURRENT_COORDINATE", chat)
+    socket.on("SET_COORDINATE", payload => {
+        console.log(payload, "<<socket di server");
+        io.emit("SET_COORDINATE", payload)
     })
 })
 
 server.listen(port, () => {
     console.log(`We are open now at ${port} SEMANGAT TZUY INI SERVER CRUD`)
  })
-
-// module.exports = app
-
-//socket io
-const server = require("http").createServer(app)
-const io = require("socket.io").listen(server)
-
-io.on("connection", socket => {
-    console.log("a user connected");
-    socket.on("SET_COORDINATE", coordinate => {
-        console.log(coordinate);
-        io.emit("SET_COORDINATE", coordinate)
-    })
-})
-
-server.listen(port, () => {
-    console.log(`We are open now at ${port} SEMANGAT TZUY INI SERVER CRUD`)
-})
 
 module.exports = app

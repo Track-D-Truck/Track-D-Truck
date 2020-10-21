@@ -14,10 +14,15 @@ export default function CardTrackingTruck(props) {
   const loading = useSelector(state => state.TruckReducer.loadingStatus)
   const chosenResult = useSelector(state => state.ResultReducer.chosenResult)
   let truckActive = null
- 
+
+  // useEffect(() => {
+  //   dispatch(FETCH_RESULT())
+  // }, [])
+   
   useEffect(() => {
     dispatch(FETCH_RESULT())
   }, [dispatch])
+  
   if (loading) return <Loading/>
 
   if(result) truckActive = result.BEST.bestSchema
