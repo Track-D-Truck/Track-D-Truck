@@ -23,7 +23,6 @@ export function fetchResult() {
                     }
                   })
             })
-            console.log(driverId, '<<< driver id');
         })
         .catch(err => console.log(err))
     }

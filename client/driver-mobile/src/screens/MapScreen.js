@@ -8,7 +8,8 @@ import {
     Dimensions,
     ActivityIndicator,
     Image,
-    FlatList
+    FlatList,
+    Linking
 } from 'react-native'
 import { AppLoading } from 'expo'
 import {
@@ -43,11 +44,15 @@ const MapScreen = ({ navigation }) => {
     // console.log(myResult, "<<< my result di mapscreen");
 
     const result = useSelector(state => state.resultReducer.result)
+    const currentPosition = useSelector(state => state.positionReducer.currentPosition)
+    const updatedPosition = useSelector(state => state.positionReducer)
+    console.log(updatedPosition, '<<< data dari position reducer');
     // const user = useSelector(state => state.userReducer)
 
     // useEffect(() => {
     //     dispatch(fetchResult())
     // }, [dispatch, user.id])
+    
 
     useEffect(() => {  
         if(result){
@@ -66,6 +71,10 @@ const MapScreen = ({ navigation }) => {
         }
     }, [result])
 
+    const goDirection = (item) => {
+        Linking.openURL(`http://www.google.com/maps/dir/${currentPosition.latitude},${currentPosition.longitude}/${item.latitude},${item.longitude}`)
+    }
+
     if (!fontsLoaded) {
         return <AppLoading/>
     }else{
@@ -75,7 +84,7 @@ const MapScreen = ({ navigation }) => {
                 {myResult && waypoints &&
                 <View style={StyleSheet.absoluteFill}>
                     <Map waypoints={waypoints}/>
-                    <FlatList
+                    {/* <FlatList
                     data={waypoints}
                     keyExtractor={el => el.address}
                     renderItem={({ item })  => {
@@ -83,12 +92,14 @@ const MapScreen = ({ navigation }) => {
                         <View style={styles.itemContainer}>
                             <Text style={{ fontFamily: 'Quicksand_700Bold'}}>{item.name}</Text>
                             <Text style={{ fontFamily: 'Quicksand_500Medium'}}>{item.address}</Text>
-                            <TouchableOpacity style={styles.btnOpenMap}>
-                                <Text style={{ textAlign: 'center', color: '#FFF', fontFamily: 'Quicksand_700Bold'}}>Open Map</Text>
+                            <TouchableOpacity style={[styles.btnOpenMap, {marginTop: 5}]} onPress={() => {
+                                goDirection(item)
+                            }}>
+                                <Text style={{ textAlign: 'center', color: '#FFF', fontFamily: 'Quicksand_700Bold'}}>Get direction</Text>
                             </TouchableOpacity>  
                         </View>
                         )
-                    }}/>
+                    }}/> */}
                 </View>}
             </View>
         )

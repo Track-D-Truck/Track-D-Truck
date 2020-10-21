@@ -59,18 +59,18 @@ const HomeScreen = ({ navigation }) => {
                     <NoTask/> :
                     <View style={ styles.contentContainer}>
                         <View style={[styles.newTaskContainer]}>
-                            <Image source={require('../../assets/warn.png')} style={{ width: 20, height: 20, alignSelf: 'flex-end'}} />
-                            <View style={{ flexDirection: 'row', height: 70}}>
-                                <Image source={require('../../assets/trash-truck.png')} style={{ width: 70, height: 70, alignSelf: 'flex-end'}} />
-                                <Text style={{ fontFamily: 'Quicksand_700Bold', fontSize: 20, padding: 20, color: '#555555'}}>New task available</Text>
+                            <View style={{ width: '40%'}}>
+                                <Image source={require('../../assets/trash-truck.png')} style={{ width: 120, height: 120, alignSelf: 'flex-end'}} />
                             </View>
-                            <View>
+                            <View style={{ width: '60%'}}>
+                                <Image source={require('../../assets/warn.png')} style={{ width: 20, height: 20, alignSelf: 'flex-end'}} />
+                                <Text style={{ fontFamily: 'Quicksand_700Bold', fontSize: 20, marginTop: 27, marginBottom: 5, color: '#555555', alignSelf: 'flex-end'}}>New task available</Text>
                                 <TouchableOpacity style={styles.btnViewRoute} onPress={() => {
                                     navigation.navigate('Map')
                                 }}>
                                     <Text style={{ textAlign: 'center', color: '#FFF', fontFamily: 'Quicksand_700Bold'}}>View Routes</Text>
                                 </TouchableOpacity>  
-                            </View>                              
+                            </View>                             
                         </View>
                 </View>
                 }
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
         padding: 20
     },
     newTaskContainer: {
+        flexDirection: 'row',
         height: '100%',
         width: '100%',
         padding: 20,

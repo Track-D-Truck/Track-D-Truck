@@ -12,13 +12,10 @@ import socket from '../config/socket'
 
 
 const FlatlistItem = ({ item, truckData }) => {
-    console.log(truckData, "<<ini truck data")
 
     const dispatch = useDispatch()
     const position = useSelector(state => state.positionReducer.updatedPosition)
     const [currentCoordinate, setCurrentCoordinate] = useState('')
-
-    console.log(currentCoordinate, '<<< coordinate sekarang');
 
     let found = false
     for(const el of position){

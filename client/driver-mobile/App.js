@@ -33,7 +33,7 @@ export default function App () {
               }}/>
             <Stack.Screen
               name='Home'
-              component={HomeTabNavigator}
+              component={HomeScreen}
               options={{
                 headerShown: false
               }}/>
