@@ -114,6 +114,14 @@ background: linear-gradient(27deg, rgba(9,144,71,1) 0%, rgba(19,217,110,1) 49%, 
   font-size: 1.5em;
 }
 
+#backgroundRoutes {
+  background-image: url('./assets/Line2line.svg');
+  background-repeat: no-repeat;
+  background-position-x: 6px;
+
+
+}
+
 /* bootstrap */
 .noBorder {
   border: 0 !important;
