@@ -4,6 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import {CREATE_TRUCK} from '../store/actions/TrucksActions'
 
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus} from '@fortawesome/free-solid-svg-icons'
+
 export default function ModalCreateTruck() {
 	const [show, setShow] = useState(false);
 	const dispatch = useDispatch()
@@ -37,8 +42,10 @@ export default function ModalCreateTruck() {
 
     return (
         <>
-        <Button className="btn btn-secondary my-3" variant="primary" onClick={handleShow}>
-          Create New
+        	<Button className="btn ml-auto mr-4 mt-1" 
+					style={{backgroundColor:"rgb(255 255 255 / 0%)", fontWeight:"bold", borderColor:"white"}}
+					variant="primary" onClick={handleShow}>
+         <FontAwesomeIcon icon={faPlus} color="white"/>
         </Button>
   
         <Modal
@@ -47,12 +54,20 @@ export default function ModalCreateTruck() {
           backdrop="static"
           keyboard={false}
         >
-          <Modal.Header closeButton>
-            <Modal.Title>Create Truck</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-
-						<form>
+					<div className="card modalHeadBackground noBorder shadow"> 
+						<div className="ml-3 text-white row my-auto">
+						<Modal.Title>Create Truck</Modal.Title>
+						<Modal.Header className="noBorder ml-auto mr-4 mt-1 p-0" closeButton>
+							
+						</Modal.Header>
+                {/* <h2 className="mb-0 mt-1">Trucks List</h2>
+                <ModalCreateTruck/> */}
+						</div>
+					</div>
+					<div className="card modalBackground noBorder shadow  mx-auto" >
+          <Modal.Body className="mt-3">
+								
+						<form className="mt-2 px-3">
 							{/* <div className="form-group row">
 								<label for="inputEmail" className="col-sm-2 col-form-label">Truck Code</label>
 								<div className="col-sm-10">
@@ -60,9 +75,9 @@ export default function ModalCreateTruck() {
 								</div>
 							</div> */}
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Truck Code</label>
-								<div className="col-sm-10">
-									<input type="text" className="form-control" id="staticType" 
+								<label for="inputType" className="col-sm-3 col-form-label">Truck Code</label>
+								<div className="col-sm-9 pr-5">
+									<input type="text" className="form-control noBorder" id="staticType" 
 											onChange={e => {
 												setTruck({
 														...truck,
@@ -74,9 +89,9 @@ export default function ModalCreateTruck() {
 							</div>
 							
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Capacity</label>
-								<div className="col-sm-10 form-inline">
-									<input type="number" className="form-control mr-3" id="staticType" 
+								<label for="inputType" className="col-sm-3 col-form-label">Capacity</label>
+								<div className="col-sm-9 form-inline">
+									<input type="number" className="form-control mr-3 noBorder" id="staticType" 
 											onChange={e => {
 												setTruck({
 														...truck,
@@ -90,7 +105,7 @@ export default function ModalCreateTruck() {
 							<div className="form-group row">
 								<label for="inputCapacity" className="col-sm-2 col-form-label ">Cost</label>
 									<div className="col-sm-10 form-inline"><span style={{fontSize:"17px"}}>Rp</span>
-									<input type="number" className="form-control mx-3" id="staticCapacity" style={{width:'100px'}}
+									<input type="number" className="form-control mx-3 noBorder" id="staticCapacity" style={{width:'100px'}}
 										onChange={e => {
 												setTruck({
 														...truck,
@@ -124,8 +139,10 @@ export default function ModalCreateTruck() {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick= {handleSubmitTruck}>Submit</Button>
+            <Button className="noBorder" style={{backgroundColor: "#65AE07"}} onClick= {handleSubmitTruck}>Submit</Button>
           </Modal.Footer>
+					</div>
+
         </Modal>
       </>
     )

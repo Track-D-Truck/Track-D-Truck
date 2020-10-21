@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import {CREATE_DUMP} from '../store/actions/DumpsAction'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus} from '@fortawesome/free-solid-svg-icons'
+
 export default function ModalCreateDump() {
 	const dispatch = useDispatch()
 	const [show, setShow] = useState(false)
@@ -30,8 +33,11 @@ export default function ModalCreateDump() {
 
     return (
         <>
-        <Button className="btn btn-secondary my-3" variant="primary" onClick={handleShow}>
-          Create New
+				<Button className="btn ml-auto mr-4 mt-1" 
+					style={{backgroundColor:"rgb(255 255 255 / 0%)", fontWeight:"bold", borderColor:"white"}}
+					variant="primary" onClick={handleShow}
+					>
+         <FontAwesomeIcon icon={faPlus} color="white"/>
         </Button>
   
         <Modal

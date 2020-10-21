@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux'
 
 import  {UPDATE_DUMP} from '../store/actions/DumpsAction'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit} from '@fortawesome/free-solid-svg-icons'
+
 export default function ModalEditDump(props) {
 	const dispatch = useDispatch()
 	const [show, setShow] = useState(false);
@@ -39,8 +42,9 @@ export default function ModalEditDump(props) {
 
     return (
         <>
-        <Button className="btn btn-secondary mx-3" variant="primary" onClick={handleShow}>
-          Edit
+        <Button className="btn noBorder" variant="primary" onClick={handleShow}
+						style={{backgroundColor:"rgb(255 255 255 / 0%)"}}>
+        	<FontAwesomeIcon icon={faEdit} color="#65AE07" size="lg"/>
         </Button>
   
         <Modal

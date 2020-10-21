@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Quicksand','Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Russo One',
-    sans-serif;
+    sans-serif,  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./assets/wave.svg');
+  background-size: 300%;
 }
 
 code {
@@ -18,11 +21,15 @@ code {
 .thead-bg{
   background-color: #A8DDA8;
 }
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-weight: bold;
+}
 
 .styleTrackingTruck{
 height: 400px;
-background: #FFF8CD;
 overflow: auto;
+
 }
 
 .styleMapsTracking {
@@ -30,11 +37,96 @@ width: 100%;
 height: 400px;
 }
 
+.headCardReport {
+
+  z-index: 1 ;
+  width: 100%;
+  background-color: #A8DDA8;
+  height: 8vh;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  text-align: center;
+}
+
+.bodyCardReport {
+  background-color: rgb(245 245 245);
+  width: 90%;
+  height: 100%;
+}
+
+.cardReport{
+  height: 350px;
+
+}
+
 .styleRoutes {
-  height: 400px;
+  height: 350px;
 }
 
 #map {
   height: 100%;
   width: 100%;
+}
+
+.modalBackground {
+  background-color: white;
+
+  width: 90%;
+}
+
+.modalHeadBackground {
+  top: +20px;
+  z-index: 1 ;
+  width: 100%;
+  background-color: #A8DDA8;
+  height: 10vh;
+
+}
+
+.tableBackground {
+  background-color: rgb(245 245 245);
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+}
+
+.tableHeadBackground {
+  top: +27px;
+  z-index: 1 ;
+  width: 95%;
+  background-color: #A8DDA8;
+  height: 8vh
+}
+
+#greenColor {
+  background-color: #65AE07;
+
+}
+
+.headResult {
+  background-color: #A8DDA8 !important;
+}
+
+.buttonGenerate {
+  background: rgb(9,144,71);
+background: linear-gradient(27deg, rgba(9,144,71,1) 0%, rgba(19,217,110,1) 49%, rgba(0,252,148,1) 72%, rgba(255,255,255,1) 100%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* bootstrap */
+.noBorder {
+  border: 0 !important;
+}
+
+.modal-content {
+  background-color: #fff0;
+  border: 0;
+}
+
+.form-control-plaintext, .form-control {
+ border-bottom: 1px solid #65AE07 !important;
+ border-radius: 0;
+ color: #65AE07;
+ font-size: 1em;
 }

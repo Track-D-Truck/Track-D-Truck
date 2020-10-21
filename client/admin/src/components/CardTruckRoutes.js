@@ -25,14 +25,19 @@ export default function CardTruckRoutes() {
           });
     },[location])
 
-  console.log(coordinates, "<<ini coordinates")
+  // console.log(coordinates, "<<ini coordinates")
   return (
-    <div className='card styleRoutes p-2' style={{backgroundColor:'#FFF8CD'}}>
-      <h2> Routes</h2>
-      <div className="overflow-auto">
+    <div className="styleRoutes">
+      <div className="card headCardReport  mx-auto noBorder shadow-sm"> 
+            <div className="ml-3 text-white row mx-auto">
+                <h2 className="mb-0 mt-1">Routes</h2>
+                </div>
+        </div>
+        <div className="card mx-auto bodyCardReport noBorder shadow" >
+          <div className="mt-4 ml-4 overflow-auto">
         {chosenResult && routes.map((tps,i) => {
           return(
-            <div key={i} className="mb-5 ml-3">
+            <div key={i} className="mb-5">
               {tps.location != coordinates ?
               <span> X</span>
                 :
@@ -43,6 +48,7 @@ export default function CardTruckRoutes() {
           )
         })}
 
+      </div>
       </div>
     </div>
   )
