@@ -15,7 +15,6 @@ import Report from './pages/Report'
 import GarbageDump from './pages/GarbageDump'
 import Drivers from './pages/Drivers'
 
-import ReportNew from './pages/ReportNew'
 import CheckOptimation from './components/CheckOptimation'
 import Landing from './landing/LandingPage'
 import Landing2 from './landing/LandingPage2'
