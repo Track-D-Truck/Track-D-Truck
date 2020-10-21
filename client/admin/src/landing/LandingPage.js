@@ -23,7 +23,6 @@ function IndexHeader() {
     dispatch(FETCH_RESULT())
   }
 
-
   if(result) {
     let currencyFormat = result.BEST.bestCost.toLocaleString('id-ID', {
       style: "currency",
