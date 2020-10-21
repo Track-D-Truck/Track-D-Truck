@@ -16,19 +16,19 @@ export default function Navbar() {
 					</button>
 					<div className="collapse navbar-collapse" id="navbarNav" >
 							<ul className="navbar-nav" >
-								<li className="nav-item">
+								<li className={history.location.pathname == '/trucks' ? 'nav-item active' : 'nav-item'}>
 										<Link className="nav-link" to="/trucks">Trucks</Link>
 								</li>
 								{/* <li className="nav-item">
 										<Link className="nav-link" to="/login">Login</Link>
 								</li> */}
-								<li className="nav-item ">
+								<li className={history.location.pathname == '/dumps' ? 'nav-item active' : 'nav-item'}>
 										<Link className="nav-link" to="/dumps">Dumps </Link>
 								</li>
-								<li className="nav-item">
+								<li className={history.location.pathname == '/drivers' ? 'nav-item active' : 'nav-item'}>
 										<Link className="nav-link" to="/drivers">Drivers</Link>
 								</li>
-								<li className="nav-item">
+								<li className={history.location.pathname == '/report' ? 'nav-item active' : 'nav-item'}>
 										<Link className="nav-link" to="/report">Report</Link>
 								</li>
 							</ul>
@@ -38,4 +38,12 @@ export default function Navbar() {
 					</div>
     		</nav>
     )
-}
+
+		// <ul class="navbar-nav mr-auto">
+		// <li class="nav-item active">
+		// 	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		// </li>
+		// <li class="nav-item">
+		// 	<a class="nav-link" href="#">Link</a>
+		// </li>
+			}
