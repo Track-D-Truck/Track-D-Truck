@@ -10,10 +10,13 @@ export default function Login() {
         },
         title: {
             fontFamily: 'Russo One',
-            fontSize: '64px',
+            fontSize: '80px',
             color: '#27ae60',
             textAlign: 'center',
             textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+        },
+        imageLogin: {
+
         }
     }
 
@@ -22,11 +25,11 @@ export default function Login() {
             <div className="container">
                 <h1 className="mt-5" style={style.title}>Track D'Truck</h1>
                 <div className="d-flex flex-row" >
-                    <div className="col-8 mt-3">
-                        <img src={loginImage} alt='loginComponent' ></img>
+                    <div className="col-8">
+                        <img src={loginImage} alt='loginComponent' style={style.imageLogin}></img>
                     </div>
                     <div className="col-4 my-auto">
-                        <FormLogin/>
+                            <FormLogin />
                     </div>
                 </div>
             </div>
