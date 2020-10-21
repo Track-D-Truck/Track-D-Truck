@@ -27,16 +27,16 @@ export default function TableDriverDetail() {
     return (
 			<div className="p-5">
 				<div className="card tableHeadBackground mx-auto noBorder shadow-sm"> 
-					<div className="ml-3 text-white">
+					<div className="ml-3 text-white mx-auto">
 					{/* <FontAwesomeIcon icon={['fas', 'Coffee']} /> */}
-							<h2 className="mb-0 mt-1">Drivers List</h2>
+							<h2 className="mb-0 mt-1 font-weight-bold">Drivers List</h2>
 							{/* <p class="font-weight-lighter font-italic">Table Driver</p> */}
 
 					</div>
 				</div>
 				<div className="card tableBackground noBorder shadow" >
 				<table className="table text-center mt-4 ">
-							<thead className='table-borderless' style={{color:'#65AE07', fontSize:'1.1em'}} >
+							<thead className='table-borderless abuColor'  style={{fontWeight:'bold', fontSize:'1.2em'}} >
 							<tr> 
 									<th scope="col">ID</th>
 									<th scope="col">Name</th>
@@ -46,7 +46,7 @@ export default function TableDriverDetail() {
 									<th scope="col">Action</th>
 							</tr>
 							</thead>
-							<tbody style={{fontSize:'0.9em'}}>
+							<tbody>
 									{drivers.map((driver,i) => {
 											console.log(driver, "<<ini driver")
 											const  driverTruck = trucks.filter(truck => truck.DriverId == driver.id)
@@ -70,7 +70,7 @@ export default function TableDriverDetail() {
 													
 											return(
 													<tr key={i}>
-															<th scope="row">{driver.id}</th>
+															<th scope="row abuColor">{driver.id}</th>
 															<td>{driver.name}</td>
 															<td>{driver.email}</td>
 															<td>{driver.phone}</td>
@@ -91,7 +91,7 @@ export default function TableDriverDetail() {
 																	{/* <button className="btn btn-secondary">Detail</button> */}
 																	{/* <ModalEditTruck/> */}
 																	<button className="btn noBorder" onClick={handleDeleteTruck}>
-																	<FontAwesomeIcon icon={faTrash} color="#65AE07" className="shadow" size="lg"/>
+																	<FontAwesomeIcon icon={faTrash} color="#212529" className="" size="lg"/>
 																	</button>
 																	
 															</td>
