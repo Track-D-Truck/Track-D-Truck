@@ -37,12 +37,13 @@ export default function CardTrackingTruck(props) {
      routes = chosenResult.route
   } 
   // console.log(routes,'check ini dahhhhh');  
+
   return (
     <div className="row">
 
     <div className="col-sm-4 cardReport">
 								
-      <div className="card headCardReport mx-auto noBorder shadow-sm"> 
+      <div className="card headCardReport resultBorderRadius mx-auto noBorder "> 
             <div className="ml-3 text-white row mx-auto">
                 <h2 className="mb-0 mt-1">Trucks List</h2>
 
@@ -62,11 +63,14 @@ export default function CardTrackingTruck(props) {
             looping += 1
             return(
               <span key={i} className='row mb-3'>
-                <span>
-
-                  <img src={truckIcon[looping]} alt="Logo" width="45px"/>
+                <span>                  
+                  <img src={truckIcon[looping]} onClick={handleChangeTruck} alt="Logo" width="45px"/>
                 </span>
-                <h5 className='btn my-auto ml-2' onClick={handleChangeTruck}>{ e.truck.truck_code}</h5>
+              {chosenResult && chosenResult.truck.id == e.truck.id ? 
+                <h5 className='btn my-auto ml-4 font-weight-bold' style={{fontSize:"1.2em"}} onClick={handleChangeTruck}>{ e.truck.truck_code}</h5>
+                :
+                <h5 className='btn my-auto ml-4' onClick={handleChangeTruck}>{ e.truck.truck_code}</h5> 
+              }
               </span>
             )
           })}

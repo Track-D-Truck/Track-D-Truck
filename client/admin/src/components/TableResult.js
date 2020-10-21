@@ -19,12 +19,12 @@ export default function TableResult() {
   } 
   return (
     <div className="noBorder shadow"  > 
-    <table className="table text-center mt-3">
-            <thead className='table-borderless thead-bg 'style={{color:'white'}} >
+    <table className="table text-center  mt-3">
+            <thead className='table-borderless thead-bg' style={{color:'white'}} >
             <tr>
                 <th scope="col">Truck Code</th>
                 <th scope="col">Driver</th>
-                <th scope="col">Vol TPS/ <br/>Capacity Truck</th>
+                <th scope="col">Vol Waste / Vol Truck</th>
                 <th scope="col">Cost/Distance</th>
                 <th scope="col">Total Distance</th>
                 <th scope="col">Total Cost</th>

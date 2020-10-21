@@ -34,7 +34,7 @@ export default function ModalCreateDump() {
     return (
         <>
 				<Button className="btn ml-auto mr-4 mt-1" 
-					style={{backgroundColor:"rgb(255 255 255 / 0%)", fontWeight:"bold", borderColor:"white"}}
+					style={{backgroundColor:"rgb(255 255 255 / 0%)", fontWeight:"bold", borderColor:"white", borderWidth:"2px"}}
 					variant="primary" onClick={handleShow}
 					>
          <FontAwesomeIcon icon={faPlus} color="white"/>

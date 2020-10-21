@@ -32,7 +32,7 @@ export default function Navbar() {
 										<Link className="nav-link" to="/report">Report</Link>
 								</li>
 							</ul>
-							<button className="ml-auto btn btn-secondary noBorder" id="greenColor" onClick={logout}>
+							<button className="ml-auto btn btn-secondary" id="borderButton" onClick={logout}>
 								Logout
 							</button>
 					</div>

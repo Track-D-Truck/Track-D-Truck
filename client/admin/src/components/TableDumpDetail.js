@@ -23,21 +23,23 @@ export default function TableDumpDetail() {
   return (
     <div className="p-5">
 	
-        <div className="card tableHeadBackground mx-auto noBorder shadow-sm"> 
-            <div className="ml-3 text-white row">
+    <div className="card tableHeadBackground mx-auto noBorder shadow-sm"> 
+            <div className="text-white row">
             {/* <FontAwesomeIcon icon={['fas', 'Coffee']} /> */}
-                <h2 className="mb-0 mt-1">Dumps List</h2>
-                <ModalCreateDump/>
+            <span className="mx-auto">
+                <h2 className="mb-0 mt-1 font-weight-bold">Dumps List</h2>
+            </span>
+                <span>
+                    <ModalCreateDump />
+
+                </span>
                 {/* <p class="font-weight-lighter font-italic">Table Driver</p> */}
             </div>
-            {/* <div>
-                <ModalCreateDump/>
-            </div> */}
         </div>
-        <div className="card tableBackground noBorder shadow" >
+        <div className="card tableBackground  noBorder shadow" >
             <div className="mt-4">
             <table className="table text-center px-2">
-                    <thead className='table-borderless' style={{color:'#65AE07'}}>
+                    <thead className='table-borderless abuColor'  style={{fontWeight:'bold', fontSize:'1.2em'}}>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
@@ -57,7 +59,7 @@ export default function TableDumpDetail() {
                             }
                             return(
                                 <tr key={i}>
-                                    <th scope="row">{dump.id}</th>
+                                    <th scope="row abuColor">{dump.id}</th>
                                     <td>{dump.name}</td>
                                     <td style={{width:"300px"}}>{dump.address}</td>
                                     <td>
@@ -69,7 +71,7 @@ export default function TableDumpDetail() {
                                     <td>
                                         <ModalEditDump chosenDump={dump} />
                                         <button className="btn noBorder" onClick={handleDeleteDump}>
-                                        <FontAwesomeIcon icon={faTrash} color="#65AE07" className="shadow" size="lg"/>
+                                        <FontAwesomeIcon icon={faTrash} color="#212529" className="" size="lg"/>
                                         </button>
                                     </td>
                                 </tr>

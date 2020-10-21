@@ -46,7 +46,7 @@ export default function ModalEditTruck(props) {
         <>
         <Button className="btn noBorder " variant="primary" onClick={handleShow}
 						style={{backgroundColor:"rgb(255 255 255 / 0%)"}}>
-        	<FontAwesomeIcon icon={faEdit} color="#65AE07" size="lg"/>
+        	<FontAwesomeIcon icon={faEdit} color="#212529" size="lg"/>
         </Button>
   
         <Modal
@@ -55,13 +55,16 @@ export default function ModalEditTruck(props) {
           backdrop="static"
           keyboard={false}
         >
-         	<div className="card modalHeadBackground noBorder shadow"> 
+         	<div className="card modalHeadBackground noBorder shadow mx-auto"> 
 						<div className="ml-3 text-white row my-auto">
-						<Modal.Title>Edit Truck</Modal.Title>
+						<span className="mx-auto">
+						<Modal.Title className="font-weight-bold  ml-4">Create Truck</Modal.Title>
+						</span>
+                <span>
 						<Modal.Header className="noBorder ml-auto mr-4 mt-1 p-0" closeButton>
-							
 						</Modal.Header>
-          	</div>
+						</span>
+						</div>
 					</div>
 					<div className="card modalBackground noBorder shadow  mx-auto" >
           <Modal.Body className="mt-3">
@@ -95,7 +98,7 @@ export default function ModalEditTruck(props) {
 									</div> */}
 
 								<div className="form-group row">
-									<label for="inputType" className="col-sm-3 col-form-label">Capacity</label>
+									<label for="inputType" className="col-sm-3 col-form-label" >Capacity</label>
 									<div className="col-sm-9 form-inline">
 										<input type="number" className="form-control mr-2 noBorder" id="staticType" 
 											onChange={e => {
@@ -125,7 +128,7 @@ export default function ModalEditTruck(props) {
 								</div>
 								
 								<div className="form-group row">
-									<label for="inputType" className="col-sm-3 col-form-label pr-0">Coordinate</label>
+									<label for="inputType" className="col-sm-3 col-form-label pr-0" style={{width:'200px'}}>Coordinate</label>
 									<div className="col-sm-9">
 										<input type="text" className="form-control noBorder" id="staticType" value={truck.location}
 												onChange={e => {
@@ -160,7 +163,7 @@ export default function ModalEditTruck(props) {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button className="noBorder" style={{backgroundColor: "#65AE07"}}  onClick= {handleSubmitTruck}>Update</Button>
+            <Button className="noBorder" id="greenColor"  onClick= {handleSubmitTruck}>Update</Button>
           </Modal.Footer>
 					</div>
         </Modal>
