@@ -17,6 +17,8 @@ import Drivers from './pages/Drivers'
 
 import ReportNew from './pages/ReportNew'
 import CheckOptimation from './components/CheckOptimation'
+import Landing from './landing/LandingPage'
+import Landing2 from './landing/LandingPage2'
 
 function App() {
   const status = useSelector(state => state.ResultReducer.status)
@@ -25,12 +27,14 @@ function App() {
     <Router>
     <Route path="/login" component={Login}></Route>
     {/* {!status && <CheckOptimation/>} */}
-        <Route exact path="/" component={Dashboard}></Route>
+        <Route exact path="/" component={Landing2}></Route>
         <Route path="/trucks" component={Trucks}></Route>
         <Route path='/report' component={Report}/>
         <Route path='/dumps' component={GarbageDump}/>
         <Route path='/drivers' component={Drivers}/>
         <Route path='/test' component={ReportNew}/>
+        <Route path='/landing' component={Landing}/>
+        <Route path='/2landing2' component={Landing2}/>
       </Router>
     
   );
