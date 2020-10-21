@@ -15,7 +15,6 @@ import Report from './pages/Report'
 import GarbageDump from './pages/GarbageDump'
 import Drivers from './pages/Drivers'
 
-import ReportNew from './pages/ReportNew'
 import CheckOptimation from './components/CheckOptimation'
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
         <Route path='/report' component={Report}/>
         <Route path='/dumps' component={GarbageDump}/>
         <Route path='/drivers' component={Drivers}/>
-        <Route path='/test' component={ReportNew}/>
       </Router>
     
   );
