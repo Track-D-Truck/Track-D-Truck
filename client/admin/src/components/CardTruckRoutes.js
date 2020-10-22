@@ -28,7 +28,7 @@ export default function CardTruckRoutes() {
           });
     },[location])
 
-  // console.log(coordinates, "<<ini coordinates")
+  
   return (
     <div className="styleRoutes">
       <div className="card headCardReport resultBorderRadius  mx-auto noBorder"> 
@@ -40,6 +40,8 @@ export default function CardTruckRoutes() {
           <div className="mt-4 ml-4 overflow-auto"  id="backgroundRoutes" >
         {chosenResult && routes.map((tps,i) => {
           let positionStatus
+          console.log(coordinates, "<<ini coordinates")
+          console.log(tps.location, "<<ini tps location")
           return(
             <div key={i} className="mb-5 mt-2 row">
               <span className="col-sm-2 mr-1">

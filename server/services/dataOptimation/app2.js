@@ -16,19 +16,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(routes)
 app.use(errorHandler)
 
-const server = require("http").createServer(app)
-const io = require("socket.io").listen(server)
-
-io.on("connection", socket => {
-    console.log("a use connected");
-    socket.on("SET_COORDINATE", payload => {
-        console.log(payload, "<<socket di server");
-        io.emit("SET_COORDINATE", payload)
-    })
-})
-
-server.listen(port, () => {
-    console.log(`We are open now at ${port} SEMANGAT TZUY INI SERVER CRUD`)
- })
+// app.listen(port, () => {
+//     console.log(`We are open now at ${port} SEMANGAT TZUY INI SERVER CRUD`)
+//  })
 
 module.exports = app

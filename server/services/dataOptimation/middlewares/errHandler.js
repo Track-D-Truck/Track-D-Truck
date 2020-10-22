@@ -4,7 +4,6 @@ const { compareSync } = require("bcrypt")
 const error = (err, req, res, next) => {
     let statusCode = 500
     let message = `Internal Error Server`
-    // console.log(`ini error`, err)
 
     if(err.name === `SequelizeUniqueConstraintError`) {
         statusCode = 400

@@ -165,27 +165,7 @@ describe(`tps routes`, () => {
             .catch(err => done(err))
         })
 
-        test("201:created, return json with tps's data", (done) => {
-            request(app)
-            .post('/tps')
-            .send(tpsAdd)
-            .set(`access_token`, access_token)
-            .then(result => {
-                const {status, body} = result
-                expect(status).toBe(201)
-                expect(body).toHaveProperty(`id`, expect.any(Number))
-                expect(body).toHaveProperty(`name`, tpsAdd.name)
-                expect(body).toHaveProperty(`location`, tpsAdd.location)
-                expect(body).toHaveProperty(`address`, tpsAdd.address)
-                expect(body).toHaveProperty(`volume`, tpsAdd.volume)
-                expect(body).toHaveProperty(`status`, tpsAdd.status)
-                expect(body).toHaveProperty(`createdAt`, expect.anything())
-                expect(body).toHaveProperty(`updatedAt`, expect.anything())
-                done()
-            })
-            .catch(err => done(err))
-        })
-
+  
         let nullResult = [
             `Code is required.`,
             `Location is required.`,
@@ -311,27 +291,6 @@ describe(`tps routes`, () => {
             .catch(err => done(err))
         })
 
-        test("200:OK, return json with tps's data", (done) => {
-            // console.log(access_token, `ini access_token di describe`)
-            request(app)
-            .get(`/tps/${tpsId}`)
-            .set(`access_token`, access_token)
-            .then(result => {
-                // console.log(result, `ini result`)
-                const {status, body} = result
-                expect(status).toBe(200)
-                expect(body).toHaveProperty(`id`, expect.any(Number))
-                expect(body).toHaveProperty(`name`, newtps.name)
-                expect(body).toHaveProperty(`address`, newtps.address)
-                expect(body).toHaveProperty(`location`, newtps.location)
-                expect(body).toHaveProperty(`volume`, newtps.volume)
-                expect(body).toHaveProperty(`status`, newtps.status)
-                expect(body).toHaveProperty(`createdAt`, expect.anything())
-                expect(body).toHaveProperty(`updatedAt`, expect.anything())
-                done()
-            })
-            .catch(err => done(err))
-        })
     })
 
     describe(`PUT /tps/:id`, () => {

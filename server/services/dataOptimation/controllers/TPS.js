@@ -3,14 +3,11 @@ const {TPStorage} = require(`../models`)
 class TPStorageController {
 
     static read(req, res, next) {
-        TPStorage.findAll({
-            order: [['id', 'ASC']]
-        })
+        TPStorage.findAll({order: [['createdAt', 'ASC']]})
         .then(result => {
             res.status(200).json(result)
         })
         .catch(err => {
-            // console.log(err)
             next(err)
         })
     }
@@ -26,7 +23,6 @@ class TPStorageController {
         }
         TPStorage.create(addTPStorage)
         .then(result => {
-            // console.log(`ini result`, result
             res.status(201).json(result)
         })
         .catch(err => {
@@ -46,7 +42,6 @@ class TPStorageController {
         TPStorage.findByPk(TPStorageId)
         .then(result => {
             if(result) {
-                // console.log(`ini result`, result)
                 res.status(200).json(result)
             } else {
                 throw error
@@ -59,7 +54,7 @@ class TPStorageController {
 
     static edit(req, res, next) {
         const editTPStorage = {
-            location: req.body.location, //gabisa array
+            location: req.body.location, 
             name:req.body.name,
             address:req.body.address,
             volume:req.body.volume,
@@ -73,7 +68,6 @@ class TPStorageController {
             res.status(200).json(result )
         })
         .catch(err => {
-            console.log(err, 'dari edit TPStorage');
             next(err)
         })
     }
@@ -86,7 +80,6 @@ class TPStorageController {
             message: `Can't find the data.`
         }
         let deletedData;
-        // console.log(`ini di dalam delete`)
         TPStorage.findByPk(TPStorageId)
         .then(result => {
             if(!result) {
@@ -97,7 +90,6 @@ class TPStorageController {
             }
         })
         .then(result => {
-            // console.log(`ini result`, result)
             res.status(200).json({message: `Successfully delete TPStorage '${deletedData.TPStorage_code}'!`})
         })
         .catch(err => {

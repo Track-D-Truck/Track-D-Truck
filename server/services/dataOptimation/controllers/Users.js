@@ -15,18 +15,11 @@ const transporter = nodemailer.createTransport({
 class DriverController {
 
     static read(req, res, next) {
-        console.log('masuk bsss');
-        Driver.findAll({
-            order: [['id', 'ASC']],
-            where: {
-                role: "driver"
-              }
-        })
+        Driver.findAll()
         .then(result => {
             res.status(200).json(result)
         })
         .catch(err => {
-            // console.log(err)
             next(err)
         })
     }
@@ -83,72 +76,6 @@ class DriverController {
         })
         .catch(err => {
              console.log(err)
-            next(err)
-        })
-    }
-
-    static find(req, res, next) {
-        let DriverId = req.params.id
-        let error = {
-            name: `otherError`,
-            statusCode: 404,
-            message: `Can't find the data.`
-        }
-
-        Driver.findByPk(DriverId)
-        .then(result => {
-            if(result) {
-                // console.log(`ini result`, result)
-                res.status(200).json(result)
-            } else {
-                throw error
-            }
-        })
-        .catch(err => {
-            next(err)
-        })
-    }
-
-    static edit(req, res, next) {
-        const editDriver = {
-            status:req.body.status
-        }
-        
-        let DriverId = +req.params.id
-
-        Driver.update(editDriver, {where: {id: DriverId}, returning: true})
-        .then(result => {
-            res.status(200).json(result )
-        })
-        .catch(err => {
-            console.log(err, 'dari edit Driver');
-            next(err)
-        })
-    }
-
-    static delete(req, res, next) {
-        let DriverId = req.params.id
-        let error = {
-            name: `otherError`,
-            statusCode: 404,
-            message: `Can't find the data.`
-        }
-        let deletedData;
-        // console.log(`ini di dalam delete`)
-        Driver.findByPk(DriverId)
-        .then(result => {
-            if(!result) {
-                throw error
-            } else {
-                deletedData = result
-                return Driver.destroy({where: {id: DriverId}})
-            }
-        })
-        .then(result => {
-            // console.log(`ini result`, result)
-            res.status(200).json({message: `Successfully delete Driver '${deletedData.name}'!`})
-        })
-        .catch(err => {
             next(err)
         })
     }

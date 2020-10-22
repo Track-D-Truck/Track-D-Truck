@@ -15,7 +15,6 @@ let newTruck = {
     cost: 123000,
     status: "Available",
     location: "-6.233.12, 126.120.11",
-    DriverId: 2,
 }
 
 let editedTruck = {
@@ -154,25 +153,24 @@ describe(`Truck routes`, () => {
         //     .catch(err => done(err))
         // })
         
-        // test("403:role is not admin, return json with error", (done) => {
-        //     request(app)
-        //     .post('/trucks')
-        //     .send(TruckAdd)
-        //     .set(`access_token`, tokenLain)
-        //     .then(result => {
-        //         const {status, body} = result
-        //         expect(status).toBe(403)
-        //         expect(body.message).toEqual(expect.stringContaining(`You don't have access to this.`))
-        //         done()
-        //     })
-        //     .catch(err => done(err))
-        // })
+        test("403:role is not admin, return json with error", (done) => {
+            request(app)
+            .post('/trucks')
+            .send(TruckAdd)
+            .set(`access_token`, tokenLain)
+            .then(result => {
+                const {status, body} = result
+                expect(status).toBe(403)
+                expect(body.message).toEqual(expect.stringContaining(`You don't have access to this.`))
+                done()
+            })
+            .catch(err => done(err))
+        })
 
         test("201:created, return json with Truck's data", (done) => {
             request(app)
             .post('/trucks')
             .send(TruckAdd)
-
             .then(result => {
                 console.log('<><><><><><><><><><><><><><><><><><><>');
                 console.log(result);
@@ -184,7 +182,7 @@ describe(`Truck routes`, () => {
                 expect(body).toHaveProperty(`location`, TruckAdd.location)
                 expect(body).toHaveProperty(`capacity`, TruckAdd.capacity)
                 expect(body).toHaveProperty(`status`, TruckAdd.status)
-             //   expect(body).toHaveProperty(`DriverId`, TruckAdd.DriverId)
+               // expect(body).toHaveProperty(`DriverId`, TruckAdd.DriverId)
                 expect(body).toHaveProperty(`createdAt`, expect.anything())
                 expect(body).toHaveProperty(`updatedAt`, expect.anything())
                 done()

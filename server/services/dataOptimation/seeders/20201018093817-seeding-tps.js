@@ -97,7 +97,7 @@ module.exports = {
         {
           name: "Tirtawening",
           location: "-6.9166927, 107.7117846",
-          status: "active",
+          status: "inactive",
           volume: 2,
           address:
             "jl cilengkrang 1 perumahan, Jl. Tirtawening No.121, Cisurupan, Kec. Cibiru, Kota Bandung, Jawa Barat 40614, Indonesia",
