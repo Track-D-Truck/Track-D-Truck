@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Swal from 'sweetalert2'
 
 import ModalEditDump from './ModalEditDump'
 import Loading from './Loading'
@@ -15,7 +16,7 @@ export default function TableDumpDetail() {
   const loading = useSelector(state => state.DumpReducer.loadingStatus)
 
   useEffect(() => {
-    dispatch(FETCH_DUMPS())
+    if(dumps.length == 0) dispatch(FETCH_DUMPS())
   },[dispatch])
 
   if (loading) return <Loading/>
@@ -53,10 +54,27 @@ export default function TableDumpDetail() {
                     <tbody>
                         {dumps.map((dump,i) => {
                             function handleDeleteDump() {
-                                dispatch(DELETE_DUMP(dump.id))
-                                const filtered = dumps.filter( e => e.id !== dump.id)
-                                dispatch(SET_DUMPS(filtered))
+                                Swal.fire({
+                                    title: 'Are you sure?',
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#27ae60',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Yes, delete it!',
+                                    }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        Swal.fire(
+                                        'Your data has been deleted!',
+                                            '',
+                                        'success'
+                                        )
+                                        dispatch(DELETE_DUMP(dump.id))
+                                        const filtered = dumps.filter( e => e.id !== dump.id)
+                                        dispatch(SET_DUMPS(filtered))
+                                    }
+                                })
                             }
+
                             return(
                                 <tr key={i}>
                                     <th scope="row abuColor">{dump.id}</th>

@@ -21,6 +21,13 @@ export function SET_DUMPS(data) {
   }; 
 }
 
+export function SET_LOCATION(data) {
+  return {
+      type: "SET_LOCATION",
+      payload: data
+  }; 
+}
+
 
 export function FETCH_DUMPS() {
 

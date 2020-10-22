@@ -3,12 +3,13 @@ import {Modal, Button} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {CREATE_DUMP} from '../store/actions/DumpsAction'
-
+import {PlacesWithStandaloneSearchBox} from  '../components/MapsFunctional'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus} from '@fortawesome/free-solid-svg-icons'
 
 export default function ModalCreateDump() {
 	const dispatch = useDispatch()
+	const location = useSelector(state => state.DumpReducer.location)
 	const [show, setShow] = useState(false)
 	const [dump, setDump] = useState({
 		name: '',
@@ -18,19 +19,26 @@ export default function ModalCreateDump() {
 		address: ''
 	})
 
-  const handleClose = () => setShow(false);
+	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	
+  if(location) {
+		setDump({
+			...dump,
+			address: location[0].formatted_address,
+			location: location[0].geometry.location,
+			name: location[0].name
+		})
+	}
 	
 	function handleSubmitDump(event) {
 		event.preventDefault()
 		// dump.location = dump.location.join()
 		dump.status = 'inactive'
-		console.log(dump,'<<<<<<<<<');
 		dispatch(CREATE_DUMP(dump))
 		setShow(false)
 	}
-
+		// console.log(dump.location,'<<<<<<<<<<');
     return (
         <>
 				<Button className="btn ml-auto mr-4 mt-1" 
@@ -45,31 +53,47 @@ export default function ModalCreateDump() {
           onHide={handleClose}
           backdrop="static"
           keyboard={false}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Create Dump</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-
-						<form>
+					>
+					<PlacesWithStandaloneSearchBox/>
+			<div className="card modalHeadBackground noBorder shadow mx-auto"> 
+						<div className=" text-white row my-auto" >
+						<span className="mx-auto">
+						<Modal.Title className="font-weight-bold  ml-5">Create Dump</Modal.Title>
+						</span>
+                <span>
+						<Modal.Header className="noBorder ml-auto mr-4 mt-1 p-0" closeButton>
+						</Modal.Header>
+						</span>
+                {/* <h2 className="mb-0 mt-1">Trucks List</h2>
+                <ModalCreateTruck/> */}
+						</div>
+					</div>
+					<div className="card modalBackground noBorder shadow  mx-auto" >
+          <Modal.Body className="mt-3">
+						<div className="form-inline mt-3 mb-0 pb-0">
+							<p>Search with google: </p>
+							{/* <PlacesWithStandaloneSearchBox/> */}
+						</div>
+						<form className="px-3">
 							<div className="form-group row">
-								<label for="inputEmail" className="col-sm-2 col-form-label">Name</label>
-								<div className="col-sm-10">
-									<input type="text" className="form-control" id="staticEmail" 
+								<label for="inputEmail" className="col-sm-3 col-form-label" value={dump.name}>Name</label>
+								<div className="col-sm-9">
+									<input type="text" className="form-control noBorder" id="staticEmail" style={{width:'150px'}}
 										onChange={e => {
 											setDump({
 													...dump,
 													name: e.target.value
 											})
 									}}
-										
 										/>
+										
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Address</label>
-								<div className="col-sm-10">
-									<input type="text" className="form-control" id="staticType" 
+								<label for="inputType" className="col-sm-3 col-form-label overflow-auto" 
+									value={dump.address} style={{width:'200px'}}>Address</label>
+								<div className="col-sm-9">
+									<input type="text" className="form-control noBorder" id="staticType" 
 											onChange={e => {
 												setDump({
 														...dump,
@@ -80,9 +104,9 @@ export default function ModalCreateDump() {
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputType" className="col-sm-2 col-form-label">Coordinate</label>
-								<div className="col-sm-10">
-									<input type="text" className="form-control" id="staticType" 
+								<label for="inputType" className="col-sm-3 col-form-label" >Coordinate</label>
+								<div className="col-sm-9">
+									<input type="text" className="form-control noBorder" id="staticType" 
 											onChange={e => {
 												setDump({
 														...dump,
@@ -93,9 +117,9 @@ export default function ModalCreateDump() {
 								</div>
 							</div>
 							<div className="form-group row">
-								<label for="inputCapacity" className="col-sm-2 col-form-label">Volume</label>
-								<div className="col-sm-10 form-inline">
-									<input type="number" className="form-control mr-2" id="staticCapacity"
+								<label for="inputCapacity" className="col-sm-3 col-form-label">Volume</label>
+								<div className="col-sm-9 form-inline">
+									<input type="number" className="form-control noBorder mr-2" id="staticCapacity"
 										onChange={e => {
 												setDump({
 														...dump,
@@ -145,6 +169,7 @@ export default function ModalCreateDump() {
           <Modal.Footer>
             <Button variant="primary" onClick= {handleSubmitDump}>Submit</Button>
           </Modal.Footer>
+					</div>
         </Modal>
       </>
     )

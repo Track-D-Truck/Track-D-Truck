@@ -56,7 +56,7 @@ class TruckController {
     }
 
     static edit(req, res, next) {
-        console.log(req.body,'<<<<<<<<<<<<<ini di controller');
+        // console.log(req.body,'<<<<<<<<<<<<<ini di controller');
         const editTruck = {
             truck_code: req.body.truck_code, 
             capacity: req.body.capacity,
@@ -67,7 +67,7 @@ class TruckController {
         }
 
         let TruckId = +req.params.id
-        // console.log(TruckId,editTruck,'<<<<<<<<<<<<<<<<<<<<<<<<');
+        // console.log(TruckId,editTruck,'<<<<<<<<<<<<<?<<<<<<<<<<<');
         Truck.update(editTruck, {where: {id: TruckId}, returning: true})
         .then(result => {
             console.log(result);

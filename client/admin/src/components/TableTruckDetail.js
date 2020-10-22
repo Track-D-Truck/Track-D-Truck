@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Swal from 'sweetalert2'
 
 import {FETCH_TRUCKS, SET_TRUCKS, DELETE_TRUCK, UPDATE_TRUCK} from '../store/actions/TrucksActions'
 import {FETCH_DRIVERS, UPDATE_DRIVERS} from '../store/actions/DriversAction'
@@ -15,9 +16,16 @@ export default function TableTruckDetail() {
     const dispatch = useDispatch()
     // const [chat, setChat] = useState('')
     const [coordinates, setCoordinates] = useState('')
+    const loading = useSelector(state => state.TruckReducer.loadingStatus)
+    const drivers = useSelector(state => state.DriverReducer.drivers)
+    const trucks = useSelector(state => state.TruckReducer.trucks)
+
     useEffect(() => {
-        dispatch(FETCH_TRUCKS())
-        dispatch(FETCH_DRIVERS())
+
+        if(trucks.length == 0  || drivers.length == 0) {
+            dispatch(FETCH_TRUCKS())
+            dispatch(FETCH_DRIVERS())
+        }
     },[])
 
     useEffect(()=> {
@@ -28,11 +36,9 @@ export default function TableTruckDetail() {
     },[coordinates])
 
     
-    const loading = useSelector(state => state.TruckReducer.loadingStatus)
-    const drivers = useSelector(state => state.DriverReducer.drivers)
-    const trucks = useSelector(state => state.TruckReducer.trucks)
-    console.log(drivers)
-    console.log(trucks);
+
+    // console.log(drivers,'cek driver dulu')
+    // console.log(trucks,'ceck truck dulu');
     if (loading) return <Loading/>
 
     // const coordinate = null 
@@ -64,7 +70,7 @@ export default function TableTruckDetail() {
             </div>
         </div>
         <div className="card tableBackground noBorder shadow" >
-            <table className="table text-center mt-4 ">
+            <table className="table text-center mt-4 " >
             <thead className='table-borderless abuColor' style={{fontWeight:'bold', fontSize:'1.2em'}}>
             <tr>
                 <th scope="col">Truck Code</th>
@@ -76,40 +82,63 @@ export default function TableTruckDetail() {
                 <th scope="col">Action</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody >
 
                 {trucks.map((truck,i) => {
                     function handleDeleteTruck() {
-                        dispatch(DELETE_TRUCK(truck.id))
-                        const filtered = trucks.filter( e => e.id !== truck.id)
-                        dispatch(SET_TRUCKS(filtered))
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#27ae60',
+                            cancelButtonColor: '#d33',
+														confirmButtonText: 'Yes, delete it!',
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              Swal.fire(
+                                'Your data has been deleted!',
+                                 '',
+                                'success'
+                              )
+															dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
+															const filtered = trucks.filter( e => e.id !== truck.id)
+															dispatch(DELETE_TRUCK(truck.id))
+															dispatch(SET_TRUCKS(filtered))
+														}
+                          })
                     }
                     function handleUpdateDriver(event) {
                         if(event.target.value) {
-                            console.log(truck,'cek truck');
                             truck.DriverId = event.target.value
                             truck.location = truck.location.join()
+                            // console.log(truck,'cek ini dulu');
                             dispatch(UPDATE_TRUCK(truck, truck.id))
                             dispatch(UPDATE_DRIVERS( {status: 'unavailable'}, truck.DriverId))
                         }
                         else {
                             dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
                             truck.DriverId = null
+                            truck.Driver = null
                             truck.location = truck.location.join()
                             dispatch(UPDATE_TRUCK(truck, truck.id))
                         }
                     }
                     function handleUpdateStatus(event) {
+                        const driverId = truck.DriverId
+                        truck.status = event.target.value
+                        truck.DriverId= null 
+                        truck.Driver= null
+                        truck.location = truck.location.join()
                         if(event.target.value == 'available') {
-                            dispatch(UPDATE_TRUCK({status: event.target.value, DriverId: null}, truck.id))
-                            dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
+                            dispatch(UPDATE_TRUCK(truck, truck.id))
                         } else if (event.target.value == 'unavailable') {
-                            dispatch(UPDATE_TRUCK({status: event.target.value}, truck.id))
+                            dispatch(UPDATE_DRIVERS( {status: 'available'}, driverId))
+                            dispatch(UPDATE_TRUCK(truck, truck.id))
                         }
                     }
                       
                     return(
-                        <tr key={i}>
+                        <tr key={i} >
                             <th scope="row abuColor">{truck.truck_code}</th>
                             <td>  
                             <div className="form-group row my-0  noBorder">
@@ -122,12 +151,15 @@ export default function TableTruckDetail() {
                                         : null    
                                     }
                                         <option value=''>Set Driver...</option>
-                                            {drivers.filter(driver => driver.status == 'available').map((driver) => {
+                                            {truck.status =='available' ? drivers.filter(driver => driver.status == 'available').map((driver) => {
                                                 // console.log(driver,'cekkkk');
                                                     return(
                                                         <option  value={driver.id}>{driver.name}</option>
                                                     )
-                                            })}
+                                            })
+                                        :
+                                        null
+                                        }
                                         </select>
                                     </div>
                                 </form>
@@ -145,7 +177,7 @@ export default function TableTruckDetail() {
                                 <div className="col-sm-10 noBorder">
                                     <select className="custom-select mr-sm-2 noBorder" id="inlineFormCustomSelect" 
                                         value={truck.status} onChange={handleUpdateStatus} style={{width:"150px"}}> 
-                                                <option >Choose...</option>
+                                                <option disabled>Choose...</option>
 												<option value="available">Available</option>
 												<option value="unavailable">Unavailable</option>
                                         </select>
@@ -156,7 +188,7 @@ export default function TableTruckDetail() {
                             <td>
                                 <ModalEditTruck chosenTruck={truck} />
                                 <button className="btn noBorder" onClick={handleDeleteTruck}>
-                                    <FontAwesomeIcon icon={faTrash} color="#212529" className="shadow iconHover" size="lg"/>
+                                    <FontAwesomeIcon icon={faTrash} color="#212529" className="shadow" size="lg"/>
                                     </button>
                             </td>
                         </tr>

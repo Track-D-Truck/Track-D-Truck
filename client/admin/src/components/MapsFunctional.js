@@ -1,12 +1,24 @@
 import React from "react";
+import {connect} from 'react-redux'
+import {SET_LOCATION} from '../store/actions/DumpsAction'
 import ReactDOM from "react-dom";
-const { compose, withProps, lifecycle } = require("recompose");
+const { compose, withProps, lifecycle, withState } = require("recompose");
 const { withScriptjs } = require("react-google-maps");
 const {
   StandaloneSearchBox
 } = require("react-google-maps/lib/components/places/StandaloneSearchBox");
 
+const mapDispatchToProps = dispatch => ({
+  location: data =>  {
+    dispatch(SET_LOCATION(data))
+  }
+});
+
 export const PlacesWithStandaloneSearchBox = compose(
+  connect(
+    null,
+    mapDispatchToProps
+  ),
   withProps({
     googleMapURL:
     "https://maps.googleapis.com/maps/api/js?key=AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc&v=3.exp&libraries=geometry,drawing,places",
@@ -24,7 +36,7 @@ export const PlacesWithStandaloneSearchBox = compose(
         },
         onPlacesChanged: () => {
           const places = refs.searchBox.getPlaces();
-
+          this.props.location(places)
           this.setState({
             places
           });
@@ -34,7 +46,7 @@ export const PlacesWithStandaloneSearchBox = compose(
   }),
   withScriptjs
 )(props => (
-  <div data-standalone-searchbox="">
+  <div data-standalone-searchbox=""  className="ml-3">
     <StandaloneSearchBox
       ref={props.onSearchBoxMounted}
       bounds={props.bounds}
@@ -53,12 +65,12 @@ export const PlacesWithStandaloneSearchBox = compose(
           boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
           fontSize: `14px`,
           outline: `none`,
-          textOverflow: `ellipses`
+          textOverflow: `ellipses`,
         }}
       />
     </StandaloneSearchBox>
     <ol>
-      {props.places.map(
+      {/* {props.places.map(
         ({ place_id, formatted_address, geometry: { location } }) => (
           <li key={place_id}>
             {formatted_address}
@@ -66,7 +78,7 @@ export const PlacesWithStandaloneSearchBox = compose(
             ({location.lat()}, {location.lng()})
           </li>
         )
-      )}
+      )} */}
     </ol>
   </div>
 ));

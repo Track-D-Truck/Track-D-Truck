@@ -115,15 +115,15 @@ class DriverController {
         }
         
         let DriverId = +req.params.id
-        console.log(editDriver,DriverId,' <<<<<<<<<<<<<<<<<<<<<<<<<<<');
-        // Driver.update(editDriver, {where: {id: DriverId}, returning: true})
-        // .then(result => {
-        //     res.status(200).json(result )
-        // })
-        // .catch(err => {
-        //     console.log(err, 'dari edit Driver');
-        //     next(err)
-        // })
+
+        Driver.update(editDriver, {where: {id: DriverId}, returning: true})
+        .then(result => {
+            res.status(200).json(result )
+        })
+        .catch(err => {
+            console.log(err, 'dari edit Driver');
+            next(err)
+        })
     }
 
     static delete(req, res, next) {

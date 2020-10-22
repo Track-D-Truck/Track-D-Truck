@@ -3,7 +3,7 @@ import { Provider, useSelector } from 'react-redux'
 
 import {
   BrowserRouter as Router,
-  // Switch,
+  Redirect,
   Route,
 } from "react-router-dom";
 
@@ -14,17 +14,21 @@ import Trucks from './pages/Trucks'
 import Report from './pages/Report'
 import GarbageDump from './pages/GarbageDump'
 import Drivers from './pages/Drivers'
+import Landing from './landing/LandingPage'
 
 import CheckOptimation from './components/CheckOptimation'
 
 function App() {
   const status = useSelector(state => state.ResultReducer.status)
+  const access_token = localStorage.access_token
+
   return (
 
     <Router>
+      {!access_token && <Redirect to="/login"/>}
     <Route path="/login" component={Login}></Route>
     {/* {!status && <CheckOptimation/>} */}
-        <Route exact path="/" component={Dashboard}></Route>
+        <Route exact path="/" component={Landing}></Route>
         <Route path="/trucks" component={Trucks}></Route>
         <Route path='/report' component={Report}/>
         <Route path='/dumps' component={GarbageDump}/>
