@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {     
     View,
@@ -15,7 +15,7 @@ import {
     useFonts,
     Quicksand_700Bold,
 } from '@expo-google-fonts/quicksand';
-import { fetchResult } from '../store/actions/resultAction'
+// import { fetchResult } from '../store/actions/resultAction'
 import { fetchHistory } from '../store/actions/historyAction'
 import CustomHeader from '../components/CustomHeader'
 import NoTask from '../components/NoTask'
@@ -28,25 +28,12 @@ const HomeScreen = ({ navigation }) => {
         Quicksand_700Bold,
       });
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const result = useSelector(state => state.resultReducer.result)
     const user = useSelector(state => state.userReducer)
     const histories = useSelector(state => state.historyReducer.histories)
-
-    useEffect(() => {
-        dispatch(fetchResult())
-        return () => {
-            console.log("clean up in home screen");
-        }  
-    }, [dispatch])
-
-    useEffect(() => {
-        dispatch(fetchHistory())
-        return () => {
-            console.log("clean up in home screen");
-        }  
-    }, [dispatch])
+    
 
     function compare_date(a, b){
         if(a.date > b.date){
@@ -58,12 +45,21 @@ const HomeScreen = ({ navigation }) => {
         }
     }
 
-    let sortedHistories
-    if(histories){
-        sortedHistories = histories.sort(compare_date)
-    }    
+    const sortedHistories = histories.sort(compare_date)
 
-    let date = new Date().toLocaleDateString()
+    // useEffect(() => {
+    //     dispatch(fetchResult())
+    //     return () => {
+    //         console.log("clean up in home screen");
+    //     }  
+    // }, [dispatch])
+
+    // useEffect(() => {
+    //     dispatch(fetchHistory())
+    //     return () => {
+    //         console.log("clean up in home screen");
+    //     } 
+    // }, [histories])
 
     if (!fontsLoaded) {
         return <AppLoading/>
@@ -98,7 +94,6 @@ const HomeScreen = ({ navigation }) => {
                                     <View style={{ width: '60%'}}>
                                         <Image source={require('../../assets/warn.png')} style={{ width: 20, height: 20, alignSelf: 'flex-end'}} />
                                         <Text style={{ fontFamily: 'Quicksand_700Bold', fontSize: 20, marginTop: 27, marginBottom: 5, color: '#555555', alignSelf: 'flex-end'}}>New task available</Text>
-                                        <Text style={{ fontFamily: 'Quicksand_700Bold', fontSize: 20,  marginBottom: 5, color: '#555555', alignSelf: 'flex-end'}}>{date}</Text>
                                         <TouchableOpacity style={styles.btnViewRoute} onPress={() => {
                                             navigation.navigate('Map')
                                         }}>
@@ -108,34 +103,34 @@ const HomeScreen = ({ navigation }) => {
                                 </View>
                         </View>}
                     </View>
-                    {!sortedHistories ? <ActivityIndicator size="large" color="#dfe6e9"/> :
-                    <View style={styles.flatListContainer}>
-                            <View>
-                                <Text style={{ color: '#555555', fontSize: 25, padding: 10, fontFamily:'Quicksand_700Bold'}}>Your task history</Text>
-                            </View>
-                            <ScrollView>
-                                {sortedHistories.map((item, index) => (
-                                    <View key={index} style={styles.itemContainer}>
-                                        <Text style={{ color: '#555555', fontSize: 20, padding: 5, fontFamily:'Quicksand_700Bold'}}>{item.date}</Text>
+                {!sortedHistories ? <ActivityIndicator size="large" color="#dfe6e9"/> :
+                <View style={styles.flatListContainer}>
+                        <View>
+                            <Text style={{ color: '#555555', fontSize: 25, padding: 10, fontFamily:'Quicksand_700Bold'}}>Your task history</Text>
+                        </View>
+                        <ScrollView>
+                            {sortedHistories.map((item, index) => (
+                                <View key={index} style={styles.itemContainer}>
+                                    <Text style={{ color: '#555555', fontSize: 20, padding: 5, fontFamily:'Quicksand_700Bold'}}>{item.date}</Text>
+                                    <View style={{ flexDirection: 'row'}}>
+                                        <Image source={require('../../assets/check.png')} style={{ width: 30, height: 30}} />
+                                        <Text style={{padding: 5, color: '#2ECC71', fontSize: 20, fontFamily:'Quicksand_700Bold'}}>Complete</Text>
+                                    </View>
+                                    <View style={{ flexDirection: 'row', alignSelf: 'flex-end'}}>                                          
                                         <View style={{ flexDirection: 'row'}}>
-                                            <Image source={require('../../assets/check.png')} style={{ width: 30, height: 30}} />
-                                            <Text style={{padding: 5, color: '#2ECC71', fontSize: 20, fontFamily:'Quicksand_700Bold'}}>Complete</Text>
-                                        </View>
-                                        <View style={{ flexDirection: 'row', alignSelf: 'flex-end'}}>                                          
-                                            <View style={{ flexDirection: 'row'}}>
-                                                <TouchableOpacity 
-                                                style={[styles.button, {marginRight: 5, marginLeft: 5}]}
-                                                onPress={() => {
-                                                    navigation.navigate('History', { item })
-                                                }}>
-                                                    <Text style={{color: '#fff', fontFamily:'Quicksand_700Bold'}}>Detail</Text>
-                                                </TouchableOpacity>
-                                            </View>
+                                            <TouchableOpacity 
+                                            style={[styles.button, {marginRight: 5, marginLeft: 5}]}
+                                            onPress={() => {
+                                                navigation.navigate('History', { item })
+                                            }}>
+                                                <Text style={{color: '#fff', fontFamily:'Quicksand_700Bold'}}>Detail</Text>
+                                            </TouchableOpacity>
                                         </View>
                                     </View>
-                                ))}
-                            </ScrollView>
-                    </View>
+                                </View>
+                            ))}
+                        </ScrollView>
+                </View>
                 }
             </View>
         )
@@ -157,7 +152,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Quicksand_700Bold'
     },
     contentContainer: {
-        height: 230,
+        height: 200,
         width,
         padding: 20
     },

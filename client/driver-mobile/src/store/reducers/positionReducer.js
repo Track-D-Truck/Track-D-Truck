@@ -11,6 +11,7 @@ const initialState = {
         latitude: -6.86666,
         longitude: 107.60000
     },
+    nextDestination: '',
     updatedPosition: []
 }
 
@@ -24,6 +25,18 @@ export function positionReducer (state = initialState, action) {
                     latitude: +splittedLocation[0],
                     longitude: +splittedLocation[1]
                 }
+            }
+        case 'SET_NEXT_DESTINATION':
+            return {
+                ...state,
+                nextDestination: action.location.address
+            }
+        case 'RESET_POSITION':
+            return {
+                ...state,
+                currentPosition: state.startPosition,
+                nextDestination: '',
+                updatedPosition: []
             }
         default:
             return state

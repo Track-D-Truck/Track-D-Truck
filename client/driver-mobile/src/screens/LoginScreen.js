@@ -6,16 +6,24 @@ import {
     StyleSheet,
     TouchableOpacity,
     TextInput,
-    Alert,
     Dimensions,
-    SafeAreaView
   } from 'react-native'
-
+  import {
+    useFonts,
+    Quicksand_500Medium,
+    Quicksand_700Bold,
+} from '@expo-google-fonts/quicksand';
+import { AppLoading } from 'expo'
 const { width, height } = Dimensions.get('window');
 
 import { loginAccount } from '../store/actions/userAction'
 
 const LoginScreen = ({ navigation }) => {
+
+    const [fontsLoaded] = useFonts({
+        Quicksand_500Medium,
+        Quicksand_700Bold
+      });
 
     const [userData, setUserData] = useState({
         email: '',
@@ -28,61 +36,61 @@ const LoginScreen = ({ navigation }) => {
 
     const login = () => {
         dispatch(loginAccount(userData))
-        // setTimeout(() => {
-        //     navigation.replace('Home')
-        // }, 2000);   
         navigation.replace('Loading')     
         setUserData({
             email: '',
             password: ''
         })
     }
-
-    return (
-        <View style={styles.container}>
-            <View style={styles.formContainer}>
-                <View style={{ padding: 20, alignItems: 'center' }}>
-                    <Text style={styles.headerFont}>Track D'Truck</Text>
-                </View>
-                <View style={{ padding: 10 }}>
-                    <Text style={styles.lable}>Email</Text>
-                    <TextInput
-                        placeholder="Email"
-                        style={styles.formInput}
-                        value={userData.email}
-                        onChangeText={(text => {
-                            setUserData({
-                                ...userData,
-                                email: text
-                            })
-                        })}/>
-                </View>
-                <View style={{ padding: 10 }}>
-                    <Text style={styles.lable}>Password</Text>
-                    <TextInput
-                        placeholder="Password"
-                        secureTextEntry={true}
-                        style={styles.formInput}
-                        value={userData.password}
-                        onChangeText={(text => {
-                            setUserData({
-                                ...userData,
-                                password: text
-                            })
-                        })}/>
-                </View>
-                <View style={{ padding: 30, alignItems: 'center' }}>
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={login}>
-                            <Text style={styles.fontWhite}>
-                                Login
-                            </Text>
-                    </TouchableOpacity>
+    if (!fontsLoaded) {
+        return <AppLoading/>
+    }else{
+        return (
+            <View style={styles.container}>
+                <View style={styles.formContainer}>
+                    <View style={{ padding: 20, alignItems: 'center' }}>
+                        <Text style={[styles.headerFont, {fontFamily: 'Quicksand_700Bold'}]}>Track D' Truck</Text>
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <Text style={[styles.lable, {fontFamily: 'Quicksand_700Bold'}]}>Email</Text>
+                        <TextInput
+                            placeholder="Email"
+                            style={[styles.formInput, {fontFamily: 'Quicksand_500Medium'}]}
+                            value={userData.email}
+                            onChangeText={(text => {
+                                setUserData({
+                                    ...userData,
+                                    email: text
+                                })
+                            })}/>
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <Text style={[styles.lable, {fontFamily: 'Quicksand_700Bold'}]}>Password</Text>
+                        <TextInput
+                            placeholder="Password"
+                            secureTextEntry={true}
+                            style={[styles.formInput, {fontFamily: 'Quicksand_500Medium'}]}
+                            value={userData.password}
+                            onChangeText={(text => {
+                                setUserData({
+                                    ...userData,
+                                    password: text
+                                })
+                            })}/>
+                    </View>
+                    <View style={{ padding: 30, alignItems: 'center' }}>
+                        <TouchableOpacity
+                            style={[styles.button, {fontFamily: 'Quicksand_700Bold'}]}
+                            onPress={login}>
+                                <Text style={styles.fontWhite}>
+                                    Login
+                                </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
-        </View>
-    )
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -109,7 +117,6 @@ const styles = StyleSheet.create({
     },
     headerFont: {
         fontSize: 30,
-        fontWeight: "bold",
         letterSpacing: 0.15,
         color: '#555555'
     },
@@ -143,7 +150,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     lable: {
-        fontWeight: 'bold',
         fontSize: 20,
         color: '#555555'
     }

@@ -5,10 +5,12 @@ import { Provider } from 'react-redux'
 import { store } from './src/store/'
 import LoginScreen from './src/screens/LoginScreen'
 import HomeScreen from './src/screens/HomeScreen'
+import HomeScreen2 from './src/screens/HomeScreen2'
 import MapTabNavigator from './src/components/MapTabNavigator'
 import HomeTabNavigator from './src/components/HomeTabNavigator'
 import { StatusBar } from 'react-native';
 import Loading from './src/components/Loading'
+import HistoryScreen from './src/screens/HistoryScreen'
 
 
 const Stack = createStackNavigator()
@@ -34,6 +36,15 @@ export default function App () {
             <Stack.Screen
               name='Home'
               component={HomeScreen}
+              options={{
+                headerShown: false
+              }}/>
+            <Stack.Screen
+              name='History'
+              component={HistoryScreen}/>
+            <Stack.Screen
+              name='Home Page'
+              component={HomeScreen2}
               options={{
                 headerShown: false
               }}/>
