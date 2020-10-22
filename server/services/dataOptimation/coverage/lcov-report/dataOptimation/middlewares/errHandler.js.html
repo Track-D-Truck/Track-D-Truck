@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/20</span>
+                <span class='fraction'>15/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>4/8</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.47% </span>
+                <span class="strong">73.68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/19</span>
+                <span class='fraction'>14/19</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,32 +82,32 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const e = require("express")
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const e = require("express")
 const { compareSync } = require("bcrypt")
 &nbsp;
 const error = (err, req, res, next) =&gt; {
@@ -121,12 +121,12 @@ const error = (err, req, res, next) =&gt; {
     } else if (err.name === `SequelizeValidationError`) {
         message = err.errors.map(e =&gt; e.message)
         statusCode = 400
-    } else if (err.name === `otherError`) {
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (err.name === `otherError`) {
         statusCode = err.statusCode
         message = err.message
-    } else if (err.name === `JsonWebTokenError`) {
-        statusCode = 401
-        message = `Please login to access this page.`
+    } else <span class="cstat-no" title="statement not covered" >if (err.name === `JsonWebTokenError`) {</span>
+<span class="cstat-no" title="statement not covered" >        statusCode = 401</span>
+<span class="cstat-no" title="statement not covered" >        message = `Please login to access this page.`</span>
     }
 &nbsp;
     return res.status(statusCode).json({message})
@@ -139,7 +139,7 @@ module.exports = error</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Oct 20 2020 08:53:09 GMT+0700 (Western Indonesia Time)
+                at Thu Oct 22 2020 19:57:43 GMT+0700 (Western Indonesia Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

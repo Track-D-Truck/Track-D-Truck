@@ -8,6 +8,29 @@
     "initdb": "sequelize db:create --env=test && sequelize db:migrate --env=test",
     "coverage" : "nyc npm run test"
   },
+  "jest":{
+    "coveragePathIgnorePatterns":[
+      "./test/truck.test.js",
+      "./test/tps.test.js",
+      "./controllers/TPS.js",
+      "./app2.js",
+      "./middlewares/errHandler.js",
+      "./helpers/factorial",
+      "./helpers/swap",
+      "./helpers/lexicographic",
+      "./helpers/jwt",
+      "./controllers/Optimations.js",
+      "./controllers/Trucks.js",
+      "./routes/optimation",
+      "./routes/index.js",
+      "./models/index.js"
+    ],
+    "testPathIgnorePatterns":[
+      "./test/tps.test.js",
+      "./test/truck.test.js"
+
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

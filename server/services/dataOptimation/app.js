@@ -1,6 +1,6 @@
-// if(process.env.NODE_ENV === 'development'){
-//     require('dotenv').config()
-// }
+if(process.env.NODE_ENV === 'development'){
+    require('dotenv').config()
+}
 
 const cors = require(`cors`)
 const express = require(`express`)
@@ -16,8 +16,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(routes)
 app.use(errorHandler)
 
-// app.listen(port, () => {
-//     console.log(`We are open now at ${port} SEMANGAT TZUY INI SERVER CRUD`)
-//  })
+app.listen(port, () => {
+    console.log(`We are open now at ${port} SEMANGAT TZUY INI SERVER CRUD`)
+ })
 
 module.exports = app
