@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link, useHistory } from "react-router-dom"
 
+import RoomChat from './RoomChat'
 export default function Navbar() {
 	const history = useHistory()
 	
 	function logout() {
+		localStorage.clear()
 		history.push('/login')
 	}
 	
@@ -32,9 +34,12 @@ export default function Navbar() {
 										<Link className="nav-link" to="/report">Report</Link>
 								</li>
 							</ul>
-							<button className="ml-auto btn btn-secondary" id="borderButton" onClick={logout}>
+							<span className="ml-auto">
+							{/* <RoomChat/> */}
+							<button className=" btn btn-secondary" id="borderButton" onClick={logout}>
 								Logout
 							</button>
+							</span>
 					</div>
     		</nav>
     )

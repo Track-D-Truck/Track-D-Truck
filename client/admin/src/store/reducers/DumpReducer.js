@@ -2,7 +2,8 @@ const initState = {
   loadingStatus: false,
   errorStatus: false,
   dumps: [],
-  chosenDumps: {}
+  chosenDumps: {},
+  location: null
 }
 
 function dumpReducer(state = initState, action) {
@@ -24,6 +25,12 @@ function dumpReducer(state = initState, action) {
         ...state,
         dumps: action.payload
       }
+    case "SET_LOCATION":
+      return {
+        ...state,
+        location: action.payload
+      }
+      
     default:
       return state
   }

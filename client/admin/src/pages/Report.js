@@ -1,18 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import Navbar from '../components/Navbar' 
 import { Maps } from '../components/Maps'
 import CardTrackingTruck from '../components/CardTrackingTruck'
 import CardTruckRoutes from '../components/CardTruckRoutes'
 import TableResult from '../components/TableResult'
-
+import Loading from '../components/Loading'
 
 export default function Report() {
+	const loading = useSelector(state => state.TruckReducer.loadingStatus)
 
+	if (loading) return <Loading/>
 	return (
         <>
 					<Navbar/>
-					<div className='container mt-2'>
+					<div className='container mt-4 px-5 pb-2'>
 						<div className="row">
 
 							<div className="col-sm-9">
