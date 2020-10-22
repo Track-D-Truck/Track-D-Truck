@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603375398030" clover="3.2.0">
-  <project timestamp="1603375398030" name="All files">
-    <metrics statements="68" coveredstatements="65" conditionals="6" coveredconditionals="6" methods="19" coveredmethods="16" elements="93" coveredelements="87" complexity="0" loc="68" ncloc="68" packages="4" files="7" classes="7"/>
+<coverage generated="1603375795468" clover="3.2.0">
+  <project timestamp="1603375795469" name="All files">
+    <metrics statements="68" coveredstatements="64" conditionals="6" coveredconditionals="6" methods="19" coveredmethods="15" elements="93" coveredelements="85" complexity="0" loc="68" ncloc="68" packages="4" files="7" classes="7"/>
     <package name="controllers">
-      <metrics statements="27" coveredstatements="24" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="7"/>
+      <metrics statements="27" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="6"/>
       <file name="Users.js" path="/home/obos/Desktop/Track-D-Truck/server/services/dataOptimation/controllers/Users.js">
-        <metrics statements="27" coveredstatements="24" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="7"/>
+        <metrics statements="27" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -19,7 +19,7 @@
         <line num="38" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
         <line num="60" count="2" type="stmt"/>
