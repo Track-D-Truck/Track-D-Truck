@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
     TextInput,
     Dimensions,
+    Image
   } from 'react-native'
   import {
     useFonts,
@@ -47,9 +48,16 @@ const LoginScreen = ({ navigation }) => {
     }else{
         return (
             <View style={styles.container}>
+                <View style={{ padding: 30, flexDirection: 'row'}}>
+                    <Image source={require('../../assets/logo.png')} style={{ width: 100, height: 100}} />
+                    <View>
+                        <Text style={[styles.headerFont, {fontFamily: 'Quicksand_700Bold'}]}>Track</Text>
+                        <Text style={[styles.headerFont, {fontFamily: 'Quicksand_700Bold'}]}>D' Truck</Text>
+                    </View>                    
+                </View>
                 <View style={styles.formContainer}>
                     <View style={{ padding: 20, alignItems: 'center' }}>
-                        <Text style={[styles.headerFont, {fontFamily: 'Quicksand_700Bold'}]}>Track D' Truck</Text>
+                        <Text style={[styles.headerFont, {fontFamily: 'Quicksand_700Bold'}]}>Welcome</Text>
                     </View>
                     <View style={{ padding: 10 }}>
                         <Text style={[styles.lable, {fontFamily: 'Quicksand_700Bold'}]}>Email</Text>
