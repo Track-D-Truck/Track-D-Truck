@@ -20,3 +20,23 @@ export function updatePosition(truckData, location) {
         .catch(err => console.log(err))        
     }
 }
+
+export function setNextDestination(location) {
+    return (dispatch, getState) => {
+        if(location){
+            dispatch({
+                type: 'SET_NEXT_DESTINATION',
+                location
+            })
+        }
+    }    
+}
+
+export function resetPosition () {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'RESET_POSITION',
+            data: null
+        })
+    }
+}

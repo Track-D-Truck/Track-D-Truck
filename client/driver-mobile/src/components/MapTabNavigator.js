@@ -46,14 +46,14 @@ function MapTabNavigator() {
             <IconBottom data={props} image={require('../../assets/checklist.png')} />
           )
         }}/>
-        <Tab.Screen 
+        {/* <Tab.Screen 
         name="Chat"
         component={ChatScreen} 
         options={{
           tabBarIcon: (props) => (
             <IconBottom data={props} image={require('../../assets/chat.png')} />
           )
-        }}/>
+        }}/> */}
     </Tab.Navigator>
   )
 }
