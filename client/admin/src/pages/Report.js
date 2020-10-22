@@ -15,7 +15,7 @@ export default function Report() {
 	return (
         <>
 					<Navbar/>
-					<div className='container mt-4'>
+					<div className='container mt-4 px-5 pb-2'>
 						<div className="row">
 
 							<div className="col-sm-9">

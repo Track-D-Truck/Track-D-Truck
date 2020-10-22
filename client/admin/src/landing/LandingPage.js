@@ -13,8 +13,9 @@ function IndexHeader() {
   const dispatch = useDispatch()
 
   const result = useSelector(state => state.ResultReducer.result)
+  // const user = useSelector(state => state.UserReducer.user)
   let loading = useSelector(state => state.TruckReducer.loadingStatus)
-
+  let userName = localStorage.name
   console.log(result, "<< ini result")
   console.log(loading, "<<ini loading")
 
@@ -35,8 +36,8 @@ function IndexHeader() {
   const style = {
     title: {
         fontFamily: 'Russo One',
-        fontSize: '64px',
-        color: '#A8DDA8',
+        fontSize: '70px',
+        color: '#27AE60',
         textAlign: 'center',
         textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         paddingTop: '0px'
@@ -53,10 +54,12 @@ if (loading) return <Loading/>
       >
         <div className="container">
                 <h1 style={style.title} className="m-0">Track D'Truck</h1>
-                <img src={loginImage} alt='loginComponent' style={{margin:'auto', paddingLeft: '50px'}}></img>
+                {/* <h5 className="font-italic">Welcome, {userName}!</h5> */}
+                <img src={loginImage} alt='loginComponent' style={{margin:'auto', paddingLeft: 0}}></img>
         </div>
         <Container>
-          <div className="motto text-center">
+          {!result && 
+          <div className="motto text-center mr-5 mt-5">
             <h1 style={{fontFamily: 'Russo One'}}>Fleet Optimization Generator</h1>
             <br />
             <h3>Let's generate the best fleet schema to obtain the most optimum cost.</h3>
@@ -83,7 +86,9 @@ if (loading) return <Loading/>
             <br/>
             <br/>
             <br/>
-         
+          </div> 
+          }
+          <div className="motto text-center mr-5">
             {result && !loading &&
             <Row className="text-center">
             <Col className="ml-auto mr-auto" md="12">

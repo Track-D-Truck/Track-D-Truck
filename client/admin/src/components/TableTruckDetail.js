@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Swal from 'sweetalert2'
 
 import {FETCH_TRUCKS, SET_TRUCKS, DELETE_TRUCK, UPDATE_TRUCK} from '../store/actions/TrucksActions'
 import {FETCH_DRIVERS, UPDATE_DRIVERS} from '../store/actions/DriversAction'
@@ -69,7 +70,7 @@ export default function TableTruckDetail() {
             </div>
         </div>
         <div className="card tableBackground noBorder shadow" >
-            <table className="table text-center mt-4 ">
+            <table className="table text-center mt-4 " >
             <thead className='table-borderless abuColor' style={{fontWeight:'bold', fontSize:'1.2em'}}>
             <tr>
                 <th scope="col">Truck Code</th>
@@ -81,14 +82,30 @@ export default function TableTruckDetail() {
                 <th scope="col">Action</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody >
 
                 {trucks.map((truck,i) => {
                     function handleDeleteTruck() {
-                        dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
-                        const filtered = trucks.filter( e => e.id !== truck.id)
-                        dispatch(DELETE_TRUCK(truck.id))
-                        dispatch(SET_TRUCKS(filtered))
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#27ae60',
+                            cancelButtonColor: '#d33',
+														confirmButtonText: 'Yes, delete it!',
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              Swal.fire(
+                                'Your data has been deleted!',
+                                 '',
+                                'success'
+                              )
+															dispatch(UPDATE_DRIVERS( {status: 'available'}, truck.DriverId))
+															const filtered = trucks.filter( e => e.id !== truck.id)
+															dispatch(DELETE_TRUCK(truck.id))
+															dispatch(SET_TRUCKS(filtered))
+														}
+                          })
                     }
                     function handleUpdateDriver(event) {
                         if(event.target.value) {
@@ -121,7 +138,7 @@ export default function TableTruckDetail() {
                     }
                       
                     return(
-                        <tr key={i}>
+                        <tr key={i} >
                             <th scope="row abuColor">{truck.truck_code}</th>
                             <td>  
                             <div className="form-group row my-0  noBorder">
@@ -171,7 +188,7 @@ export default function TableTruckDetail() {
                             <td>
                                 <ModalEditTruck chosenTruck={truck} />
                                 <button className="btn noBorder" onClick={handleDeleteTruck}>
-                                    <FontAwesomeIcon icon={faTrash} color="#212529" className="shadow iconHover" size="lg"/>
+                                    <FontAwesomeIcon icon={faTrash} color="#212529" className="shadow" size="lg"/>
                                     </button>
                             </td>
                         </tr>

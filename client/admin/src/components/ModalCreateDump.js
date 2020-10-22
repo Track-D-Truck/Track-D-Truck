@@ -54,7 +54,7 @@ export default function ModalCreateDump() {
           backdrop="static"
           keyboard={false}
 					>
-					{/* <PlacesWithStandaloneSearchBox/> */}
+					<PlacesWithStandaloneSearchBox/>
 			<div className="card modalHeadBackground noBorder shadow mx-auto"> 
 						<div className=" text-white row my-auto" >
 						<span className="mx-auto">
