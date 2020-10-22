@@ -101,13 +101,13 @@ const FlatlistItem = ({ item, truckData }) => {
                 <View style={{ flexDirection: 'row', alignSelf: 'flex-end'}}>
                     {!found && (nextDestination === item.address) &&   
                     <View style={{ flexDirection: 'row'}}>
-                    <TouchableOpacity 
+                    {/* <TouchableOpacity 
                     style={[styles.button, {marginRight: 5, marginLeft: 5, backgroundColor: '#E74C3C'}]}
                     onPress={() => {
                         getDirection(item)
                     }}>
                         <Text style={{color: '#fff', fontFamily:'Quicksand_700Bold'}}>Get direction</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                     <TouchableOpacity 
                     style={[styles.button, {marginRight: 5, marginLeft: 5}]}
                     onPress={() => {
