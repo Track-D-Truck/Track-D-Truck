@@ -87,7 +87,7 @@ export default function TableDriverDetail() {
 													
 											return(
 													<tr key={i}>
-															<th scope="row abuColor">{driver.id}</th>
+															<th scope="row abuColor">{driver.id - 1}</th>
 															<td>{driver.name}</td>
 															<td>{driver.email}</td>
 															<td>{driver.phone}</td>

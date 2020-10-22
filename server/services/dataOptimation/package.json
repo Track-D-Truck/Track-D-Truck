@@ -4,9 +4,23 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "test": "jest --runInBand --detectOpenHandles --forceExit --coverage",
     "initdb": "sequelize db:create --env=test && sequelize db:migrate --env=test",
     "coverage": "nyc npm run test"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "./controllers/Optimations",
+      "./helpers/factorial",
+      "./helpers/lexicographic",
+      "./helpers/swap"
+    ],
+    "testPathIgnorePatterns": [
+      "./controllers/Optimations",
+      "./helpers/factorial",
+      "./helpers/lexicographic",
+      "./helpers/swap"
+    ]
   },
   "keywords": [],
   "author": "",

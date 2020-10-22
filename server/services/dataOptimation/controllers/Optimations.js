@@ -231,12 +231,14 @@ class OptimationController {
       init = store;
     }
 
+    let totalPermutations = fctrl + factorial(activeTPS.length)
+
     //HASIL ALL
     // return res.send(schemas);
     //HASIL BEST SCHEMA
     // return res.send({bestCost, bestSchema});
     //HASIL COMBINE
-    return res.send({BEST:{bestCost: bestCost, bestSchema: bestSchema}, ALL:schemas});
+    return res.send({BEST:{bestCost: bestCost, bestSchema: bestSchema}, ALL:schemas, PERMUTATIONS: totalPermutations});
   }
 }
 
