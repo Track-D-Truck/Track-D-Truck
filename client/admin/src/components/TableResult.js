@@ -20,7 +20,7 @@ export default function TableResult() {
     //  console.log(routes,'ini routes',truck);
   } 
   return (
-    <div className="noBorder shadow"  > 
+    <div className="noBorder shadow mt-5"  > 
     <table className="table text-center  mt-3">
             <thead className='table-borderless thead-bg' style={{color:'white'}} >
             <tr>

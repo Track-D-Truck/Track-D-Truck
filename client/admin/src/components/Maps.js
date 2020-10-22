@@ -41,8 +41,8 @@ export const Maps = compose(
 			const DirectionsService = new window.google.maps.DirectionsService();
 		
 			DirectionsService.route({
-		  origin: new window.google.maps.LatLng(-6.86666, 107.60000),
-		  destination: new window.google.maps.LatLng(-7.0015804, 107.9028182),
+		  origin: new window.google.maps.LatLng(-6.891205299999999, 107.6266582),
+		  destination: new window.google.maps.LatLng(-7.020695399999999, 107.9047481),
 		  waypoints: tpsLocations,
 		  travelMode: window.google.maps.TravelMode.DRIVING,
 		}, (result, status) => {
@@ -81,8 +81,8 @@ export const Maps = compose(
 		<div>
 			{/* {JSON.stringify(props.chosenResult)} */}
 			<GoogleMap
-				defaultZoom={7}
-				defaultCenter={new window.google.maps.LatLng( -6.260786, 106.781563)}
+				defaultZoom={3}
+				defaultCenter={new window.google.maps.LatLng( -6.955950, 107.7657032)}
 			>
 				{props.directions && <DirectionsRenderer directions={props.directions}/> }
 			</GoogleMap>
