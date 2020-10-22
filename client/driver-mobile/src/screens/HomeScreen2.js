@@ -30,6 +30,8 @@ const HomeScreen = ({ navigation }) => {
 
     // const dispatch = useDispatch()
 
+    const [sortedHistories, setSortedHistories] = useState(null)
+
     const result = useSelector(state => state.resultReducer.result)
     const user = useSelector(state => state.userReducer)
     const histories = useSelector(state => state.historyReducer.histories)
@@ -45,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
         }
     }
 
-    const sortedHistories = histories.sort(compare_date)
+    // const sortedHistories = histories.sort(compare_date)
 
     // useEffect(() => {
     //     dispatch(fetchResult())
@@ -54,12 +56,16 @@ const HomeScreen = ({ navigation }) => {
     //     }  
     // }, [dispatch])
 
-    // useEffect(() => {
-    //     dispatch(fetchHistory())
-    //     return () => {
-    //         console.log("clean up in home screen");
-    //     } 
-    // }, [histories])
+    useEffect(() => {
+        // dispatch(fetchHistory())
+        // return () => {
+        //     console.log("clean up in home screen");
+        // } 
+        if(histories){
+            setSortedHistories(histories.sort(compare_date)
+            )
+        }
+    }, [histories])
 
     if (!fontsLoaded) {
         return <AppLoading/>
@@ -103,7 +109,7 @@ const HomeScreen = ({ navigation }) => {
                                 </View>
                         </View>}
                     </View>
-                {!sortedHistories ? <ActivityIndicator size="large" color="#dfe6e9"/> :
+                {sortedHistories.length < 1 ? <ActivityIndicator size="large" color="#dfe6e9"/> :
                 <View style={styles.flatListContainer}>
                         <View>
                             <Text style={{ color: '#555555', fontSize: 25, padding: 10, fontFamily:'Quicksand_700Bold'}}>Your task history</Text>

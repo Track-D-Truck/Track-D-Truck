@@ -1,5 +1,5 @@
 const initialState = {
-    histories: null,
+    histories: [],
     todayHistory: []
 }
 

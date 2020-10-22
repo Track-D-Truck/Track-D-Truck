@@ -41,27 +41,27 @@ const HomeScreen = ({ navigation }) => {
         }  
     }, [dispatch])
 
-    useEffect(() => {
-        dispatch(fetchHistory())
-        return () => {
-            console.log("clean up in home screen");
-        }  
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(fetchHistory())
+    //     return () => {
+    //         console.log("clean up in home screen");
+    //     }  
+    // }, [dispatch])
 
-    function compare_date(a, b){
-        if(a.date > b.date){
-                return -1;
-        }else if(a.date < b.date){
-                return 1;
-        }else{
-                return 0;
-        }
-    }
+    // function compare_date(a, b){
+    //     if(a.date > b.date){
+    //             return -1;
+    //     }else if(a.date < b.date){
+    //             return 1;
+    //     }else{
+    //             return 0;
+    //     }
+    // }
 
-    let sortedHistories
-    if(histories){
-        sortedHistories = histories.sort(compare_date)
-    }    
+    // let sortedHistories
+    // if(histories){
+    //     sortedHistories = histories.sort(compare_date)
+    // }    
 
     let date = new Date().toLocaleDateString()
 
@@ -108,13 +108,16 @@ const HomeScreen = ({ navigation }) => {
                                 </View>
                         </View>}
                     </View>
-                    {!sortedHistories ? <ActivityIndicator size="large" color="#dfe6e9"/> :
+                    {histories.length < 1 ?
+                    <View>
+                        <Text style={{ color: '#555555', fontSize: 25, padding: 10, fontFamily:'Quicksand_700Bold'}}>Your don't have any task history</Text>
+                    </View> :
                     <View style={styles.flatListContainer}>
                             <View>
                                 <Text style={{ color: '#555555', fontSize: 25, padding: 10, fontFamily:'Quicksand_700Bold'}}>Your task history</Text>
                             </View>
                             <ScrollView>
-                                {sortedHistories.map((item, index) => (
+                                {histories.map((item, index) => (
                                     <View key={index} style={styles.itemContainer}>
                                         <Text style={{ color: '#555555', fontSize: 20, padding: 5, fontFamily:'Quicksand_700Bold'}}>{item.date}</Text>
                                         <View style={{ flexDirection: 'row'}}>
