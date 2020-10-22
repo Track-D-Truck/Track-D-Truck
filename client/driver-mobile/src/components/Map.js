@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { 
     Dimensions,
     StyleSheet,
@@ -11,8 +11,7 @@ import {
 } from 'react-native';
 import MapView, { Marker } from 'react-native-maps'
 import MapViewDirections from 'react-native-maps-directions';
-// import GOOGLE_MAPS_APIKEY from '../../gmapskey'
-import { positionReducer } from '../store/reducers/positionReducer';
+import { setNextDestination } from '../store/actions/positionAction'
 
 const { width, height } = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
@@ -23,11 +22,28 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 const Map = ({ waypoints }) => { 
 
+    const dispatch = useDispatch()
+    const [count, setCount] = useState(-1)
     const currentPosition = useSelector(state => state.positionReducer.currentPosition)
     const origin = useSelector(state => state.positionReducer.startPosition)
     const destination = useSelector(state => state.positionReducer.lastDestination)
+    console.log(currentPosition, "<<< current position");
+    
+    useEffect(() => {
+        if(count < waypoints.length){
+            dispatch(setNextDestination(waypoints[count + 1]))
+            setCount(count + 1)            
+            console.log("Count ke-", count)
+        }
+        if(count === waypoints.length){
+            setCount(-1)
+        }
+        return () => {
+            console.log("clean up in map component");
+        }  
+    }, [currentPosition])
 
-    const goDirection = (coordinate) => {
+    const getDirection = (coordinate) => {
         Linking.openURL(`http://www.google.com/maps/dir/${currentPosition.latitude},${currentPosition.longitude}/${coordinate.latitude},${coordinate.longitude}`)
     }
 
@@ -75,11 +91,11 @@ const Map = ({ waypoints }) => {
             {waypoints.map((coordinate, index) =>
             <MapView.Marker key={`coordinate_${index}`} coordinate={coordinate}>
                 <MapView.Callout onPress={() => {
-                                goDirection(coordinate)
+                                getDirection(coordinate)
                             }}>
                     <View style={styles.callout}>
                         <Text style={{ fontFamily: 'Quicksand_700Bold'}}>
-                            {coordinate.name}
+                            {`#${index+1}${coordinate.name}`}
                         </Text>
                         <Text style={{ fontFamily: 'Quicksand_500Medium'}}>
                             {coordinate.address}
@@ -92,7 +108,7 @@ const Map = ({ waypoints }) => {
             </MapView.Marker>
             )}
               <MapViewDirections
-                origin={origin}
+                origin={currentPosition}
                 waypoints={waypoints}
                 destination={destination}
                 apikey="AIzaSyAK0QXUj4Jet4cJnWWV9nE1e62CbXPAcsc"
@@ -110,7 +126,7 @@ const styles = StyleSheet.create({
         width
     },
     callout: {
-        height: 150,
+        height: '100%',
         width: 150
     },
 

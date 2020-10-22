@@ -1,12 +1,7 @@
 import React from 'react'
 import {     
     View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    Dimensions,
-    ActivityIndicator,
-    Image
+    Text
 } from 'react-native'
 
 function ChatScreen(params) {

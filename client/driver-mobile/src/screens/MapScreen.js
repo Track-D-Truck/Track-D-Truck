@@ -1,33 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {     
     View,
-    Text,
     StyleSheet,
-    TouchableOpacity,
-    Dimensions,
     ActivityIndicator,
-    Image,
-    FlatList,
-    Linking
 } from 'react-native'
 import { AppLoading } from 'expo'
 import {
     useFonts,
-    // Quicksand_300Light,
-    // Quicksand_400Regular,
     Quicksand_500Medium,
     Quicksand_600SemiBold,
     Quicksand_700Bold,
 } from '@expo-google-fonts/quicksand';
-import { fetchResult } from '../store/actions/resultAction'
 import Map from '../components/Map'
-import CustomHeader from '../components/CustomHeader'
-import NoTask from '../components/NoTask'
-import FlatlistItem from '../components/FlatlistItem'
-import ProgressScreen from './ProgressScreen'
-
-const { width, height } = Dimensions.get('window');
 
 const MapScreen = ({ navigation }) => {
 
@@ -36,23 +21,11 @@ const MapScreen = ({ navigation }) => {
         Quicksand_600SemiBold,
         Quicksand_700Bold,
       });
-
-    // const dispatch = useDispatch()
     
     const [myResult, setMyResult] = useState(null)
     const [waypoints, setWaypoints] = useState(null)
-    // console.log(myResult, "<<< my result di mapscreen");
 
-    const result = useSelector(state => state.resultReducer.result)
-    const currentPosition = useSelector(state => state.positionReducer.currentPosition)
-    const updatedPosition = useSelector(state => state.positionReducer)
-    console.log(updatedPosition, '<<< data dari position reducer');
-    // const user = useSelector(state => state.userReducer)
-
-    // useEffect(() => {
-    //     dispatch(fetchResult())
-    // }, [dispatch, user.id])
-    
+    const result = useSelector(state => state.resultReducer.result)    
 
     useEffect(() => {  
         if(result){
@@ -69,11 +42,10 @@ const MapScreen = ({ navigation }) => {
             setWaypoints(temp)
             setMyResult(result)
         }
+        return () => {
+            console.log("clean up in map screen");
+        }  
     }, [result])
-
-    const goDirection = (item) => {
-        Linking.openURL(`http://www.google.com/maps/dir/${currentPosition.latitude},${currentPosition.longitude}/${item.latitude},${item.longitude}`)
-    }
 
     if (!fontsLoaded) {
         return <AppLoading/>
@@ -84,22 +56,6 @@ const MapScreen = ({ navigation }) => {
                 {myResult && waypoints &&
                 <View style={StyleSheet.absoluteFill}>
                     <Map waypoints={waypoints}/>
-                    {/* <FlatList
-                    data={waypoints}
-                    keyExtractor={el => el.address}
-                    renderItem={({ item })  => {
-                        return (
-                        <View style={styles.itemContainer}>
-                            <Text style={{ fontFamily: 'Quicksand_700Bold'}}>{item.name}</Text>
-                            <Text style={{ fontFamily: 'Quicksand_500Medium'}}>{item.address}</Text>
-                            <TouchableOpacity style={[styles.btnOpenMap, {marginTop: 5}]} onPress={() => {
-                                goDirection(item)
-                            }}>
-                                <Text style={{ textAlign: 'center', color: '#FFF', fontFamily: 'Quicksand_700Bold'}}>Get direction</Text>
-                            </TouchableOpacity>  
-                        </View>
-                        )
-                    }}/> */}
                 </View>}
             </View>
         )
@@ -110,8 +66,6 @@ const MapScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
         backgroundColor: '#ffffff'
     },
     itemContainer: {
