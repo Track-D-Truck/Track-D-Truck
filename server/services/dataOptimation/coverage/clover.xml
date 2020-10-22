@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603345372975" clover="3.2.0">
-  <project timestamp="1603345372975" name="All files">
-    <metrics statements="267" coveredstatements="193" conditionals="41" coveredconditionals="24" methods="76" coveredmethods="42" elements="384" coveredelements="259" complexity="0" loc="267" ncloc="267" packages="6" files="17" classes="17"/>
+<coverage generated="1603361320572" clover="3.2.0">
+  <project timestamp="1603361320573" name="All files">
+    <metrics statements="269" coveredstatements="189" conditionals="41" coveredconditionals="22" methods="77" coveredmethods="40" elements="387" coveredelements="251" complexity="0" loc="269" ncloc="269" packages="6" files="17" classes="17"/>
     <package name="dataOptimation">
-      <metrics statements="19" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="0"/>
+      <metrics statements="21" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="0"/>
       <file name="app.js" path="/Users/macbookpro/Desktop/Hacktiv8/Phase-3/Day15/Final Project/Test12_kamis_integration/Track-D-Truck/server/services/dataOptimation/app.js">
-        <metrics statements="19" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="0"/>
+        <metrics statements="21" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="0"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
@@ -24,11 +24,13 @@
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
         <line num="34" count="3" type="stmt"/>
       </file>
     </package>
     <package name="dataOptimation.controllers">
-      <metrics statements="117" coveredstatements="66" conditionals="18" coveredconditionals="10" methods="52" coveredmethods="27"/>
+      <metrics statements="117" coveredstatements="62" conditionals="18" coveredconditionals="8" methods="52" coveredmethods="26"/>
       <file name="TPS.js" path="/Users/macbookpro/Desktop/Hacktiv8/Phase-3/Day15/Final Project/Test12_kamis_integration/Track-D-Truck/server/services/dataOptimation/controllers/TPS.js">
         <metrics statements="34" coveredstatements="33" conditionals="4" coveredconditionals="4" methods="16" coveredmethods="15"/>
         <line num="1" count="3" type="stmt"/>
@@ -103,7 +105,7 @@
         <line num="110" count="3" type="stmt"/>
       </file>
       <file name="Users.js" path="/Users/macbookpro/Desktop/Hacktiv8/Phase-3/Day15/Final Project/Test12_kamis_integration/Track-D-Truck/server/services/dataOptimation/controllers/Users.js">
-        <metrics statements="50" coveredstatements="24" conditionals="10" coveredconditionals="6" methods="20" coveredmethods="7"/>
+        <metrics statements="50" coveredstatements="20" conditionals="10" coveredconditionals="4" methods="20" coveredmethods="6"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -118,19 +120,19 @@
         <line num="45" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
         <line num="62" count="1" type="stmt"/>
         <line num="67" count="2" type="stmt"/>
         <line num="68" count="2" type="stmt"/>
         <line num="74" count="2" type="stmt"/>
-        <line num="76" count="2" type="cond" truecount="4" falsecount="0"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="78" count="1" type="stmt"/>
-        <line num="79" count="1" type="stmt"/>
-        <line num="81" count="1" type="stmt"/>
-        <line num="85" count="1" type="stmt"/>
-        <line num="86" count="1" type="stmt"/>
+        <line num="76" count="2" type="cond" truecount="2" falsecount="2"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="81" count="2" type="stmt"/>
+        <line num="85" count="2" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
         <line num="92" count="0" type="stmt"/>
         <line num="98" count="0" type="stmt"/>
@@ -157,9 +159,9 @@
       </file>
     </package>
     <package name="dataOptimation.helpers">
-      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="bcrypt.js" path="/Users/macbookpro/Desktop/Hacktiv8/Phase-3/Day15/Final Project/Test12_kamis_integration/Track-D-Truck/server/services/dataOptimation/helpers/bcrypt.js">
-        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
@@ -167,14 +169,14 @@
         <line num="6" count="5" type="stmt"/>
         <line num="7" count="5" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
       </file>
       <file name="jwt.js" path="/Users/macbookpro/Desktop/Hacktiv8/Phase-3/Day15/Final Project/Test12_kamis_integration/Track-D-Truck/server/services/dataOptimation/helpers/jwt.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
       </file>
@@ -206,21 +208,21 @@
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="5" count="10" type="stmt"/>
-        <line num="6" count="10" type="stmt"/>
-        <line num="9" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="9" count="11" type="cond" truecount="1" falsecount="1"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="11" type="cond" truecount="2" falsecount="0"/>
         <line num="13" count="3" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="15" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
+        <line num="15" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
         <line num="18" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="23" count="10" type="stmt"/>
+        <line num="23" count="11" type="stmt"/>
         <line num="26" count="3" type="stmt"/>
       </file>
     </package>

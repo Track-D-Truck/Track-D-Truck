@@ -1,15 +1,15 @@
 const initialState = {
     startPosition: {
-        latitude: -6.86666,
-        longitude: 107.60000
+        latitude: -6.891205299999999, 
+        longitude: 107.6266582
     },
     lastDestination: {
-        latitude: -7.0015804,
-        longitude: 107.9028182
+        latitude: -7.020695399999999,
+        longitude: 107.9047481
     },
     currentPosition: {
-        latitude: -6.86666,
-        longitude: 107.60000
+        latitude: -6.891205299999999, 
+        longitude: 107.6266582
     },
     nextDestination: '',
     updatedPosition: []

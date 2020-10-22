@@ -8,7 +8,7 @@ import HomeScreen from './src/screens/HomeScreen'
 import HomeScreen2 from './src/screens/HomeScreen2'
 import MapTabNavigator from './src/components/MapTabNavigator'
 import HomeTabNavigator from './src/components/HomeTabNavigator'
-import { StatusBar } from 'react-native';
+import { StatusBar, LogBox } from 'react-native';
 import Loading from './src/components/Loading'
 import HistoryScreen from './src/screens/HistoryScreen'
 
@@ -16,6 +16,7 @@ import HistoryScreen from './src/screens/HistoryScreen'
 const Stack = createStackNavigator()
 
 export default function App () {
+  LogBox.ignoreAllLogs()
   return (
     <Provider store={store}>
       <StatusBar hidden={true} />
