@@ -28,7 +28,7 @@ export default function Login() {
                 
             </div>
             <div className="container">
-                <h1 className="mt-5 " style={style.title}>Track D'Truck</h1>
+                <h1 className="mt-4 " style={style.title}>Track D'Truck</h1>
                         <FormLogin />
 
                 <div className="row " >

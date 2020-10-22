@@ -38,6 +38,7 @@ export function LOGIN_USER(data) {
       .then((data) => {
         // {access_token, name, id, phone, email}
         localStorage.setItem('access_token', data.access_token)
+        localStorage.setItem('name', data.name)
         data = {name : data.name , id: data.id, phone: data.id, email: data.email}
         dispatch(SET_USER(data))
       })

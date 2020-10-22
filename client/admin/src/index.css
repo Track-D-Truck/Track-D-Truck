@@ -147,6 +147,14 @@ height: 400px;
   z-index: -1;
 }
 
+.loginBg {
+ 
+}
+
+.swal2-styled.swal2-confirm{
+  background-color: #27ae60 !important;
+}
+
 /* bootstrap */
 .noBorder {
   border: 0 !important;

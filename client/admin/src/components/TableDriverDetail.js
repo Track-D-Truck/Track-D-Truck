@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Swal from 'sweetalert2'
 
 import ModalEditTruck from './ModalEditTruck'
 import Loading from './Loading'
@@ -51,9 +52,26 @@ export default function TableDriverDetail() {
 											const  driverTruck = trucks.filter(truck => truck.DriverId == driver.id)
 											
 											function handleDeleteTruck() {
-													dispatch(DELETE_DRIVER(driver.id))
-													const filtered = drivers.filter( e => e.id !== driver.id)
-													dispatch(SET_DRIVERS(filtered))
+												Swal.fire({
+													title: 'Are you sure?',
+													icon: 'warning',
+													showCancelButton: true,
+													confirmButtonColor: '#27ae60',
+													cancelButtonColor: '#d33',
+													confirmButtonText: 'Yes, delete it!',
+													}).then((result) => {
+													if (result.isConfirmed) {
+															Swal.fire(
+															'Your data has been deleted!',
+																	'',
+															'success'
+															)
+															dispatch(DELETE_DRIVER(driver.id))
+															const filtered = drivers.filter( e => e.id !== driver.id)
+															dispatch(SET_DRIVERS(filtered))
+													}
+												})
+
 											}
 
 											function handleUpdateStatus(event) {

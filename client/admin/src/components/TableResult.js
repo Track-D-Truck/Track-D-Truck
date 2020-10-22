@@ -6,15 +6,17 @@ export default function TableResult() {
   const chosenResult = useSelector(state => state.ResultReducer.chosenResult)
   let routes = []
   let truck = {}
+  let tempDistance
   if(chosenResult) {
-      let currencyFormat = chosenResult.totalCost.toLocaleString('id-ID', {
-        style: "currency",
-        currency: "IDR"
-      })
-      chosenResult.totalCost = currencyFormat.split(',')
-      chosenResult.totalDistance = chosenResult.totalDistance.toLocaleString()
-     routes = chosenResult.route
-     truck = chosenResult.truck
+    let currencyFormat = chosenResult.totalCost.toLocaleString('id-ID', {
+      style: "currency",
+      currency: "IDR"
+    })
+    chosenResult.totalCost = currencyFormat.split(',')
+    tempDistance = (chosenResult.totalDistance/1000).toFixed(2)
+    // chosenResult.totalDistance = tempDistance
+    routes = chosenResult.route
+    truck = chosenResult.truck
     //  console.log(routes,'ini routes',truck);
   } 
   return (
@@ -40,7 +42,7 @@ export default function TableResult() {
                   }
                   <td>{chosenResult.totalVolume}/{truck.capacity} m³</td>
                   <td>Rp {truck.cost} / meter</td>
-                  <td>{chosenResult.totalDistance} km</td>
+                  <td>{tempDistance} km</td>
                   <td>{chosenResult.totalCost[0]}</td>
                 </tr>
               </tbody>
